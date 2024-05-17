@@ -4,9 +4,10 @@ interface TextImageProps{
     urlImage: string;
     text: string;
     backgroundPosition: string;
+    fontSize?: string;
 }
 
-export const TextImage: React.FC<TextImageProps> = ({urlImage, text, backgroundPosition}) => {
+export const TextImage: React.FC<TextImageProps> = ({urlImage, fontSize = 'clamp(10px, 1vw, 15px)' , text, backgroundPosition}) => {
 
     return (
         <Typography
@@ -14,7 +15,7 @@ export const TextImage: React.FC<TextImageProps> = ({urlImage, text, backgroundP
             sx={{
                 textTransform: 'uppercase',
                 fontWeight: 'bold',
-                fontSize: 'clamp(10px, 1vw, 15px)',
+                fontSize: fontSize,
                 backgroundSize: 'auto',
                 backgroundClip: 'text',
                 backgroundImage: `url(${urlImage})`,

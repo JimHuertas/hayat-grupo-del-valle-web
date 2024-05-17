@@ -2,6 +2,7 @@
 
 ![grupo-del-valle](https://github.com/JimHuertas/hayat-grupo-del-valle-web/assets/16847578/d3aaaeea-a533-43ae-8398-439aa58bcc27)
 
+------
 
 Tu lo sueñas, nosotros lo creamos.
 
