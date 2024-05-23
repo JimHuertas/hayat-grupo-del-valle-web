@@ -1,15 +1,15 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import { authSlice } from './auth';
-import { productSlice } from './products';
 import { useDispatch } from 'react-redux';
 import { themeSlice } from './theme/themeSlice';
+import { navBarSlice } from './navbar/navBatSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authSlice.reducer,
+    nabBar: navBarSlice.reducer,
     theme: themeSlice.reducer,
-    product: productSlice.reducer
   },
 });
 

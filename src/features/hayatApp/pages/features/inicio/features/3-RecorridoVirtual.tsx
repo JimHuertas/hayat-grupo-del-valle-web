@@ -13,7 +13,7 @@ export const RecorridoVirtual3: React.FC = () => {
                 height: '50vh',
             }}
         >
-            
+
         </Box>
     );
 }
