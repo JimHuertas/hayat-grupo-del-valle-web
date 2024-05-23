@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { InicioPage } from './features/inicio/InicioPage';
 import { ContactoPage } from './features/contacto/ContactoPage';
 import { NosotrosPage } from './features/nosotros/NosotrosPage';
-import { ServiciosPage } from './features/servicios/1-ServiciosPage';
+import { ServiciosPage } from './features/servicios/ServiciosPage';
 import { ReservaPage } from './features/reserva/ReservaPage';
 import { changeIndex } from '../../../store/navbar/navBatSlice';
 

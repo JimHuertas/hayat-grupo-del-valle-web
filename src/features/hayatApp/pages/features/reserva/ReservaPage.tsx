@@ -1,6 +1,6 @@
-import { Button, Grid, Typography } from '@mui/material';
-import { SaveOutlined } from '@mui/icons-material';
+import { Grid } from '@mui/material';
 import { HayatAppLayout } from '../../../layout/HayatAppLayout';
+import { Reserva1 } from './features/1-Reserva';
 
 export const ReservaPage = () => {
     // const { theme } = useSelector( (state: RootState) => state.theme );
@@ -14,15 +14,7 @@ export const ReservaPage = () => {
         sx={{ mb: 1 }}
         className='animate__animated animate__fadeIn animate__faster'
     >
-        <Grid item>
-            <Typography fontSize={ 50 } fontWeight='light' >Reserva View</Typography>
-        </Grid>
-        <Grid item>
-            <Button color="primary" sx={{ padding: 2 }}>
-                <SaveOutlined sx={{ fontSize: 30, mr: 1 }} />
-                Guardar
-            </Button>
-        </Grid>
+        <Reserva1 />
     </Grid>
     </HayatAppLayout>
   )
