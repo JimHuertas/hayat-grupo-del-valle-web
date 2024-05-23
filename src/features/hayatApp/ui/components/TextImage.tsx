@@ -11,7 +11,7 @@ export const TextImage: React.FC<TextImageProps> = ({urlImage, fontSize = 'clamp
 
     return (
         <Typography
-            variant="h3" // Elige el tipo de variante adecuada para tu caso
+            variant="h3"
             sx={{
                 textTransform: 'uppercase',
                 fontWeight: 'bold',
