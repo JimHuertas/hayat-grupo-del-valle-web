@@ -8,7 +8,7 @@ export const Reserva1 = () => {
     const {height} = heightScreen();
     
     const first_content = (height < 800) ? 800 * (85/100) : height * (70/100);
-    const second_content = (height < 800) ? 800 * (20/100): height * (22/100);
+    const second_content = (height < 800) ? 800 * (20/100): height * (22.7/100);
 
     return (
         <Box

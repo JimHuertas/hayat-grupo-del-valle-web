@@ -11,7 +11,6 @@ export const ServiciosPage = () => {
         direction='row' 
         justifyContent='space-between' 
         alignItems='center' 
-        sx={{ mb: 1 }}
         className='animate__animated animate__fadeIn animate__faster'
     >
         <Servicios1/>

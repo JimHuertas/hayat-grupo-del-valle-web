@@ -1,61 +1,61 @@
 
-import { checkingCredentials, logout, login } from '.';
-import { Dispatch } from 'redux';
-import { checkAuthStatus, loginWithEmailPassword, logoutFirebase, registerUserWithEmailPassword } from '../../features/shared/service/providers';
+// import { checkingCredentials, logout, login } from '.';
+// import { Dispatch } from 'redux';
+// import { checkAuthStatus, loginWithEmailPassword, logoutFirebase, registerUserWithEmailPassword } from '../../features/shared/service/providers';
 
-export const checkingAuthentication = () => {
-    return async( dispatch: Dispatch ) => {
-        dispatch( checkingCredentials() );
-    }
-}
+// export const checkingAuthentication = () => {
+//     return async( dispatch: Dispatch ) => {
+//         dispatch( checkingCredentials() );
+//     }
+// }
 
-export const startCreatingUserWithEmailPassword = ({ email, password, fullName, number }: FormState) => {
-    return async( dispatch: Dispatch ) => {
+// export const startCreatingUserWithEmailPassword = ({ email, password, fullName, number }: FormState) => {
+//     return async( dispatch: Dispatch ) => {
 
-        dispatch( checkingCredentials() );
+//         dispatch( checkingCredentials() );
 
-        const result = await registerUserWithEmailPassword({ email, password, fullName, number });
+//         const result = await registerUserWithEmailPassword({ email, password, fullName, number });
         
-        if ( result.error === true ) return dispatch( logout( result.message ) );
+//         if ( result.error === true ) return dispatch( logout( result.message ) );
         
-        dispatch( login( result ))
+//         dispatch( login( result ))
 
-    }
+//     }
 
-}
+// }
 
-export const startLoginWithEmailPassword = ({ number, password }: LoginData) => {
-    return async( dispatch: Dispatch ) => {
+// export const startLoginWithEmailPassword = ({ number, password }: LoginData) => {
+//     return async( dispatch: Dispatch ) => {
 
-        dispatch( checkingCredentials() );
+//         dispatch( checkingCredentials() );
 
-        const result = await loginWithEmailPassword({ number, password });
+//         const result = await loginWithEmailPassword({ number, password });
         
-        if ( result.error ) return dispatch( logout( result ) );
+//         if ( result.error ) return dispatch( logout( result ) );
 
-        dispatch( login( result ));
+//         dispatch( login( result ));
 
-    }
-}
+//     }
+// }
 
-export const startLogout = () => {
-    return async( dispatch: Dispatch ) => {
+// export const startLogout = () => {
+//     return async( dispatch: Dispatch ) => {
         
-        await logoutFirebase();
+//         await logoutFirebase();
 
-        dispatch( logout('') );
+//         dispatch( logout('') );
 
-    }
-}
+//     }
+// }
 
-export const startAuthCheckStatus = () => {
-    return async (dispatch : Dispatch) => {
-        dispatch( checkingCredentials() );
-        const result = await checkAuthStatus();
+// export const startAuthCheckStatus = () => {
+//     return async (dispatch : Dispatch) => {
+//         dispatch( checkingCredentials() );
+//         const result = await checkAuthStatus();
         
-        if ( result.error === true ) return dispatch( logout( result.message ) );
-        dispatch( login( result ));
+//         if ( result.error === true ) return dispatch( logout( result.message ) );
+//         dispatch( login( result ));
 
-    }
-}
+//     }
+// }
 

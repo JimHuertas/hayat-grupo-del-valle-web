@@ -18,18 +18,19 @@ export const HayatAppLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
     <Box
       sx={{ 
+        // border:4,
+        borderColor:'green',
         display: 'relative', 
         flexDirection: 'column',
         minHeight: isSmallScreen ? 'calc(100vh - 56px)' : '100vh',
-        minWidth: '100%',
+        minWidth: '90%',
       }} 
       className='animate__animated animate__fadeIn animate__faster'>
         { ( isSidebarOpen ) ? <SideBar drawerWidth={ 230 } isOpen={ isSidebarOpen } handleSidebarToggle={handleSidebarToggle}/> : null }
         <NavBar
           onToggleSidebar={handleSidebarToggle}
         />
-        <Box 
-            // bgcolor={`${theme}`}
+        <Box
             zIndex={1}
             overflow={'auto'}
             component='main'

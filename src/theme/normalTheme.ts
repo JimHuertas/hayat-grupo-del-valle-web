@@ -7,7 +7,7 @@ export const normalTheme = createTheme({
             styleOverrides: {
                 root: {
                     backgroundColor: 'transparent',
-                    // boxShadow: 'none',
+                    boxShadow: 'none',
                 },
             },
         },
@@ -25,7 +25,7 @@ export const normalTheme = createTheme({
 
         },
         secondary: {
-            main: '#F8F8F8',
+            main: 'black',
             dark: '#252525',
             light: '#F8F8F8',
             contrastText: '#F8F8F8',
