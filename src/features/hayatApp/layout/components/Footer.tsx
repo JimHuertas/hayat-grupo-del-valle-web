@@ -70,7 +70,7 @@ export const Footer = () => {
                 md: '0 8%  0 6%',
                 lg: '0 10%  0 8%',
                 xl: '0 15%  0 12%'
-            } 
+            }
             // height: isSmallScreen ? '90vh' : '50vh',
             // display: 'flex',
             // direction: 'row'
@@ -105,7 +105,7 @@ export const Footer = () => {
                         direction='row'
                     >
                         <img src={logoHayat} alt="Logo" style={{ boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: 140}} />
-                        <Typography style={{color: '#A8A8A8', fontSize:'20px'}} >CLUB PUNTA SAL</Typography>
+                        <Typography style={{ fontWeight:'500', alignContent:'end', color: '#A8A8A8', fontSize:'20px'}} >CLUB PUNTA SAL</Typography>
                     </Grid>
 
                     <TextField

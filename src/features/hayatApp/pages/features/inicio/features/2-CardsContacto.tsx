@@ -5,7 +5,7 @@ export const CardsContacto2: React.FC = () => {
 
     return (
     <Box 
-        bgcolor={'rgba(238,238,238,0.5)'}
+        bgcolor={'#F8F8F8'}
         borderColor={'red'}
         sx={{ 
             padding: 'none',
@@ -31,7 +31,7 @@ export const CardsContacto2: React.FC = () => {
             }} fontWeight={500}> Tendrás inumerables actividades de las cuales podrías disfrutar a los largo de tu estadía con nosotros </Typography>
         </Box>
         <Box height={'80%'} display={'flex'} flexDirection={'row'} alignItems='center' >
-            <CardsInfo  />
+            <CardsInfo/>
         </Box>
 
     </Box>

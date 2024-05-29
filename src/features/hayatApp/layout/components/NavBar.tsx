@@ -1,54 +1,79 @@
 import { AppBar, Box, Button, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import { MenuOutlined } from '@mui/icons-material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-// import { startLogout } from '../../../../store/auth';
-// import { useAppDispatch } from '../../../../store';
 import { CustomButton } from '../../ui/components';
 import { MenuOptions } from '../../ui/config/menu-options';
 import { CustomRoundedButton } from '../../ui/components/CustomRoundedButton';
-import '../../ui/css/CustomRoundedButton.css';
 import { TextImage } from '../../ui/components/TextImage';
+import '../../ui/css/CustomRoundedButton.css';
+import './navBar.css';
 
 import { selectedOption } from '../../hooks/selectedOption';
 import { widthScreen } from '../../hooks/widthScreen';
 
 import logoHayat from '../../../../assets/hayat-logo.png';
 import background1 from '../../../../assets/background-1.webp';
-import { useSelector } from 'react-redux';
+import background2 from '../../../../assets/background-2.webp';
+import background3 from '../../../../assets/background-3.webp';
+import background4 from '../../../../assets/background-4.webp';
+import background5 from '../../../../assets/background-5.webp';
+
+// import { startLogout } from '../../../../store/auth';
+// import { useAppDispatch } from '../../../../store';
 import { RootState } from '../../../../store';
 
+const backgrounds: string[] = [
+    background1,
+    background2,
+    background3,
+    background4,
+    background5
+];
 
 interface NavBarProps {
-    onToggleSidebar: ()=>void
+    onToggleSidebar: ()=>void;
 }
 
 export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
-
+    
     const [isSideBarOpen, setIsSideBarOpen] = useState(true); 
     
     const { width } = widthScreen();
     
     const navigate = useNavigate();
-
+    
     const { handleButtonClick } =  selectedOption();
-    
-    let indexNav= useSelector((state: RootState) => state.nabBar.index);
-    
-    // const dispatch = useAppDispatch();
 
-    // const onLogout = () => {
-    //     dispatch( startLogout() );
-    // }
+    let indexNav= useSelector((state: RootState) => state.nabBar.index);
+
+    const imgBg = backgrounds[indexNav];
     
+    const [showAppBar, setShowAppBar] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 150) {
+                setShowAppBar(false);
+            } else {
+                setShowAppBar(true);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const handleToggleSidebar = () => {
         setIsSideBarOpen(!isSideBarOpen);
         if (onToggleSidebar) {
             onToggleSidebar();
         }
     };
-
 
     const handleOnClickLogo = ()=>{
         navigate('/');
@@ -58,7 +83,8 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
     <AppBar 
         position='fixed'
         sx={{ 
-            top: 0,
+            transition: 'top 0.7s ease-in-out',
+            top: (showAppBar) ? 0 : '-100px',
             left: 0,
             right: 0,
             bgcolor: 'transparent',
@@ -69,25 +95,27 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
     >
         <Toolbar style={{  alignContent: 'center', justifyContent: 'center' }}>
             <Grid container direction='row' justifyContent='space-between' alignItems='center'>
-                <Box width='10%' display='flex' flexDirection='row' alignContent='center'>
-                    {(width < 925) 
-                    ? <IconButton onClick={handleToggleSidebar} sx={{ margin: (width < 431) ? '40px 0 0 0' :'60px 0 0 0' ,alignContent: 'center', width: '40px', height: '40px', background: 'rgba(238,238,238,0.9)'}}> 
+                <Box height='60px' justifyItems='center' display='flex' flexDirection='row' alignItems='center'>
+                    {(width < 935) 
+                    ? <IconButton onClick={handleToggleSidebar} sx={{ alignContent: 'center', width: '40px', height: '40px', background: 'rgba(238,238,238,0.9)'}}> 
                         <MenuOutlined sx={{color:'#E3641A'}}  />
                       </IconButton> 
-                    : <Box width={(width < 431) ? '1px' : '6%'} /> }
+                    : <Box  width={(width < 431) ? '1px' : '6%'} /> }
                     
-                    <IconButton disableRipple className='logo-button' edge="start" color="inherit" aria-label="menu" onClick={handleOnClickLogo}>
-                        <img src={logoHayat} alt="Logo" style={{ boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 431) ? 100 : 140, borderRadius: '0' }} />
-                    </IconButton>
+                    <Button sx={{ height: '100%' }} disableRipple  color="inherit" aria-label="menu" onClick={handleOnClickLogo}>
+                        <img src={logoHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 440) ? 80 : 120, borderRadius: '0' }} />
+                    </Button>
                 </Box>
-                <Box width={(width < 431) ? '1px' : '4.2vw'} />
+                <Box width={(width < 440) ? '1px' : (width < 990) ? '1px' : '4.2vw'} />
                 <Box>
-                {width < 925 ? null : MenuOptions.map((option, index) => (
+                {width < 935 ? null : MenuOptions.map((option, index) => (
                     (index !== 4)
                     ? <CustomButton
                         key={index} 
                         className={`button ${indexNav === index ? 'selected' : ''}`}
-                        onClick={() => handleButtonClick(index)} >
+                        onClick={() => {
+                            handleButtonClick(index)
+                        }} >
                         <Typography color="#F8F8F8" fontSize= 'clamp(13px, 1vw, 18px)' fontWeight="fontWeightBold" bgcolor={'transparent'} >{option.title}</Typography>
                       </CustomButton>
                     : <CustomRoundedButton
@@ -96,12 +124,14 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                         padding=''
                         key={index}
                         className={`rounded-button ${indexNav === index ? 'selected-background' : ''}`}
-                        onClick={()=>handleButtonClick(index)}
+                        onClick={()=>{
+                            handleButtonClick(index)
+                        }}
                       >
                         <TextImage 
                             backgroundPosition='center 10%'
                             text='RESERVA'
-                            urlImage={background1}  
+                            urlImage={imgBg}  
                         />
                       </CustomRoundedButton>
                 ))
@@ -165,3 +195,10 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
     </AppBar>
   )
 }
+
+ // const dispatch = useAppDispatch();
+
+    // const onLogout = () => {
+    //     dispatch( startLogout() );
+    // }
+    

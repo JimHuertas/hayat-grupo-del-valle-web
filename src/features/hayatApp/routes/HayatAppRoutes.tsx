@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import { NosotrosPage } from "../pages/features/nosotros/NosotrosPage";
 import { ContactoPage } from "../pages/features/contacto/ContactoPage";
-import { ServiciosPage } from "../pages/features/servicios/1-ServiciosPage";
+import { ServiciosPage } from "../pages/features/servicios/ServiciosPage";
 import { ReservaPage } from "../pages/features/reserva/ReservaPage";
 import { InicioPage } from "../pages/features/inicio/InicioPage";
 import { useEffect } from "react";
