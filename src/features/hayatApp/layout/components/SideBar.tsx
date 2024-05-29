@@ -72,25 +72,25 @@ export const SideBar: React.FC<SideBarProps> = ({ drawerWidth = 240, isOpen, han
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
-                        <ListItemButton component={NavLink} to="/">
+                        <ListItemButton component={NavLink} to="/contacto">
                             <ListItemText primary="Contácto" />
                         </ListItemButton>
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton component={NavLink} to="/">
+                        <ListItemButton component={NavLink} to="/nosotros">
                             <ListItemText primary="Nosotros" />
                         </ListItemButton>
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton component={NavLink} to="/">
+                        <ListItemButton component={NavLink} to="/servicios">
                             <ListItemText primary="Servicios" />
                         </ListItemButton>
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton component={NavLink} to="/">
+                        <ListItemButton component={NavLink} to="/reserva">
                             <ListItemText primary="Reserva" />
                         </ListItemButton>
                     </ListItem>

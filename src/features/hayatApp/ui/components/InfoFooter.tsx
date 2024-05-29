@@ -58,7 +58,7 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
             <Box alignSelf='center' justifyContent='center' border={1.2} height={sizeContent * (75/100)} display='flex' color='white' />
             
             <Box width='40vw' height={sizeContent} >
-            {(width < 890)
+            {(width < 900)
                 ? <SmallSizeScreenContent sizeContent={sizeContent} width={width}/>
                 : <HighSizeScreenContent  sizeContent={sizeContent} width={width}/>
             }
@@ -102,7 +102,7 @@ const SmallSizeScreenContent:React.FC<ScreenContentProps> = ({width, sizeContent
      );
  }
 
-const HighSizeScreenContent:React.FC<ScreenContentProps>  = ({ sizeContent}) => {
+const HighSizeScreenContent:React.FC<ScreenContentProps>  = ({sizeContent}) => {
    return (
    <Grid container padding='0 5px' alignContent='center' height={sizeContent} justifyContent='space-between' direction='row' >
         <Box component='img' width={{

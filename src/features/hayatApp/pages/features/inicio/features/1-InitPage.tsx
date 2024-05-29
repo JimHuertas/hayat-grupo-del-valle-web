@@ -15,13 +15,11 @@ export const InitPage1: React.FC = () => {
     const {height} = heightScreen();
     
     const first_content = (height < 800) ? 800 * (85/100) : height * (70/100);
-    const second_content = (height < 800) ? 800 * (20/100): height * (22/100);
+    const second_content = (height < 800) ? 800 * (20/100): height * (22.7/100);
 
     return (
         <Box
             bgcolor={'rgba(38,38,38,0.5)'}
-            color={'#3DF45D'}
-            // border={2}
             sx={{ 
                 backgroundAttachment: 'center',
                 backgroundImage: `url(${urlImage})`,
@@ -89,6 +87,7 @@ export const InitPage1: React.FC = () => {
                     </CustomRoundedButton> */}
                     <Box margin={'12px 0 0 0'}>
                         <CustomRoundedButton
+                            boxShadow=''
                             background="white"
                             onClick={()=>{}}
                             className=""

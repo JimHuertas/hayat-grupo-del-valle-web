@@ -27,7 +27,7 @@ const CardOne:React.FC<CardProps> = ({img, title, content, onClick}) => {
                 md: '0 3% 0 48%',
                 lg: '0 3% 0 48%',
                 xl: '0 3% 0 48%',
-            }} borderRadius='50px' width='92%' height='75%' bgcolor='rgba(238,238,238,0.5)'
+            }} borderRadius='50px' width='92%' height='75%' bgcolor='F8F8F8'
           boxShadow='5px 5px 10px rgba(38, 38, 38, 0.7)'
           >
             <Typography padding={'13% 4% 9% 0'} textAlign='left' fontFamily={'Montserrat'} sx={{ fontWeight: 500 ,fontSize: {
@@ -104,8 +104,9 @@ export const CardsInfo: React.FC = () => {
     <div className="slider-container">
       <Slider {...settings}>
         {cards.map((card: CardType, index) =>{
-          return (<CardOne
-          key={index}
+          return (
+          <CardOne
+            key={index}
             content={card.content}
             title={card.title}
             img={card.image}
