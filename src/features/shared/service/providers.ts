@@ -6,8 +6,9 @@ export const sendEmail = async ({nombres, apellidos, correo, departamento, numer
         nombres: `${nombres} ${apellidos}`,
         email: correo,
         departamento: departamento,
-        numero: numero
+        numero: +numero
     }).then(response => {
+        console.log(response.data);
         return response.data;
     }).catch(error => {
         if (error.response) {

@@ -8,11 +8,11 @@ export enum UserStatus {
     Authenticated    = 'authenticated'
 }
 
-export enum CreateProductStatus{
+export enum SendMailStatus{
+    None = 'none',
     Checking = 'checking',
-    NotCreated = 'not-created',
-    Created = 'created',
-    Failed = 'failed'
+    MailSended = 'mail-sended',
+    MainFailed = 'mail-failed'
 }
 
 const token = localStorage.getItem('token');

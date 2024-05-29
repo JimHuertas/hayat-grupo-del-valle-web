@@ -9,8 +9,6 @@ export const ContactoPage = () => {
     <HayatAppLayout>
     <Grid container 
         direction='row' 
-        // justifyContent='space-between' 
-        // alignItems='center' 
         className='animate__animated animate__fadeIn animate__faster'
     >
         <Contacto1 />

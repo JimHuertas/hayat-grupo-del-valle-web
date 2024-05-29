@@ -25,14 +25,14 @@ export const normalTheme = createTheme({
 
         },
         secondary: {
-            main: 'black',
+            main: '#388e3c',
             dark: '#252525',
-            light: '#F8F8F8',
-            contrastText: '#F8F8F8',
+            light: '#38800c',
+            contrastText: '#38800c',
 
         },
         success:{
-            main: 'rgba(6, 45, 62, 0.9)',
+            main: 'rgba(56, 128, 12, 0.9)',
             light: 'rgba(6, 45, 62, 0.9)',
             dark: 'rgba(6, 45, 62, 0.9)',
             contrastText: '#252525'

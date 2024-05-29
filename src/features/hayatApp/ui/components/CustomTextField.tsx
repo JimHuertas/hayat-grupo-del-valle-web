@@ -40,7 +40,7 @@ export const CustomTextField: React.FC<CustomTextFieldProps> = ({sx, label, ...p
             },
           },
           '& .MuiOutlinedInput-notchedOutline': {
-            border:0,
+            border: 0,
             borderColor: 'rgba(248,248,248,0.5)',
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
@@ -49,6 +49,7 @@ export const CustomTextField: React.FC<CustomTextFieldProps> = ({sx, label, ...p
           '&.Mui-focused fieldset': {
               borderColor: 'rgba(248,248,248,1)',
           },
+          
           zIndex: 1
         }}
         {...props}
