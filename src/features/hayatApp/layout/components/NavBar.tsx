@@ -9,29 +9,16 @@ import { MenuOptions } from '../../ui/config/menu-options';
 import { CustomRoundedButton } from '../../ui/components/CustomRoundedButton';
 import { TextImage } from '../../ui/components/TextImage';
 import '../../ui/css/CustomRoundedButton.css';
-import './navBar.css';
+import './css/navBar.css';
 
 import { selectedOption } from '../../hooks/selectedOption';
 import { widthScreen } from '../../hooks/widthScreen';
 
 import logoHayat from '../../../../assets/hayat-logo.png';
-import background1 from '../../../../assets/background-1.webp';
-import background2 from '../../../../assets/background-2.webp';
-import background3 from '../../../../assets/background-3.webp';
-import background4 from '../../../../assets/background-4.webp';
-import background5 from '../../../../assets/background-5.webp';
 
 // import { startLogout } from '../../../../store/auth';
 // import { useAppDispatch } from '../../../../store';
 import { RootState } from '../../../../store';
-
-const backgrounds: string[] = [
-    background1,
-    background2,
-    background3,
-    background4,
-    background5
-];
 
 interface NavBarProps {
     onToggleSidebar: ()=>void;
@@ -48,8 +35,6 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
     const { handleButtonClick } =  selectedOption();
 
     let indexNav= useSelector((state: RootState) => state.nabBar.index);
-
-    const imgBg = backgrounds[indexNav];
     
     const [showAppBar, setShowAppBar] = useState(true);
 
@@ -129,9 +114,8 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                         }}
                       >
                         <TextImage 
-                            backgroundPosition='center 10%'
+                            backgroundPosition='top'
                             text='RESERVA'
-                            urlImage={imgBg}  
                         />
                       </CustomRoundedButton>
                 ))
@@ -147,7 +131,7 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                       },
                 }} 
                 ></Box>
-                <Box display='flex' flexDirection='row'>
+                {/* <Box display='flex' flexDirection='row'>
                 <Button
                     sx={{ 
                         color: '#F8F8F8',
@@ -181,7 +165,7 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                 >
                     Ingresar
                 </Button>
-                </Box>
+                </Box> */}
                 
                 {/* <IconButton 
                     color='error'

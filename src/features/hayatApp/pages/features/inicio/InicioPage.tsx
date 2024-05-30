@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Box } from '@mui/material';
 
 import { InitPage1 } from './features/1-InitPage';
 import { CardsContacto2 } from './features/2-CardsContacto';
@@ -10,8 +10,8 @@ export const InicioPage = () => {
 
   return (
     <HayatAppLayout>
-    <Grid container 
-        direction='column' 
+    <Box 
+        flexDirection='column'
         justifyContent='top' 
         alignItems='center' 
         className='animate__animated animate__fadeIn animate__faster'
@@ -19,7 +19,7 @@ export const InicioPage = () => {
         <InitPage1 />
         <CardsContacto2/>
         <RecorridoVirtual3/>
-    </Grid>
+    </Box>
     </HayatAppLayout>
   )
 }

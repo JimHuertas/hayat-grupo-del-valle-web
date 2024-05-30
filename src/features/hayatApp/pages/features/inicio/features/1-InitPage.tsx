@@ -3,11 +3,9 @@ import { Box, Grid, Typography } from "@mui/material";
 import { CustomRoundedButton } from "../../../../ui/components/CustomRoundedButton";
 import { TextImage } from "../../../../ui/components/TextImage";
 
-import urlImage from '../../../../../../assets/background-1.webp';
-import background1 from '../../../../../../assets/background-1.webp';
-
 import { heightScreen } from "../../../../hooks/heightScreen";
 import { InfoFooter } from "../../../../ui/components/InfoFooter";
+import { countState } from "../../../../hooks/countState";
 
 
 export const InitPage1: React.FC = () => {
@@ -17,12 +15,13 @@ export const InitPage1: React.FC = () => {
     const first_content = (height < 800) ? 800 * (85/100) : height * (70/100);
     const second_content = (height < 800) ? 800 * (20/100): height * (22.7/100);
 
+    const { count } = countState();
+
     return (
         <Box
-            bgcolor={'rgba(38,38,38,0.5)'}
+            bgcolor={'rgba(38,38,38,0.3)'}
             sx={{ 
                 backgroundAttachment: 'center',
-                backgroundImage: `url(${urlImage})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 padding: '80px 0 0 0',
@@ -31,10 +30,10 @@ export const InitPage1: React.FC = () => {
         >
             <Grid container display='flex' direction='row' >
                 <Grid height={first_content} width='12%' alignItems='center' justifyContent='center' display='flex' flexDirection='column' >
-                    <Typography fontWeight='bold' color='white' fontSize='20px' >01</Typography>
+                    <Typography fontWeight='bold' color='white' fontSize='20px' >{(count<1) ? '01' : `0${count}`}</Typography>
                     <Box color='#E3641A' border={3} width='1px' height={'40%'} ></Box>
                     <Box color='white' border={1} width='1px' height={'40%'} ></Box>
-                    <Typography fontWeight='bold' color='white' fontSize='20px'>04</Typography>
+                    <Typography fontWeight='bold' color='white' fontSize='20px'>05</Typography>
                 </Grid>
 
                 <Box height={first_content} width='88%'>
@@ -45,7 +44,7 @@ export const InitPage1: React.FC = () => {
                             sm: '50px 5vw 0 0',
                             md: '55px 15vw 0 0',
                             lg: '40px 25vw 0 0',
-                            xl: '80px 25vw 0 0'
+                            xl: '50px 25vw 0 0'
                         }} 
                         fontSize={{
                             xs: '6vw',
@@ -91,7 +90,7 @@ export const InitPage1: React.FC = () => {
                             background="white"
                             onClick={()=>{}}
                             className=""
-                        >  <TextImage fontSize="25px" text="¡Consulta Ahora!" backgroundPosition="bottom" urlImage={background1} />
+                        >  <TextImage fontSize="22px" text="¡Consulta Ahora!" backgroundPosition="bottom 39% left 20% " />
                         </CustomRoundedButton>
                     </Box>
                 </Box>
