@@ -16,39 +16,55 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
 
     const icons_separation = {
         xs: '0 5px 0 0',
-        sm: '0 30px 0 0',
+        sm: '0 25px 0 0',
         md: '0 50px 0 0',
         lg: '0 70px 0 0',
         xl: '0 75px 0 0'
+    }
+
+    const icon_radius = {
+        xs: '25px',
+        sm: '34px',
+        md: '40px',
+        lg: '42px',
+        xl: '50px'
+    }
+
+    const icons_size = {
+        xs: '25px',
+        sm: '30px',
+        md: '32px',
+        lg: '37px',
+        xl: '40px'
     }
 
     return (
     <Box bgcolor='rgba(38,38,38, 0.6)' height={sizeContent}>
         <Grid container justifyContent='space-between' display='flex' color='#B8B8B8' direction='row'>
             <Box justifyContent='right'  alignItems='center' display='flex' width='32vw'  height={sizeContent}>
-                <IconButton onClick={()=>{}} sx={{margin:icons_separation, background: '#F8F8F8', width: '30px', height: '30px'}} > 
+                <IconButton onClick={()=>{}} sx={{margin:icons_separation, background: '#F8F8F8', width: icon_radius, height:icon_radius}} > 
                     <FacebookRounded 
                         sx={{
                             '&:hover': {color: 'white'},
-                            fontSize:'25px', 
+                            fontSize: icons_size, 
                             color: "#585858"
                         }}
                     /> 
                 </IconButton>
-                <IconButton onClick={()=>{}} sx={{margin:icons_separation, background: '#F8F8F8', width: '30px', height: '30px'}} > 
+                <IconButton onClick={()=>{}} sx={{margin:icons_separation, background: '#F8F8F8', width: icon_radius, height: icon_radius}} > 
                     <YouTube 
                         sx={{
                             '&:hover': {color: 'white'},
-                            fontSize:'25px', 
+                            fontSize: icons_size, 
                             color: "#585858"
                         }}
                         />
                 </IconButton>
-                <IconButton onClick={()=>{}} sx={{ margin:icons_separation, background: '#F8F8F8', width: '30px', height: '30px'}} > 
+                <IconButton onClick={()=>{}} sx={{ margin:icons_separation, background: '#F8F8F8', width: icon_radius, height: icon_radius}} > 
                     <Instagram 
                         sx={{
                             '&:hover': {color: 'white'},
-                            fontSize:'25px', 
+                            fontSize: icons_size, 
                             color: "#585858"
                         }}
                         /> 

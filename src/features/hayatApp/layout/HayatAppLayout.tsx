@@ -1,44 +1,53 @@
-import { Theme, useMediaQuery } from '@mui/material';
 import { Box } from '@mui/system';
 import { Footer, NavBar, SideBar } from '../ui/components';
-import { ReactNode, useState } from 'react';
-import "../ui/css/background.css";
+import { ReactNode, useRef, useState } from 'react';
+import './components/css/transitions.css';
+
+import { BackgroundSlider } from './components/Background-Slider';
+import { bg_images } from '../config/bg_options';
 
 interface AuthLayoutProps {
   children: ReactNode;
 }
 
 export const HayatAppLayout: React.FC<AuthLayoutProps> = ({ children }) => {
-  const isSmallScreen = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  
+
+  const contentRef = useRef<HTMLDivElement>(null);
+
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
   return (
     <Box
       sx={{ 
-        // border:4,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         borderColor:'green',
         display: 'relative', 
         flexDirection: 'column',
-        minHeight: isSmallScreen ? 'calc(100vh - 56px)' : '100vh',
-        minWidth: '90%',
+        // minHeight: '100vh',
+        // minWidth: '90%',
       }} 
-      className='animate__animated animate__fadeIn animate__faster'>
+      // className="fade-in-out"
+      >
+        <BackgroundSlider images={bg_images} interval={500} contentRef={contentRef}/>
         { ( isSidebarOpen ) ? <SideBar drawerWidth={ 230 } isOpen={ isSidebarOpen } handleSidebarToggle={handleSidebarToggle}/> : null }
         <NavBar
           onToggleSidebar={handleSidebarToggle}
         />
         <Box
-            zIndex={1}
-            overflow={'auto'}
-            component='main'
-            sx={{ flexGrow: 1, p: '0 0 0 0'}}
+          component='main'
+          overflow={'auto'}
+          zIndex={1}
+          ref={contentRef}
+          sx={{ flexGrow: 1, p: '0 0 0 0', overflow: 'auto',
+          position: 'relative'}}
         >
-            {/* <Toolbar /> */}
-
-            { children }
+          
+          { children }
             
         </Box>
         <Footer />

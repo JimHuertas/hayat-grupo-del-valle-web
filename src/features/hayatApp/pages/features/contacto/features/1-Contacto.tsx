@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { heightScreen } from "../../../../hooks/heightScreen";
 import { widthScreen } from "../../../../hooks/widthScreen";
 
-import urlImage2 from '../../../../../../assets/background-2.webp';
 import girlBeach from "../../../../../../assets/girl-beach.png";
 
 import { InfoFooter } from "../../../../ui/components/InfoFooter";
@@ -34,7 +33,6 @@ export const Contacto1 = () => {
     const { alert, handleCloseAlert, handleShowAlert } = alertSwap();
     const dispatch = useAppDispatch();
 
-
     const {width} = widthScreen();
     const {height} = heightScreen();
     const first_content = (height < 1000) 
@@ -56,7 +54,6 @@ export const Contacto1 = () => {
         numero: '',
     }, formValidations);
 
-
     useEffect(()=>{
         if( mailState.status === SendMailStatus.MailSended || mailState.status === SendMailStatus.MainFailed){
             handleShowAlert();
@@ -66,23 +63,25 @@ export const Contacto1 = () => {
         event.preventDefault();
         setFormSubmitted(true);
 
-        if(!isFormValid && selectedItem !== '') return;
-        const departamento = selectedItem;
+        if(!isFormValid || selectedItem === '' || confirmCorreo !== correo) return;
+
+        const departamento:string = selectedItem;
         await dispatch( startSendingMail({nombres, apellidos, correo, departamento , numero}) );
+        
     }
     
 
     return (
     <Box
-        bgcolor={'rgba(38,38,38,0.5)'}
+        bgcolor={'rgba(38,38,38,0.2)'}
         sx={{
             backgroundAttachment: 'center',
-            backgroundImage: `url(${urlImage2})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             padding: '80px 0 0 0',
             alignContent: 'center',
             width: '100%', 
+            borderColor:'red'
         }}
     >
         <Grid height='inherit' container display='flex' direction='row' >
@@ -91,7 +90,8 @@ export const Contacto1 = () => {
                     <Typography fontWeight='500' fontSize={(width < 860) ? {
                         xs: '8vw',
                         sm: '8vw',
-                    } : {sm: '50px',md: '50px',
+                    } : {sm: '50px',
+                        md: '50px',
                         lg: '50px',
                         xl: '70px'}} color='white' fontFamily='Montserrat'  >CONTÁCTANOS Y</Typography>
                     <Typography padding={(width < 1070)  ? 'none' : '0 0 0 10px'} fontWeight='bold' fontSize={(width < 860) ? {
@@ -103,12 +103,12 @@ export const Contacto1 = () => {
                         xl: '70px'}} fontFamily='Montserrat' color='#E96417'  >EMPEZEMOS CON</Typography>
                 </Box>
                 <Typography fontWeight='bold' margin='0 0 0 9vw' fontSize={(width < 860) ? {
-                        xs: '8vw',
-                        sm: '8vw',
-                    } : {sm: '50px',
-                        md: '50px',
-                        lg: '50px',
-                        xl: '70px'}}  fontFamily='Montserrat' color='#E96417'>ESTA MARAVILLOSA EXPERIENCIA</Typography>
+                    xs: '8vw',
+                    sm: '8vw',
+                } : {sm: '50px',
+                    md: '50px',
+                    lg: '50px',
+                    xl: '70px'}}  fontFamily='Montserrat' color='#E96417'>ESTA MARAVILLOSA EXPERIENCIA</Typography>
 
                 <Typography margin='30px 25vw 50px 9vw' color='white' fontSize={{
                     xs: '15px',

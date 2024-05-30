@@ -11,6 +11,13 @@ export const sendEmail = async ({nombres, apellidos, correo, departamento, numer
         console.log(response.data);
         return response.data;
     }).catch(error => {
+        console.log(error);
+        if(error.code === 'ERR_NETWORK'){
+            return {
+                error: true,
+                message: 'Error al enviar el mensaje, vamos a solucionarlo.'
+            }
+        }
         if (error.response) {
             return { 
                 error: true,
