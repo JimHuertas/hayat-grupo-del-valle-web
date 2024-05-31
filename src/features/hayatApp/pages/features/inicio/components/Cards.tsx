@@ -73,7 +73,7 @@ export const CardsInfo: React.FC = () => {
     infinite: true,
     centerMode: false,
     autoplay:true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     slidesToShow: (width < 1200) ? 1 : 2,
     slidesToScroll: 1,
     pauseOnHover: true,

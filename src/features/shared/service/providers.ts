@@ -8,10 +8,8 @@ export const sendEmail = async ({nombres, apellidos, correo, departamento, numer
         departamento: departamento,
         numero: +numero
     }).then(response => {
-        console.log(response.data);
         return response.data;
     }).catch(error => {
-        console.log(error);
         if(error.code === 'ERR_NETWORK'){
             return {
                 error: true,

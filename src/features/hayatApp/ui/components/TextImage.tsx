@@ -22,8 +22,6 @@ export const TextImage: React.FC<TextImageProps> = ({ fontSize = 'clamp(10px, 1v
         return () => clearInterval(interval);
     }, []);
 
-    console.log('count: ', count, '\nindex: ', index); 
-
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prevIndex) => (prevIndex + 1) % bg_images.length);

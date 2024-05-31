@@ -54,7 +54,7 @@ export const InitPage1: React.FC = () => {
                             xl: '60px'
                         }} 
                         color='#F8F8F8'
-                    > ¡EMPIEZA A VIVIR UN MAR DE EXPERIENCIAS EN ESTE PARAÍSO!
+                    > ¡EMPIEZA A VIVIR UN MAR DE EXPERIENCIAS!
                     </Typography>
                     
                     <Typography 
@@ -73,10 +73,10 @@ export const InitPage1: React.FC = () => {
                             lg: '20px',
                             xl: '21px'
                         }} fontWeight='500'
-                    > ''Bienvenido al paraíso en nuestro exclusivo club. ''vive un mar de emociones'', donde cada momento se convierte
-                        en una experiencia inolvidavle. Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas
+                    > ''Bienvenido a nuestro exclusivo club. ''vive un mar de experiencias'', donde cada momento se convierte
+                        en un recuerdo inolvidable. Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas
                         cristalinas del océano. Disfruta de una variedad de comodidades de lujo, desde exquisitos restaurantes y bares 
-                        frente al mar hasta cómodas cabañas y tumbonas para descansar bajo el cálido sol tropical''.
+                        frente al mar hasta cómodas habitaciones y espacios para descansar bajo el cálido sol tropical''.
                     </Typography>
                     {/* <CustomRoundedButton
                         background='#E3641A'

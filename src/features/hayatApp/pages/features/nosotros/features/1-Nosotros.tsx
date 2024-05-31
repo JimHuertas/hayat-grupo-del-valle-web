@@ -15,11 +15,9 @@ export const Nosotros1 = () => {
     return (
         <Box
             bgcolor={'rgba(38,38,38,0.3)'}
-            // border={2}
             sx={{ 
                 backgroundAttachment: 'center',
                 // backgroundImage: `url(${urlImage3})`,
-                // backgroundImage: `transparent`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 padding: '80px 0 0 0',
@@ -32,6 +30,10 @@ export const Nosotros1 = () => {
                     <Box color='#E3641A' border={3} width='1px' height={'40%'} ></Box>
                     <Box color='white' border={1} width='1px' height={'40%'} ></Box>
                     <Typography fontWeight='bold' color='white' fontSize='20px'>05</Typography>
+                </Grid>
+                <Grid>
+                    
+
                 </Grid>
             </Grid>
 

@@ -16,8 +16,6 @@ export const startSendingMail = ({ nombres, apellidos, correo, departamento, num
 
         const result = await sendEmail({nombres, apellidos, correo, departamento, numero })
         
-        console.log("aca result: ", result);
-        
         if ( result.error === true ) return dispatch( failedMessage( result.message ) );
         
         dispatch( sendedMessage( result.message ))
