@@ -1,5 +1,5 @@
 
-import { sendEmail } from '../../features/shared/service/providers';
+import { sendEmail } from '../../hayatApp/service/providers';
 import { noStaredMail, chekingMessage, failedMessage, sendedMessage } from './mailSlice';
 import { Dispatch } from 'redux';
 

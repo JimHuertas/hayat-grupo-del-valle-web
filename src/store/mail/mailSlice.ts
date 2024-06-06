@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { SendMailStatus } from '../../features/shared/service/config';
+import { SendMailStatus } from '../../hayatApp/service/config';
 
 export const mailSlice = createSlice({
     name: 'mail',
