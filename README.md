@@ -1,8 +1,7 @@
 # Grupo del Valle Investmet Holding SAC
 
-![grupo-del-valle](https://github.com/JimHuertas/hayat-grupo-del-valle-web/assets/16847578/d3aaaeea-a533-43ae-8398-439aa58bcc27)
+------![grupo-del-valle-color](https://github.com/JimHuertas/hayat-grupo-del-valle-web/assets/16847578/e7b15de2-9058-4ac9-ae60-0251022c204e)
 
-------
 
 Tu lo sueñas, nosotros lo creamos.
 
