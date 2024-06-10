@@ -1,5 +1,5 @@
 
-import { sendEmail } from '../../features/shared/service/providers';
+import { sendEmail } from '../../hayatApp/service/providers';
 import { noStaredMail, chekingMessage, failedMessage, sendedMessage } from './mailSlice';
 import { Dispatch } from 'redux';
 
@@ -15,8 +15,6 @@ export const startSendingMail = ({ nombres, apellidos, correo, departamento, num
         dispatch( chekingMessage() );
 
         const result = await sendEmail({nombres, apellidos, correo, departamento, numero })
-        
-        console.log("aca result: ", result);
         
         if ( result.error === true ) return dispatch( failedMessage( result.message ) );
         

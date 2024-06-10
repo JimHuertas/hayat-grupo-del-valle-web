@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserStatus } from '../../features/shared/service/config';
+import { UserStatus } from '../../hayatApp/service/config';
 
 export const authSlice = createSlice({
     name: 'auth',

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { SendMailStatus } from '../../features/shared/service/config';
+import { SendMailStatus } from '../../hayatApp/service/config';
 
 export const mailSlice = createSlice({
     name: 'mail',
@@ -20,8 +20,6 @@ export const mailSlice = createSlice({
             state.message = payload;
         },
         failedMessage: ( state, {payload} ) => {
-            console.log(payload);
-            
             state.status = SendMailStatus.MainFailed; // 'checking', 'mail-sended', 'mail-failed'
             state.severity = 'error'
             state.message = payload

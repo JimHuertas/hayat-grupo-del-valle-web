@@ -6,7 +6,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 
 // import { UserStatus } from '../features/shared/service/config';
-import { HayatAppRoutes } from '../features/hayatApp/routes/HayatAppRoutes';
+import { HayatAppRoutes } from '../hayatApp/routes/HayatAppRoutes';
 
 
 export const AppRouter = () => {
