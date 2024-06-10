@@ -8,7 +8,7 @@ import { InicioPage } from './features/inicio/InicioPage';
 import { ContactoPage } from './features/contacto/ContactoPage';
 import { NosotrosPage } from './features/nosotros/NosotrosPage';
 import { ServiciosPage } from './features/servicios/ServiciosPage';
-import { ReservaPage } from './features/reserva/ReservaPage';
+// import { ReservaPage } from './features/reserva/ReservaPage';
 import { changeIndex } from '../../store/navbar/navBatSlice';
 
 
@@ -40,9 +40,10 @@ export const HomePage: React.FC<HomePagePros> = ({index}) => {
             setCurrentComponent(<NosotrosPage/>);
         } else if (indexNav === 4){
             setCurrentComponent(<ServiciosPage/>);
-        } else if (indexNav === 5){
-            setCurrentComponent(<ReservaPage/>);
         }
+        // } else if (indexNav === 5){
+        //     setCurrentComponent(<ReservaPage/>);
+        // }
       }, [indexNav]);
 
     return (

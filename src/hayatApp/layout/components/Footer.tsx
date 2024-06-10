@@ -208,9 +208,6 @@ export const Footer = () => {
                         <iframe width={isSmallScreen ? '70%' : '100%'} height={isSmallScreen ? '500px' : '350px'} style={{ border:1, maxWidth: isSmallScreen ? '60%' : '90%' }}
                                 src="https://youtube.com/embed/sapiVleNp68?si=sEoY2KQPDGtdiA3g" 
                                 title="Un mar de experiencias"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-                                gyroscope; picture-in-picture;
-                                web-share"
                                 
                         >Tu navegador no soporta el elemento de video 😞.</iframe>
                     </Box>

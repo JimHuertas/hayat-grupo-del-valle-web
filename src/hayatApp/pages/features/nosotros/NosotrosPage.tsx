@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Box } from '@mui/material';
 import { HayatAppLayout } from '../../../layout/HayatAppLayout';
 import { Nosotros1 } from './features/1-Nosotros';
 
@@ -7,14 +7,14 @@ export const NosotrosPage = () => {
 
   return (
     <HayatAppLayout>
-    <Grid container 
-        direction='row' 
-        justifyContent='space-between' 
+    <Box 
+        flexDirection='column'
+        justifyContent='top' 
         alignItems='center' 
         className='animate__animated animate__fadeIn animate__faster'
     >
         <Nosotros1 />
-    </Grid>
+    </Box>
     </HayatAppLayout>
   )
 }

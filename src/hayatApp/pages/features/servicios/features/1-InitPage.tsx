@@ -10,7 +10,7 @@ import { widthScreen } from "../../../../hooks/widthScreen";
 
 
 
-export const Servicios1: React.FC = () => {
+export const InitPage1: React.FC = () => {
 
     const {height} = heightScreen();
     const {width} = widthScreen();

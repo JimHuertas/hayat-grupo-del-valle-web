@@ -89,11 +89,11 @@ export const SideBar: React.FC<SideBarProps> = ({ drawerWidth = 240, isOpen, han
                         </ListItemButton>
                     </ListItem>
 
-                    <ListItem disablePadding>
+                    {/* <ListItem disablePadding>
                         <ListItemButton component={NavLink} to="/reserva">
                             <ListItemText primary="Reserva" />
                         </ListItemButton>
-                    </ListItem>
+                    </ListItem> */}
                 </List>
             </Drawer>
         </Box>

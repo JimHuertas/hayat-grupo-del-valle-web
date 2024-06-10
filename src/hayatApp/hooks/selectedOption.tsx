@@ -29,10 +29,10 @@ export const selectedOption = (initialSelectedIndex: number | null = null) => {
                 dispatch( changeIndex(buttonIndex))
                 navigate('/servicios');
                 break;
-            case 4:
-                dispatch( changeIndex(buttonIndex))
-                navigate('/reserva');
-                break;
+            // case 4:
+            //     dispatch( changeIndex(buttonIndex))
+            //     navigate('/reserva');
+            //     break;
             default:
                 dispatch( changeIndex(buttonIndex))
                 navigate('/');
