@@ -13,7 +13,7 @@ export const CardsContacto2: React.FC = () => {
         sx={{ 
             padding: 'none',
             width: '100%', 
-            height: '700px',
+            height: '750px',
         }}
     >
         <Box height='15%' padding={'20px 2% 0 5%'} alignItems={'center'} justifyContent='space-between' display='flex' flexDirection='row'>
@@ -44,7 +44,7 @@ export const CardsContacto2: React.FC = () => {
             }
 
         </Box>
-        <Box height={'80%'} display={'flex'} flexDirection={'row'} alignItems='center' >
+        <Box height={'90%'} display={'flex'} flexDirection={'row'} alignItems='center' >
             <CardsInfo/>
         </Box>
 

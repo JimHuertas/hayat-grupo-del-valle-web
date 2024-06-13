@@ -3,8 +3,8 @@
     align-items: center;
     align-self: center;
     justify-content: center;
-    /* overflow: hidden; */
-    margin: auto;
+    overflow: hidden;
+    padding: 0 0 100px 0;
   }
   
   .slick-slide {
@@ -34,4 +34,18 @@
   .slick-track {
     display: flex;
   }
+
+  .slick-dots{
+    width: 100%;
+    height: 50px;
+    /* background: #000; */
+    position: absolute;
+
+    bottom: -70px;
+  }
+
+  .slick-dots li button:before
+    {
+        font-size: 20px;
+    }
   

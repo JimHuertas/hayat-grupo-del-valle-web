@@ -16,7 +16,7 @@ export const Servicios1: React.FC = () => {
     const {width} = widthScreen();
 
     const first_content = (width < 380) ? 620 : 750;
-    const second_content = (height < 800) ? 800 * (20/100): height * (22.7/100);
+    const second_content = (height < 800) ? 800 * (20/100): 250;
 
     const { count } = countState();
 
@@ -57,9 +57,27 @@ export const Servicios1: React.FC = () => {
                             xl: '60px'
                         }} 
                         color='#F8F8F8'
-                    > ¡EMPIEZA A VIVIR UN MAR DE EXPERIENCIAS!
+                    > AMBIENTE PERFECTO
                     </Typography>
-                    
+                    <Typography 
+                        fontFamily='Archivo Black' 
+                        padding={{
+                            xs: '0 6vw 0 0',
+                            sm: '0 5vw 0 0',
+                            md: '0 15vw 0 0',
+                            lg: '0 25vw 0 0',
+                            xl: '0 25vw 0 0'
+                        }} 
+                        fontSize={{
+                            xs: '6vw',
+                            sm: '6vw',
+                            md: '5vw',
+                            lg: '50px',
+                            xl: '60px'
+                        }} 
+                        color='#E3641A'
+                    > CON EL CONFORT QUE TU MERECES
+                    </Typography>
                     <Typography 
                         color='#F8F8F8' 
                         padding={{
@@ -76,10 +94,9 @@ export const Servicios1: React.FC = () => {
                             lg: '20px',
                             xl: '21px'
                         }} fontWeight='500'
-                    > ''Bienvenido a nuestro exclusivo club. ''vive un mar de experiencias'', donde cada momento se convierte
-                        en un recuerdo inolvidable. Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas
-                        cristalinas del océano. Disfruta de una variedad de comodidades de lujo, desde exquisitos restaurantes y bares 
-                        frente al mar hasta cómodas habitaciones y espacios para descansar bajo el cálido sol tropical''.
+                    > Se parte de nuestro exclusivo club. ``vive un mar de emociones'', donde no podras perderte en una experiencia inolvidable.
+                    Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas cristalinas del océano. Disfruta de una variedad de comodidadesde lujo,
+                    desde exquisitos restaurantes y bares frente al mar hasta comodas cabañas y tumbonas para descansar bajo el cálido sol tropical.
                     </Typography>
                     {/* <CustomRoundedButton
                         background='#E3641A'

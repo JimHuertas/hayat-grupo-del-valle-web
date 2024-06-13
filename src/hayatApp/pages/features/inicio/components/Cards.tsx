@@ -74,9 +74,10 @@ export const CardsInfo: React.FC = () => {
     speed: 500,
     dots: true,
     infinite: true,
-    centerMode: false,
+    centerMode: true,
     autoplay:true,
     autoplaySpeed: 5000,
+    centerPadding: (width < 950 ) ? '4%' : "5%",
     slidesToShow: (width < 1200) ? 1 : 2,
     slidesToScroll: 1,
     pauseOnHover: true,
@@ -84,7 +85,7 @@ export const CardsInfo: React.FC = () => {
   };
 
   return (
-    <div style={{width: (width< 550) ? '100%' : '90%'}}  className="slider-container">
+    <div style={{width: (width< 550) ? '100%' : '100%'}}  className="slider-container">
       <Slider {...settings}>
         {cards.map((card: CardType, index) =>{
           return (
