@@ -3,20 +3,25 @@ import { LocationOn, Phone } from "@mui/icons-material";
 
 import { widthScreen } from "../../../../hooks/widthScreen";
 import { InfoFooter } from "../../../../ui/components/InfoFooter";
-// import { countState } from "../../../../hooks/countState";
 
 import IkiLogo from '../../../../../assets/logo-iki.webp';
 import HayatLogo from '../../../../../assets/hayat-logo-bw.webp';
+import AudioFest from '../../../../../assets/logo-audiofest-blanco.webp';
 
 import GrupoDelValleLogo from '../../../../../assets/grupo-del-valle-color.webp';
+import { AnimatedTypography } from "../../shared/AnimatedTypography";
 
 
 export const Nosotros1 = () => {
 
     const {width} = widthScreen();
 
-    const first_content = (width < 480) ? 1200 : 1250;
+    const first_content = 
+        (width < 480) 
+            ? 1300 
+            : (width < 850) ? 1250 : 1150;
     // const second_content = (height < 800) ? 800 * (20/100): height * (22.7/100);
+
     const second_content = 180;
 
     const spaceTextSide = {
@@ -28,7 +33,7 @@ export const Nosotros1 = () => {
     }
     const fontTextSize = {
         xs: '15px',
-        sm: '18px',
+        sm: '16px',
         md: '20px',
         lg: '20px',
         xl: '20px'
@@ -36,10 +41,10 @@ export const Nosotros1 = () => {
 
     const fontDirectionsText = {
         xs: '16px',
-        sm: '20px',
-        md: '22px',
-        lg: '22px',
-        xl: '22px'
+        sm: '16px',
+        md: '19px',
+        lg: '19px',
+        xl: '19px'
     }
 
     const boxNumberPhoneSize = {
@@ -73,45 +78,45 @@ export const Nosotros1 = () => {
                     { (width < 900) 
                     ? <Box display={'flex'} flexDirection='column' >
                         <Box m={'0 0 30px 0'} display='flex' justifyContent='center'>
-                            <Box height={'100%'} width={'40%'} alignContent='center' display='flex' justifyContent='center' top={'-10px'} >
-                                <img src={GrupoDelValleLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: '98%'}} />        
+                            <Box height={'100%'} width={'38%'} alignContent='center' display='flex' justifyContent='center' top={'-10px'} >
+                                <img src={GrupoDelValleLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', width: '96%'}} />        
                             </Box>
                         </Box>
                         <Box color={'white'} width={'95%'}>
-                        <Typography color={'white'} fontSize={fontTextSize} > Un propósito claro, catalizar el crecimiento económico al ofrecer asesoramiento
+                        <AnimatedTypography color={'white'} fontSize={fontTextSize} > Un propósito claro, catalizar el crecimiento económico al ofrecer asesoramiento
                             experto y oportunidades de financiamiento innovadoras. En el núcleo de nuestra misión está 
                             la convicción de que cada proyecto merece la oportunidad de florecer, y estamos comprometidos 
-                            a ser el puente que transforma ideas en realidades financieras sólidas </Typography>
-                        <Typography m={'20px 0 0 0'} color={'white'} fontSize={fontTextSize}> Representa la fusión perfecta entre la ambición empresarial y el respaldo financiero,
+                            a ser el puente que transforma ideas en realidades financieras sólidas </AnimatedTypography>
+                        <AnimatedTypography margin={'20px 0 0 0'} color={'white'} fontSize={fontTextSize}> Representa la fusión perfecta entre la ambición empresarial y el respaldo financiero,
                             construyendo un sólido puente hacia el éxito. Esta marca se posiciona como el catalizador que conecta los sueños
                             empresariales con el capital necesario, empoderando el éxito a travéz de una estrategia financiera efectiva.
-                            "Tu lo sueñas nosotros lo creamos" </Typography>
+                            "Tu lo sueñas nosotros lo creamos" </AnimatedTypography>
                         </Box>
                     </Box>
                     :   <Box display={'flex'} width={'68%'} flexDirection='row'>
                             <Box color={'white'}>
-                            <Typography color={'white'} fontSize={fontTextSize} > Un propósito claro, catalizar el crecimiento económico al ofrecer asesoramiento
+                            <AnimatedTypography color={'white'} fontSize={fontTextSize} > Un propósito claro, catalizar el crecimiento económico al ofrecer asesoramiento
                                 experto y oportunidades de financiamiento innovadoras. En el núcleo de nuestra misión está 
                                 la convicción de que cada proyecto merece la oportunidad de florecer, y estamos comprometidos 
-                                a ser el puente que transforma ideas en realidades financieras sólidas </Typography>
-                            <Typography m={'20px 0 0 0'} color={'white'} fontSize={fontTextSize}> Representa la fusión perfecta entre la ambición empresarial y el respaldo financiero,
+                                a ser el puente que transforma ideas en realidades financieras sólidas </AnimatedTypography>
+                            <AnimatedTypography margin={'20px 0 0 0'} color={'white'} fontSize={fontTextSize}> Representa la fusión perfecta entre la ambición empresarial y el respaldo financiero,
                                 construyendo un sólido puente hacia el éxito. Esta marca se posiciona como el catalizador que conecta los sueños
                                 empresariales con el capital necesario, empoderando el éxito a travéz de una estrategia financiera efectiva.
-                                "Tu lo sueñas nosotros lo creamos" </Typography>
+                                "Tu lo sueñas nosotros lo creamos" </AnimatedTypography>
                         </Box>
                         
                         <Box height={'30%'} width={'30%'} display='fixed' justifyContent='center' position={'absolute'} right='0' top='190px' >
-                            <img src={GrupoDelValleLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: '98%'}} />        
+                            <img src={GrupoDelValleLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: '87%'}} />        
                         </Box>
                         </Box>
                     }
 
-                    <Typography m={'20px 0 0 0'}  fontWeight={'bold'} fontSize={fontTextSize} color='#E3641A' > Encuentranos en nuestras oficinas </Typography>
-                    <Typography fontWeight={'bold'} fontSize={fontTextSize} color='#E3641A'> Ubicadas en: </Typography>
+                    <AnimatedTypography margin={'20px 0 0 0'}  fontWeight={'bold'} fontSize={fontTextSize} color='#E3641A' > Encuentranos en nuestras oficinas </AnimatedTypography>
+                    <AnimatedTypography fontWeight={'bold'} fontSize={fontTextSize} color='#E3641A'> Ubicadas en: </AnimatedTypography>
                     
-                    <Typography display='flex' alignItems='center' color={'white'} fontWeight={'500'} fontSize={fontDirectionsText} > <LocationOn sx={{fontSize: '40px', color:'#E3641A'}} /> Direccion Lima </Typography>
-                    <Typography display='flex' alignItems='center' color={'white'} fontWeight={'500'} fontSize={fontDirectionsText} > <LocationOn sx={{fontSize: '40px', color:'#E3641A'}} /> Direccion Piura </Typography>
-                    <Typography display='flex' alignItems='center' color={'white'} fontWeight={'500'} fontSize={fontDirectionsText} > <LocationOn sx={{fontSize: '40px', color:'#E3641A'}} /> Jose Santos Chocano 617, Umacollo, Arequipa </Typography>
+                    <AnimatedTypography padding={(width < 900) ? '0 3% 0 0' : '0 35% 0 0'} display='flex' alignItems='center' color={'white'} fontWeight={'500'} fontSize={fontDirectionsText} > <LocationOn sx={{fontSize: '40px', color:'#E3641A'}} /> Edificio Lima Center Tower 7mo piso, Oficina N 1704 Urb. El Berrdy, Distrito Santiago de Surco, Lima  </AnimatedTypography>
+                    <AnimatedTypography padding={(width < 900) ? '0 3% 0 0' : '0 35% 0 0'} display='flex' alignItems='center' color={'white'} fontWeight={'500'} fontSize={fontDirectionsText} > <LocationOn sx={{fontSize: '40px', color:'#E3641A'}} /> Urb. Miraflores Av. Luis Montero 390, Distrito de Castilla, Piura</AnimatedTypography>
+                    <AnimatedTypography padding={(width < 900) ? '0 3% 0 0' : '0 35% 0 0'} display='flex' alignItems='center' color={'white'} fontWeight={'500'} fontSize={fontDirectionsText} > <LocationOn sx={{fontSize: '40px', color:'#E3641A'}} /> Jose Santos Chocano 617, Umacollo, Arequipa </AnimatedTypography>
                     
                     <Typography m='20px 0 0 0' fontWeight={'bold'} fontSize={fontTextSize} color='#E3641A'> Contáctanos al: </Typography>
                     <Box m='20px 0 0 0' display={'flex'} flexDirection={(width<840) ? 'column' :'row'}>
@@ -132,16 +137,16 @@ export const Nosotros1 = () => {
                     </Box>
                     
                     <Box m='20px 0 0 0' width={(width < 900) ? '100%' :'70%'} flexDirection={(width < 840) ? 'column' :'row'} display={'flex'} >
-                        <Typography alignContent='center' justifyContent='center' m={(width < 840) ? '0 0 20px 0' : '0 0 20px 0'} width='50vw' color='white' fontWeight='bold' >PROYECTOS EN DESARROLLO: </Typography>
-                        <Box display='flex' >
-                            <Box display='flex' justifyContent='center'>
-                                <img src={IkiLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: '80%'}} />        
+                        <Typography alignContent='center' justifyContent='center' m={(width < 840) ? '0 0 20px 0' : '0 0 20px 0'} width='22%' color='white' fontWeight='bold' >PROYECTOS EN DESARROLLO: </Typography>
+                        <Box display='flex' height={'100%'} >
+                            <Box width={'30%'} display='flex' justifyContent='center'>
+                                <img src={IkiLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s',height:'100%', width: '90%'}} />        
                             </Box>
-                            <Box display='flex' justifyContent='center'>
-                                <img src={HayatLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: '80%'}} />        
+                            <Box width={'26%'}display='flex' justifyContent='center'>
+                                <img src={HayatLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', height:'100%', width: '80%'}} />        
                             </Box>
-                            <Box display='flex' justifyContent='center'>
-                                <img src={IkiLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: '80%'}} />        
+                            <Box height={'100%'}  width={'44%'}  display='flex' alignContent={'center'} alignItems={'center'} justifyItems={'center'}>
+                                <img src={AudioFest} alt="Logo" style={{ padding:'10% 0 0 0', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', height: '100%', width: '70%', }} />        
                             </Box>
                         </Box>
                     </Box>

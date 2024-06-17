@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CustomRoundedButton } from "../../../../ui/components/CustomRoundedButton";
 import { CardType, cards } from "../config/cards";
 import { widthScreen } from "../../../../hooks/widthScreen";
+import { useNavigate } from "react-router-dom";
 
 interface CardProps {
   img: string;
@@ -22,7 +23,7 @@ const CardOne:React.FC<CardProps> = ({img, title, content, onClick}) => {
 
   return (
     <div style={{ padding: (width < 550) ? ' 0 10px 0 10px'  : '0 15px'}} className="slide">
-      <Box sx={{ ml:'6%', objectFit: 'cover', top: (width< 550) ? '40px' : 0, position: "absolute",zIndex:1 }} component='img' width={'38%'}  height={(width < 550) ? '85%' : '100%'} overflow='auto' src={img} display='block' ></Box>
+      <Box sx={{ ml:'6%', objectFit: 'cover', top: (width< 550) ? '40px' : '5%', position: "absolute",zIndex:1 }} component='img' width={'38%'}  height={(width < 550) ? '80%' : '90%'} overflow='auto' src={img} display='block' ></Box>
       <Box sx={{position:'relative'}} padding={{
             xs: '0 3% 0 50%',
             sm: '0 3% 0 48%',
@@ -32,19 +33,20 @@ const CardOne:React.FC<CardProps> = ({img, title, content, onClick}) => {
         }} borderRadius='50px' width={(width < 550) ? '100%' : '92%'} height='75%' bgcolor='F8F8F8'
         boxShadow='5px 5px 10px rgba(38, 38, 38, 0.7)'
       >
-        <Typography padding={'13% 4% 9% 0'} textAlign='left' fontFamily={'Montserrat'} sx={{ fontWeight: 500 ,fontSize: {
+        <Typography padding={'7% 4% 4% 0'} textAlign='left' fontFamily={'Montserrat'} sx={{ fontWeight: 500 ,fontSize: {
             xs: '16px',
             sm: '20px',
             md: '17px',
             lg: '18px',
             xl: '19px'
         } }}> {title}</Typography>
-        <Typography textAlign='left' sx={{ mb: '15px', fontSize: {
-            xs: '13.5px',
-            sm: '16px',
-            md: '15px',
-            lg: '16px',
-            xl: '17px'
+        <Typography textAlign='left' sx={{ mb: '15px', fontSize: (width < 400) 
+        ? '11px' : {
+            xs: '13px',
+            sm: '14px',
+            md: '14px',
+            lg: '14px',
+            xl: '14px'
         }}}> {content}
         </Typography>
         <CustomRoundedButton  background="#007EB9" className="" onClick={onClick}> <Typography margin={{
@@ -69,14 +71,17 @@ export const CardsInfo: React.FC = () => {
 
   const {width} = widthScreen();
 
+  const navigate = useNavigate();
+
   const settings = {
     arrows: false,
     speed: 500,
     dots: true,
     infinite: true,
-    centerMode: false,
+    centerMode: true,
     autoplay:true,
     autoplaySpeed: 5000,
+    centerPadding: (width < 950 ) ? '4%' : "5%",
     slidesToShow: (width < 1200) ? 1 : 2,
     slidesToScroll: 1,
     pauseOnHover: true,
@@ -84,7 +89,7 @@ export const CardsInfo: React.FC = () => {
   };
 
   return (
-    <div style={{width: (width< 550) ? '100%' : '90%'}}  className="slider-container">
+    <div style={{width: (width< 550) ? '100%' : '100%'}}  className="slider-container">
       <Slider {...settings}>
         {cards.map((card: CardType, index) =>{
           return (
@@ -93,7 +98,7 @@ export const CardsInfo: React.FC = () => {
             content={card.content}
             title={card.title}
             img={card.image}
-            onClick={()=>{}}
+            onClick={()=>{navigate('/contacto#form-hayat')}}
           />)
         })}
       </Slider>

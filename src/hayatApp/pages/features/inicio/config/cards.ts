@@ -1,5 +1,5 @@
-import familiaPlaya from '../../../../../assets/familia-playa.jpeg';
-import yogaPlaya from '../../../../../assets/yoga-ocean.jpeg';
+import comidaPlaya from '../../../../../assets/comida-playa.jpg';
+import barPlaya from '../../../../../assets/bar-playa.jpg';
 
 export interface CardType{
     image: string;
@@ -9,22 +9,22 @@ export interface CardType{
 
 export const cards: CardType[] = [
     {
-        image: familiaPlaya,
+        image: comidaPlaya,
         title: 'Experiencias Enriquesedoras',
-        content: 'Animamos a los húespedes a disfrutar más de Hayat a trávez de experiencias de inmersión inmejorables. Diversos talleres que inpulsan la sostenibilidad, la cultura, el arte...', 
+        content: 'Una experiencia culinaria frente al mar con fusión de sabores frescos y exóticos, decoración serena y brisa refrescante, garantizando servicio excepcional y vistas', 
     },
     {
-        image: yogaPlaya,
-        title:' Experiencias Enriquesedoras',
-        content: 'Hayat adopta un enfoque holístico para el bienestar de nuestros huespedes las actividades y los tratamientos de bienestar se han diseñado...',
+        image: barPlaya,
+        title:'Experiencias Enriquesedoras',
+        content: 'El bar de playa del club ofrece cócteles refrescantes y aperitivos junto al mar en un ambiente relajado con servicio excepcional',
     },
     {
-        image: familiaPlaya,
+        image: comidaPlaya,
         title:' Experiencias Enriquesedoras',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
     },
     {
-        image: yogaPlaya,
+        image: barPlaya,
         title:' Experiencias Enriquesedoras',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
     },

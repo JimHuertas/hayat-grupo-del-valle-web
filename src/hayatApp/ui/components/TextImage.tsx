@@ -1,6 +1,6 @@
-import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { bg_images } from "../../config/bg_options";
+import { AnimatedTypography } from "../../pages/features/shared/AnimatedTypography";
 
 interface TextImageProps{
     text: string;
@@ -30,7 +30,7 @@ export const TextImage: React.FC<TextImageProps> = ({ fontSize = 'clamp(10px, 1v
         return () => clearInterval(interval);
     }, []);
     return (
-        <Typography
+        <AnimatedTypography
             variant="h3"
             sx={{
                 textTransform: 'uppercase',
@@ -47,6 +47,6 @@ export const TextImage: React.FC<TextImageProps> = ({ fontSize = 'clamp(10px, 1v
             }}
         >
             {text}
-        </Typography>
+        </AnimatedTypography>
     );
 }

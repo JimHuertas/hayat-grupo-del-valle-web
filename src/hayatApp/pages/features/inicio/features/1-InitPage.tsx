@@ -6,9 +6,10 @@ import { TextImage } from "../../../../ui/components/TextImage";
 import { InfoFooter } from "../../../../ui/components/InfoFooter";
 import { heightScreen } from "../../../../hooks/heightScreen";
 import { countState } from "../../../../hooks/countState";
+
+import { AnimatedTypography } from "../../shared/AnimatedTypography";
 import { widthScreen } from "../../../../hooks/widthScreen";
-
-
+import { useNavigate } from "react-router-dom";
 
 export const InitPage1: React.FC = () => {
 
@@ -16,9 +17,11 @@ export const InitPage1: React.FC = () => {
     const {width} = widthScreen();
 
     const first_content = (width < 380) ? 620 : 750;
-    const second_content = (height < 800) ? 800 * (20/100): height * (22.7/100);
+    const second_content = (height < 800) ? 170 : 140;
 
     const { count } = countState();
+
+    const navigate = useNavigate();
 
     return (
         <Box
@@ -33,14 +36,14 @@ export const InitPage1: React.FC = () => {
         >
             <Grid container display='flex' direction='row' >
                 <Grid height={first_content} width='12%' alignItems='center' justifyContent='center' display='flex' flexDirection='column' >
-                    <Typography fontWeight='bold' color='white' fontSize='20px' >{(count<1) ? '01' : `0${count}`}</Typography>
+                    <Typography fontWeight='bold' color='white' fontSize='20px' >{(count < 1) ? '01' : `0${count}`}</Typography>
                     <Box color='#E3641A' border={3} width='1px' height={'40%'} ></Box>
                     <Box color='white' border={1} width='1px' height={'40%'} ></Box>
                     <Typography fontWeight='bold' color='white' fontSize='20px'>05</Typography>
                 </Grid>
 
                 <Box height={first_content} width='88%'>
-                    <Typography  
+                    <AnimatedTypography
                         fontFamily='Archivo Black' 
                         padding={{
                             xs: '80px 6vw 0 0',
@@ -58,9 +61,9 @@ export const InitPage1: React.FC = () => {
                         }} 
                         color='#F8F8F8'
                     > ¡EMPIEZA A VIVIR UN MAR DE EXPERIENCIAS!
-                    </Typography>
+                    </AnimatedTypography>
                     
-                    <Typography 
+                    <AnimatedTypography 
                         color='#F8F8F8' 
                         padding={{
                             xs: '40px 7vw 0 0',
@@ -80,7 +83,7 @@ export const InitPage1: React.FC = () => {
                         en un recuerdo inolvidable. Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas
                         cristalinas del océano. Disfruta de una variedad de comodidades de lujo, desde exquisitos restaurantes y bares 
                         frente al mar hasta cómodas habitaciones y espacios para descansar bajo el cálido sol tropical''.
-                    </Typography>
+                    </AnimatedTypography>
                     {/* <CustomRoundedButton
                         background='#E3641A'
                         onClick={()=>{}}
@@ -91,7 +94,7 @@ export const InitPage1: React.FC = () => {
                         <CustomRoundedButton
                             boxShadow=''
                             background="white"
-                            onClick={()=>{}}
+                            onClick={()=>{navigate('/contacto#form-hayat')}}
                             className=""
                         >  <TextImage fontSize="22px" text="¡Consulta Ahora!" backgroundPosition="bottom 39% left 20% " />
                         </CustomRoundedButton>
