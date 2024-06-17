@@ -15,16 +15,14 @@ export const BackgroundSlider:React.FC<BackgroundSliderProps> = ({contentRef, im
     const height = window.screen.height + 200;
 
     useEffect(() => {
-
-
-        if(contentRef){
-          setActualHeight(contentRef.current?.scrollHeight)
-        }
-        const timer = setTimeout(() => {
-          setShowInitial(false);
-        }, interval+4990);
-        return () => clearTimeout(timer);
-      }, [interval]);
+      if(contentRef){
+        setActualHeight(contentRef.current?.scrollHeight)
+      }
+      const timer = setTimeout(() => {
+        setShowInitial(false);
+      }, interval+4990);
+      return () => clearTimeout(timer);
+    }, [interval]);
     
     const transitions = useTransition(index, {
         key: index,

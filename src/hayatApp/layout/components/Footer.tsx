@@ -147,7 +147,7 @@ export const Footer = () => {
                     <Typography margin={'0 0 15px 0'} style={{color: '#A8A8A8'}}>Conectate con nosotros</Typography>
                     <Grid container direction= 'row' justifyContent='start' sx={{ 
                     }}>
-                        <IconButton onClick={Links[0]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #25f4ee, #000000, #fe2c55)', color: '#383838'}}} > <TikTokIcon size={'21px'} color={'#A8A8A8'} /> </IconButton>
+                        <IconButton onClick={Links[0]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #25f4ee, #000000, #fe2c55)', color: '#383838'}}} > <TikTokIcon size={'15px'} color={'#A8A8A8'} /> </IconButton>
                         <Box width={widthSpace}></Box>
                         <IconButton onClick={Links[1]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #0866FF, #000000, #0866FF)', color: '#0866FF'}}} > <Facebook style={{ color: '#A8A8A8'}}/> </IconButton>
                         <Box width={widthSpace}></Box>
@@ -174,8 +174,8 @@ export const Footer = () => {
                     <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Canal</Typography> </a>
                     <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Nosotros</Typography> </a>
                     <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Canal</Typography> </a>
-                    <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Redes</Typography> </a>
-                    <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Plano</Typography> </a>
+                    <a href="https://linktr.ee/grupodelvalle" target="_blank" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Redes</Typography> </a>
+                    <a style={{ padding: '0 0 10px 0', color: '#484848', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Plano</Typography> </a>
                     <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Informes</Typography> </a>
                 </Grid>
                 <Grid container width={(width < 1030) 
@@ -183,8 +183,7 @@ export const Footer = () => {
                         ? '50%' 
                         : '80%'
                     :'50%'} direction='column'>
-                    <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Soporte</Typography> </a>
-                    <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Contáctanos</Typography> </a>
+                    <a href="/nosotros" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Contáctanos</Typography> </a>
                     <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Precios</Typography> </a>
                     <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Grupos</Typography> </a>
                     <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Oficina</Typography> </a>

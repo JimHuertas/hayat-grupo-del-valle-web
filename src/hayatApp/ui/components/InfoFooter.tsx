@@ -42,7 +42,7 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
     <Box bgcolor='rgba(38,38,38, 0.6)' height={sizeContent}>
         <Grid container justifyContent='space-between' display='flex' color='#B8B8B8' direction='row'>
             <Box justifyContent= {(width<600) ? 'center' : 'right' } flexDirection={(width<600) ? 'column' : 'row'} alignItems='center' display='flex' width='32vw'  height={sizeContent}>
-                <IconButton onClick={()=>{}} sx={{margin:icons_separation, background: '#F8F8F8', width: icon_radius, height:icon_radius}} > 
+                <IconButton onClick={()=>{window.open('https://www.facebook.com/profile.php?id=61558631184828', '_blank');}} sx={{margin:icons_separation, background: '#F8F8F8', width: icon_radius, height:icon_radius}} > 
                     <FacebookRounded 
                         sx={{
                             '&:hover': {color: 'white'},
@@ -51,7 +51,7 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
                         }}
                     /> 
                 </IconButton>
-                <IconButton onClick={()=>{}} sx={{margin:icons_separation, background: '#F8F8F8', width: icon_radius, height: icon_radius}} > 
+                <IconButton onClick={()=>{window.open('https://youtube.com/@hayatperu?si=wxofF2uo--mIiV2C', '_blank')}} sx={{margin:icons_separation, background: '#F8F8F8', width: icon_radius, height: icon_radius}} > 
                     <YouTube 
                         sx={{
                             '&:hover': {color: 'white'},
@@ -60,7 +60,7 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
                         }}
                         />
                 </IconButton>
-                <IconButton onClick={()=>{}} sx={{ margin:icons_separation, background: '#F8F8F8', width: icon_radius, height: icon_radius}} > 
+                <IconButton onClick={()=>{window.open('https://www.instagram.com/hayatperu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}} sx={{ margin:icons_separation, background: '#F8F8F8', width: icon_radius, height: icon_radius}} > 
                     <Instagram 
                         sx={{
                             '&:hover': {color: 'white'},

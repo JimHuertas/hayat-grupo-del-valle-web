@@ -3,12 +3,17 @@ import { HayatAppLayout } from '../../../layout/HayatAppLayout';
 import { Servicios1 } from './features/1-Servicios';
 import { Experiencias2 } from './features/2-Experiencias';
 
-export const ServiciosPage = () => {
-    // const { theme } = useSelector( (state: RootState) => state.theme );
+import { loadingScreenHook } from '../../../hooks/loadingWait';
+import { LoadingScreen } from '../../../ui/components/LoadingScreen';
 
-  return (
-    <HayatAppLayout>
+export const ServiciosPage = () => {
+  const { isLoading } = loadingScreenHook();
+
+  return ((isLoading) 
+  ? <LoadingScreen/> 
+  :  <HayatAppLayout>
     <Grid container 
+        overflow='hidden'
         direction='row' 
         justifyContent='space-between' 
         alignItems='center' 

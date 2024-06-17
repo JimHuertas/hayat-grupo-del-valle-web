@@ -16,16 +16,16 @@ export const cards: ExperienciasCardType[] = [
     {
         id: '01',
         title: 'Actividad',
-        content: 'Una experiencia culinaria frente al mar con fusión de sabores frescos y exóticos, decoración serena y brisa refrescante, garantizando servicio excepcional y vistas.',
+        content: 'Una experiencia culinaria frente al mar con fusión de sabores frescos y exóticos.',
         image: comidaPlaya,
-        height: '220px'
+        height: '170px'
     },
     {
         id: '02',
         title: 'Actividad',
-        content: 'El bar de playa del club ofrece cócteles refrescantes y aperitivos junto al mar en un ambiente relajado con servicio excepcional.',
+        content: 'El bar de playa del club ofrece cócteles refrescantes y aperitivos junto al mar con servicio excepcional.',
         image: barPlaya,
-        height: '190px'
+        height: '170px'
     },
     {
         id: '03',

@@ -1,20 +1,22 @@
 import React from "react";
 import Slider from "react-slick";
 import { Box, IconButton, Typography } from "@mui/material";
-import { ArrowBackIosNewRounded, ArrowForwardIosRounded} from '@mui/icons-material';
 
 import './css/cardsExpHori.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { widthScreen } from "../../../../hooks/widthScreen";
+
 import { ExperienciasCardType, cards } from "../config/cards";
+import { ArrowLeftIcon } from "./ArrowLeftIcon";
+import { ArrowRightIcon } from "./ArrowRightIcon";
+import { widthScreen } from "../../../../hooks/widthScreen";
 
 
 function SamplePrevArrow(props: any){
   const { style, onClick } = props;
   return (
-    <IconButton sx={{ left:'-30px', display: 'flex', justifyContent:'center' ,top:'25%'}} onClick={onClick} style={{ ...style, position:'absolute', zIndex:1, display: "flex", background: "transparent" }}>
-      <ArrowBackIosNewRounded sx={{ color:'rgba(48,48,48,0.6)', fontSize: '100px'}}/>
+    <IconButton disableRipple className="arrow" sx={{ left:'-25px', display: 'flex', justifyContent:'center' ,top:'25%'}} onClick={onClick} style={{ ...style, position:'absolute', zIndex:1, display: "flex", background: "transparent" }}>
+      <ArrowLeftIcon size="100px" color="#E4E4E4"/>
     </IconButton>
   );
 }
@@ -23,8 +25,8 @@ function SampleNextArrow(props: any) {
 
   const { style, onClick } = props;
   return (
-    <IconButton sx={{ display: 'flex', justifyContent:'center', right:'-30px' ,top:'25%'}} onClick={onClick} style={{ ...style, position:'absolute', zIndex:1, display: "flex", background: "transparent" }}>
-      <ArrowForwardIosRounded sx={{ color:'rgba(48,48,48,0.6)', fontSize: '100px'}}/>
+    <IconButton disableRipple className="arrow" sx={{ display: 'flex', justifyContent:'center', right:'-25px' ,top:'25%'}} onClick={onClick} style={{ ...style, position:'absolute', zIndex:1, display: "flex", background: "transparent" }}>
+      <ArrowRightIcon size='100px' color='#E4E4E4'/>
     </IconButton>
   );
 }

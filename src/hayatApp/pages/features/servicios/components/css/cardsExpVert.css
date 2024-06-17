@@ -1,13 +1,11 @@
 .vert-slider-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: center;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 300px;
   overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 10px;
 }
 
 .vert-slider-content {
@@ -18,7 +16,8 @@
 }
 
 .vert-slider-item {
-  min-height: 80%;
+  max-width: 450px;
+  min-height: 67%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,18 +58,17 @@
   background-color: #007bff;
   position: absolute;;
   z-index: 1;
-  width: 100px;
-  height: 100px;
-  
-  min-width: 0;
-  padding: 5px;
-  margin: 5px;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .dots-container {
   flex-direction: column;
   position: absolute;
-  top: 30%;
+  top: 26%;
   left: 3vw;
   display: flex;
   justify-content: center;
@@ -81,98 +79,13 @@
   width: 10px;
   height: 10px;
   background-color: #ccc;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  margin: 5px 0;
+  margin: 10px 0;
   cursor: pointer;
 }
 
 .dot.active {
-  background-color: #007bff;
+  background-color: #888888;
 }
-
-/* 
-.slider-cards {
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  position: relative;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.slick-card{
-  text-align: center;
-  color: black;
-  background: #fff;
-  box-sizing: border-box;
-}
-
-.card {
-  position: relative;
-  align-content: center;
-  background: rgba(238,238,238,0.5);
-  width: 100%;
-  height: 200px;
-  box-sizing: border-box;
-}
-
-.slick-list {
-  overflow: visible; 
-}
-
-.slick-track {
-  display: flex;
-}
-
-.slider-cards::before{
-  content: "";
-  position: absolute;
-  margin: 0 0 0 33%;
-  width: 8vw;
-  height: 250px;
-  z-index: 1;
-  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
-}
-.slider-cards::after {
-  content: "";
-  position: absolute;
-  left: 84%;
-  height: 250px;
-  width: 8vw;
-  z-index: 0;
-  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
-}
-
-@media (max-width: 949px) {
-  .slider-cards::before{
-    margin: 0 0 0 30%;
-  }
-}
-
-@media (max-width: 949px) {
-  .slider-cards::after{
-    left: 92%;
-  }
-}
-
-@media (max-height: 799px) {
-  .slider-cards::after{
-    top: 1040px;
-  }
-}
-
-@media (min-height: 800px) {
-  .slider-cards::after{
-    top: 1130px;
-  }
-}
-
-.slider-cards::before {
-  left: 0;
-}
-
-.slider-cards::after {
-  right: 0;
-} */

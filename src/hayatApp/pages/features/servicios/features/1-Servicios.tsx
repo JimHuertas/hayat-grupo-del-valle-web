@@ -1,14 +1,14 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 import { CustomRoundedButton } from "../../../../ui/components/CustomRoundedButton";
 import { TextImage } from "../../../../ui/components/TextImage";
 
 import { InfoFooter } from "../../../../ui/components/InfoFooter";
-import { heightScreen } from "../../../../hooks/heightScreen";
 import { countState } from "../../../../hooks/countState";
+import { heightScreen } from "../../../../hooks/heightScreen";
 import { widthScreen } from "../../../../hooks/widthScreen";
-
-
+import { AnimatedTypography } from "../../shared/AnimatedTypography";
+import { useNavigate } from "react-router-dom";
 
 export const Servicios1: React.FC = () => {
 
@@ -20,9 +20,12 @@ export const Servicios1: React.FC = () => {
 
     const { count } = countState();
 
+    const navigate = useNavigate();
+
     return (
         <Box
             bgcolor={'rgba(38,38,38,0.3)'}
+            overflow='hidden'
             sx={{ 
                 backgroundAttachment: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -33,14 +36,14 @@ export const Servicios1: React.FC = () => {
         >
             <Grid container display='flex' direction='row' >
                 <Grid height={first_content} width='12%' alignItems='center' justifyContent='center' display='flex' flexDirection='column' >
-                    <Typography fontWeight='bold' color='white' fontSize='20px' >{(count<1) ? '01' : `0${count}`}</Typography>
+                    <AnimatedTypography fontWeight='bold' color='white' fontSize='20px' >{(count<1) ? '01' : `0${count}`}</AnimatedTypography>
                     <Box color='#E3641A' border={3} width='1px' height={'40%'} ></Box>
                     <Box color='white' border={1} width='1px' height={'40%'} ></Box>
-                    <Typography fontWeight='bold' color='white' fontSize='20px'>05</Typography>
+                    <AnimatedTypography fontWeight='bold' color='white' fontSize='20px'>05</AnimatedTypography>
                 </Grid>
 
                 <Box height={first_content} width='88%'>
-                    <Typography  
+                    <AnimatedTypography  
                         fontFamily='Archivo Black' 
                         padding={{
                             xs: '80px 6vw 0 0',
@@ -58,8 +61,8 @@ export const Servicios1: React.FC = () => {
                         }} 
                         color='#F8F8F8'
                     > AMBIENTE PERFECTO
-                    </Typography>
-                    <Typography 
+                    </AnimatedTypography>
+                    <AnimatedTypography 
                         fontFamily='Archivo Black' 
                         padding={{
                             xs: '0 6vw 0 0',
@@ -77,8 +80,8 @@ export const Servicios1: React.FC = () => {
                         }} 
                         color='#E3641A'
                     > CON EL CONFORT QUE TU MERECES
-                    </Typography>
-                    <Typography 
+                    </AnimatedTypography>
+                    <AnimatedTypography 
                         color='#F8F8F8' 
                         padding={{
                             xs: '40px 7vw 0 0',
@@ -94,10 +97,10 @@ export const Servicios1: React.FC = () => {
                             lg: '20px',
                             xl: '21px'
                         }} fontWeight='500'
-                    > Se parte de nuestro exclusivo club. ``vive un mar de emociones'', donde no podras perderte en una experiencia inolvidable.
+                    > Se parte de nuestro exclusivo club. ''vive un mar de emociones'', donde no podras perderte en una experiencia inolvidable.
                     Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas cristalinas del océano. Disfruta de una variedad de comodidadesde lujo,
                     desde exquisitos restaurantes y bares frente al mar hasta comodas cabañas y tumbonas para descansar bajo el cálido sol tropical.
-                    </Typography>
+                    </AnimatedTypography>
                     {/* <CustomRoundedButton
                         background='#E3641A'
                         onClick={()=>{}}
@@ -108,7 +111,7 @@ export const Servicios1: React.FC = () => {
                         <CustomRoundedButton
                             boxShadow=''
                             background="white"
-                            onClick={()=>{}}
+                            onClick={()=>{navigate('/contacto#form-hayat')}}
                             className=""
                         >  <TextImage fontSize="22px" text="¡Consulta Ahora!" backgroundPosition="bottom 39% left 20% " />
                         </CustomRoundedButton>
