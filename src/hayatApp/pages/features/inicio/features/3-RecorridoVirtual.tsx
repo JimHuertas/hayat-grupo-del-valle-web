@@ -1,7 +1,8 @@
 import { Box, IconButton, Typography } from "@mui/material";
-import virtual3d from '../../../../../assets/3d-recorrido.webp'; 
 import { Icon360 } from "../components/icon360";
 import { widthScreen } from "../../../../hooks/widthScreen";
+
+import virtual3d from '../../../../../assets/fondo-3d-render.jpg'; 
 
 export const RecorridoVirtual3: React.FC = () => {
 
@@ -11,6 +12,8 @@ export const RecorridoVirtual3: React.FC = () => {
         <Box 
             sx={{ 
                 backgroundImage: `url(${virtual3d})`,
+                backgroundPosition:'center',
+                backgroundSize:'cover',
                 padding: 'none',
                 width: '100%', 
                 height: '60vh',

@@ -56,7 +56,7 @@
 
 .arrow-btn {
   background-color: #007bff;
-  position: absolute;;
+  position: absolute;
   z-index: 1;
   width: 10px;
   height: 10px;
@@ -68,24 +68,23 @@
 .dots-container {
   flex-direction: column;
   position: absolute;
-  top: 26%;
-  left: 3vw;
+  top: 10%;
+  left: 4vw;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 18px;
 }
 
 .dot {
   width: 10px;
   height: 10px;
   background-color: #ccc;
-  width: 15px;
-  height: 15px;
   border-radius: 50%;
   margin: 10px 0;
   cursor: pointer;
 }
 
 .dot.active {
+  scale: 1.2;
   background-color: #888888;
 }

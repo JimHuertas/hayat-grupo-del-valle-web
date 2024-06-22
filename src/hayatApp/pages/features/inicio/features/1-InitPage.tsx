@@ -1,7 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
-
-import { CustomRoundedButton } from "../../../../ui/components/CustomRoundedButton";
-import { TextImage } from "../../../../ui/components/TextImage";
+import { Box, Grid, IconButton, Typography } from "@mui/material";
 
 import { InfoFooter } from "../../../../ui/components/InfoFooter";
 import { heightScreen } from "../../../../hooks/heightScreen";
@@ -10,6 +7,7 @@ import { countState } from "../../../../hooks/countState";
 import { AnimatedTypography } from "../../shared/AnimatedTypography";
 import { widthScreen } from "../../../../hooks/widthScreen";
 import { useNavigate } from "react-router-dom";
+import ConsultaAhoraSvg from "../../../../ui/components/TextSVG";
 
 export const InitPage1: React.FC = () => {
 
@@ -37,8 +35,8 @@ export const InitPage1: React.FC = () => {
             <Grid container display='flex' direction='row' >
                 <Grid height={first_content} width='12%' alignItems='center' justifyContent='center' display='flex' flexDirection='column' >
                     <Typography fontWeight='bold' color='white' fontSize='20px' >{(count < 1) ? '01' : `0${count}`}</Typography>
-                    <Box color='#E3641A' border={3} width='1px' height={'40%'} ></Box>
-                    <Box color='white' border={1} width='1px' height={'40%'} ></Box>
+                    <Box sx={{transition: 'height 0.5s ease-out'}} color='#E3641A' border={3} width='1px' height={`${16*count}%`} ></Box>
+                    <Box sx={{transition: 'height 0.5s ease-out'}}  color='white' border={1} width='1px' height={`${80-(16*count)}%`} ></Box>
                     <Typography fontWeight='bold' color='white' fontSize='20px'>05</Typography>
                 </Grid>
 
@@ -53,11 +51,11 @@ export const InitPage1: React.FC = () => {
                             xl: '160px 25vw 0 0'
                         }} 
                         fontSize={{
-                            xs: '6vw',
-                            sm: '6vw',
-                            md: '5vw',
-                            lg: '50px',
-                            xl: '60px'
+                            xs: '4.6vw',
+                            sm: '4.6vw',
+                            md: '4.6vw',
+                            lg: '45px',
+                            xl: '45px'
                         }} 
                         color='#F8F8F8'
                     > ¡EMPIEZA A VIVIR UN MAR DE EXPERIENCIAS!
@@ -73,13 +71,13 @@ export const InitPage1: React.FC = () => {
                             xl: '30px 25vw 18px 0'
                         }} 
                         fontSize={{
-                            xs: '15px',
-                            sm: '20px',
-                            md: '20px',
-                            lg: '20px',
-                            xl: '21px'
+                            xs: '12px',
+                            sm: '12px',
+                            md: '17px',
+                            lg: '17px',
+                            xl: '18px'
                         }} fontWeight='500'
-                    > ''Bienvenido a nuestro exclusivo club. ''vive un mar de experiencias'', donde cada momento se convierte
+                    > ''Bienvenido a Hayat club punta sal, donde vivirás un mar de experiencias, cada momento se convierte
                         en un recuerdo inolvidable. Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas
                         cristalinas del océano. Disfruta de una variedad de comodidades de lujo, desde exquisitos restaurantes y bares 
                         frente al mar hasta cómodas habitaciones y espacios para descansar bajo el cálido sol tropical''.
@@ -90,15 +88,9 @@ export const InitPage1: React.FC = () => {
                         className=""
                     > <TextImage fontSize="20px" text="Registrate" backgroundPosition="bottom" urlImage={background1} />
                     </CustomRoundedButton> */}
-                    <Box margin={'12px 0 0 0'}>
-                        <CustomRoundedButton
-                            boxShadow=''
-                            background="white"
-                            onClick={()=>{navigate('/contacto#form-hayat')}}
-                            className=""
-                        >  <TextImage fontSize="22px" text="¡Consulta Ahora!" backgroundPosition="bottom 39% left 20% " />
-                        </CustomRoundedButton>
-                    </Box>
+                    <IconButton  sx={{ height:'50px', width:'280px', borderRadius:'30px' }}  onClick={()=>{navigate('/contacto#form-hayat')}}>
+                        <ConsultaAhoraSvg style={{ width: 300, height: (width < 550) ? 35 : 40 }} />
+                    </IconButton>
                 </Box>
             </Grid>
 

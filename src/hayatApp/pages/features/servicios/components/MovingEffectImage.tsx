@@ -4,7 +4,6 @@ import casaPLaya from '../../../../../assets/casa-playa.jpg';
 import { Box } from '@mui/material';
 import { widthScreen } from '../../../../hooks/widthScreen';
 
-
 interface MovingImageEffectProps{
     images: string[];
 }
