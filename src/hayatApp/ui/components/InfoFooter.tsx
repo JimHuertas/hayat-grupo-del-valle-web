@@ -1,8 +1,8 @@
 import { FacebookRounded, Instagram, YouTube, PlayArrowRounded } from "@mui/icons-material";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 
-import comida from '../../../assets/comida.webp';
-import casaPlaya from '../../../assets/casa-playa.jpg';
+import comida from '../../../assets/comida-hayat.jpg';
+import showEspeciales from '../../../assets/show-especiales.jpg';
 
 import { widthScreen } from "../../hooks/widthScreen";
 
@@ -118,14 +118,14 @@ const SmallSizeScreenContent:React.FC<ScreenContentProps> = ({width, sizeContent
     return (
     <Grid container padding='0 5px' height={sizeContent} alignContent='center' justifyContent={(width < 424) ? 'center' : 'space-between'} direction={(width < 430) ? 'column' : 'column'} >
          <Box height={(width < 430) ? '40%': '100%'} width={(width < 430) ? '100%': '50%'}flexDirection='column' display='flex' alignItems='center' justifyContent='center' >
-            <Box component='img' overflow='hidden' src={comida} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%'}} />
+            <Box component='img' overflow='hidden' src={showEspeciales} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%'}} />
             <Typography textAlign='center' fontSize={(width < 424) ? '9px' : '13px'} color='white' fontWeight='bold' > SHOW ESPECIALES </Typography>
             {(width < 640) 
                 ? null 
                 : <Typography textAlign='center' fontSize='13px' color='white'> No te pierdas de ...</Typography>}
          </Box>
          <Box height={(width < 430) ? '40%': '100%'} width={(width < 430) ? '100%': '50%'}textAlign='center' flexDirection='column' display='flex' alignItems='center' justifyContent='center'>
-            <Box component='img' overflow='hidden' src={casaPlaya} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%' }} />
+            <Box component='img' overflow='hidden' src={comida} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%' }} />
             <Typography textAlign='center' fontSize={(width < 424) ? '9px' : '13px'}color='white' fontWeight='bold'> COMIDAS Y BEBIDAS </Typography>
             {(width < 640) 
                 ? null 
@@ -140,7 +140,7 @@ const HighSizeScreenContent:React.FC<ScreenContentProps>  = ({sizeContent}) => {
    return (
    <Grid container padding='0 20px' alignContent='center' height={sizeContent} justifyContent='space-between' direction='row' >
         <Box component='img' height={{md: '50%', lg: '50%', xl: '50%'}} width={{md: '24%', lg: '20%', xl: '17%'}}  
-            overflow='hidden' src={comida} alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
+            overflow='hidden' src={showEspeciales} alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
         <Box alignContent='center' justifyContent='center' width='24%' >
             <Typography fontSize={{
                 md: '13px',
@@ -154,7 +154,7 @@ const HighSizeScreenContent:React.FC<ScreenContentProps>  = ({sizeContent}) => {
             }} color='white'> No te pierdas de ...</Typography>
         </Box>
         <Box component='img' height={{md: '50%', lg: '50%', xl: '50%'}} width={{md: '24%', lg: '20%', xl: '17%'}} 
-        overflow='hidden' src={casaPlaya} alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
+        overflow='hidden' src={comida} alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
         <Box alignContent='center' justifyContent='center' width='24%'height='auto' >
             <Typography fontSize={{
                 md: '13px',

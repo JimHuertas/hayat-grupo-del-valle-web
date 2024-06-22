@@ -9,7 +9,7 @@ export const NosotrosPage = () => {
   const { isLoading } = loadingScreenHook();
   return ((isLoading) 
   ? <LoadingScreen/> 
-  :  <HayatAppLayout>
+  :  <HayatAppLayout type='image' >
     <Box 
     flexDirection='column'
     justifyContent='top' 

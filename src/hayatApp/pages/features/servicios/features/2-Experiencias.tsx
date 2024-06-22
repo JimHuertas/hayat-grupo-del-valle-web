@@ -2,8 +2,8 @@ import { Box, Typography } from "@mui/material"
 import { HorizontalCards } from "../components/HorizontalCards";
 
 import { VerticalCards } from "../components/VerticalCards";
-import { MovingImageEffect } from "../components/MovingEffectImage";
 import { widthScreen } from "../../../../hooks/widthScreen";
+import { GridPhotos } from "../components/GridPhotos";
 
 
 
@@ -12,7 +12,7 @@ export const Experiencias2 = () => {
     const {width} = widthScreen();
 
     return (
-    <Box  bgcolor='white' width='100%' height={(width < 700) ? '1250px' : '980px'} overflow='hidden' >
+    <Box  bgcolor='white' width='100%' height={ (width < 700) ? '1250px' : '1150px'} overflow='hidden' >
     {(width > 700) 
     ? <Box m='50px 0 0 0' display='flex' width='100%' height='250px'      
         p={(width < 950 )
@@ -67,14 +67,36 @@ export const Experiencias2 = () => {
       </Box>
     }
 
-    <Box p='0 2vw' display='flex' alignItems='center' alignContent='center' >
+    <Box m='0 0 10px 0' p=' 2vw' display='flex' alignItems='center' alignContent='center' >
         <Box border={1.5} color='#E3641A' height={'0'} width={'100px'} />
         <Typography fontWeight='bold' fontSize='20px' p='10px 10px' >DESCUBRE LAS MEJORES EXPERIENCIAS</Typography>
         <Typography fontWeight='500' p='10px 10px' >Tendrás inumerables acividades de las cuales podrías a lo largo de tu estadía con nosotros</Typography>
     </Box>
 
-    <Box display='flex' alignContent='center' justifyContent='center' width={'100%'} color='red' height='560px' >
-        <MovingImageEffect/>
+    <Box sx={{
+        boxShadow: '10px 10px 15px rgb(0 0 0 / 26%)',
+        width: '95%',
+        m:'0 2.5%',
+        overflowY: 'scroll',
+        overflowX:'hidden',
+        '&::-webkit-scrollbar': {
+            width: '12px',
+        },
+        '&::-webkit-scrollbar-thumb': {
+            background: '#888',
+            borderRadius: '10px',
+        },
+        '&::-webkit-scrollbar-thumb:hover': {
+            background: '#555',
+        },
+        '&::-webkit-scrollbar-track': {
+            background: '#f1f1f1',
+            borderRadius: '10px',
+        },
+        }}
+         display='flex' alignContent='center' justifyContent='center' color='red' height= {(width < 700) ? '400px' : '600px'} >
+        {/* <MovingImageEffect/> */}
+        <GridPhotos/>
     </Box>
 
 

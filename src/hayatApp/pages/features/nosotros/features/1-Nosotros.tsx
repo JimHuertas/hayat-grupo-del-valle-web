@@ -7,6 +7,7 @@ import { InfoFooter } from "../../../../ui/components/InfoFooter";
 import IkiLogo from '../../../../../assets/logo-iki.webp';
 import HayatLogo from '../../../../../assets/hayat-logo-bw.webp';
 import AudioFest from '../../../../../assets/logo-audiofest-blanco.webp';
+import fondoNosotros from '../../../../../assets/nosotros-fondo.webp';
 
 import GrupoDelValleLogo from '../../../../../assets/grupo-del-valle-color.webp';
 import { AnimatedTypography } from "../../shared/AnimatedTypography";
@@ -18,8 +19,8 @@ export const Nosotros1 = () => {
 
     const first_content = 
         (width < 480) 
-            ? 1300 
-            : (width < 850) ? 1250 : 1150;
+            ? 1290 
+            : (width < 850) ? 1250 : 1110;
     // const second_content = (height < 800) ? 800 * (20/100): height * (22.7/100);
 
     const second_content = 180;
@@ -34,17 +35,17 @@ export const Nosotros1 = () => {
     const fontTextSize = {
         xs: '15px',
         sm: '16px',
-        md: '20px',
-        lg: '20px',
-        xl: '20px'
+        md: '16px',
+        lg: '16px',
+        xl: '16px'
     }
 
     const fontDirectionsText = {
         xs: '16px',
         sm: '16px',
-        md: '19px',
-        lg: '19px',
-        xl: '19px'
+        md: '17px',
+        lg: '17px',
+        xl: '17px'
     }
 
     const boxNumberPhoneSize = {
@@ -59,14 +60,15 @@ export const Nosotros1 = () => {
         <Box
             bgcolor={'rgba(38,38,38,0.3)'}
             sx={{ 
+                backgroundImage: `url(${fondoNosotros})`,
                 backgroundAttachment: 'center',
-                // backgroundImage: `url(${urlImage3})`,
+                backgroundPosition: 'right',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                padding: (width < 400) ? '100px 0 0 0' : '120px 0 0 0',
-                width: '100%', 
+                width: '100%',
             }}
         >
+            <Box bgcolor={'rgba(38,38,38,0.4)'} >
             <Grid height={first_content} container display='flex' direction='row' >
                 {/* <Grid height={first_content} width='12%' alignItems='center' justifyContent='center' display='flex' flexDirection='column' >
                     <Typography fontWeight='bold' color='white' fontSize='20px' >{(count<1) ? '01' : `0${count}`}</Typography>
@@ -77,7 +79,7 @@ export const Nosotros1 = () => {
                 <Grid color={'red'}width='100%' fontWeight='500'  p={spaceTextSide}>
                     { (width < 900) 
                     ? <Box display={'flex'} flexDirection='column' >
-                        <Box m={'0 0 30px 0'} display='flex' justifyContent='center'>
+                        <Box m={'100px 0 30px 0'} display='flex' justifyContent='center'>
                             <Box height={'100%'} width={'38%'} alignContent='center' display='flex' justifyContent='center' top={'-10px'} >
                                 <img src={GrupoDelValleLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', width: '96%'}} />        
                             </Box>
@@ -95,7 +97,7 @@ export const Nosotros1 = () => {
                     </Box>
                     :   <Box display={'flex'} width={'68%'} flexDirection='row'>
                             <Box color={'white'}>
-                            <AnimatedTypography color={'white'} fontSize={fontTextSize} > Un propósito claro, catalizar el crecimiento económico al ofrecer asesoramiento
+                            <AnimatedTypography margin='60px 0 0 0' color={'white'} fontSize={fontTextSize} > Un propósito claro, catalizar el crecimiento económico al ofrecer asesoramiento
                                 experto y oportunidades de financiamiento innovadoras. En el núcleo de nuestra misión está 
                                 la convicción de que cada proyecto merece la oportunidad de florecer, y estamos comprometidos 
                                 a ser el puente que transforma ideas en realidades financieras sólidas </AnimatedTypography>
@@ -105,8 +107,8 @@ export const Nosotros1 = () => {
                                 "Tu lo sueñas nosotros lo creamos" </AnimatedTypography>
                         </Box>
                         
-                        <Box height={'30%'} width={'30%'} display='fixed' justifyContent='center' position={'absolute'} right='0' top='190px' >
-                            <img src={GrupoDelValleLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: '87%'}} />        
+                        <Box width={'30%'} m='0 0 0 0' display='flex' justifyContent='start' position={'absolute'} right='0' top='150px' >
+                            <img src={GrupoDelValleLogo} alt="Logo" style={{textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: '63%'}} />        
                         </Box>
                         </Box>
                     }
@@ -138,14 +140,14 @@ export const Nosotros1 = () => {
                     
                     <Box m='20px 0 0 0' width={(width < 900) ? '100%' :'70%'} flexDirection={(width < 840) ? 'column' :'row'} display={'flex'} >
                         <Typography alignContent='center' justifyContent='center' m={(width < 840) ? '0 0 20px 0' : '0 0 20px 0'} width='22%' color='white' fontWeight='bold' >PROYECTOS EN DESARROLLO: </Typography>
-                        <Box display='flex' height={'100%'} >
-                            <Box width={'30%'} display='flex' justifyContent='center'>
+                        <Box alignItems={'center'} justifyContent={'start'} display='flex' height={'100%'} >
+                            <Box width={'22%'} height={'100%'} display='flex' justifyContent='center'>
                                 <img src={IkiLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s',height:'100%', width: '90%'}} />        
                             </Box>
-                            <Box width={'26%'}display='flex' justifyContent='center'>
+                            <Box width={'18%'} height={'100%'} display='flex' justifyContent='center'>
                                 <img src={HayatLogo} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', height:'100%', width: '80%'}} />        
                             </Box>
-                            <Box height={'100%'}  width={'44%'}  display='flex' alignContent={'center'} alignItems={'center'} justifyItems={'center'}>
+                            <Box height={'100%'}  width={'34%'}  display='flex' alignContent={'center'} alignItems={'center'} justifyItems={'center'}>
                                 <img src={AudioFest} alt="Logo" style={{ padding:'10% 0 0 0', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', height: '100%', width: '70%', }} />        
                             </Box>
                         </Box>
@@ -155,6 +157,7 @@ export const Nosotros1 = () => {
             </Grid>
 
             <InfoFooter sizeContent={second_content} />
+            </Box>
         </Box>
     );
 }

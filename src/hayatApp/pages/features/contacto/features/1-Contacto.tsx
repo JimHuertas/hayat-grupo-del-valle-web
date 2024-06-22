@@ -141,14 +141,14 @@ export const Contacto1 = () => {
                         ? <Box zIndex={1} bottom={0} left={(width < 550) ?  '-31px' : '-60px'} height='auto' width={{
                             xs: '44vw',
                             sm: '46vw',
-                            md: '42vw',
-                            lg: '41vw',
-                            xl: '33vw'
-                        }} position='absolute' component={'img'} src={girlBeach} sx={{ objectFit: 'contain'}} />
+                            md: '38vw',
+                            lg: '38vw',
+                            xl: '34vw'
+                        }} maxWidth={'440px'} position='absolute' component={'img'} src={girlBeach} sx={{ objectFit: 'contain'}} />
                         : null
                     }
                     <Box position='relative' bgcolor='rgba(233,100,23, 0.7)' width={(width < 480) ? '7%' : '35%'} />
-                    <Box p={(width < 480) ? '5% 5% 0 0' : '5% 5% 0 5%'} color='rgba(38,38,38,0.8)' position='relative' bgcolor='rgba(248,248,248, 0.7)' width={(width < 480) ? '93%' : '65%'}>
+                    <Box p={(width < 480) ? '5% 5% 0 0' : '5% 5% 0 5%'} color='rgba(38,38,38,0.8)' position='relative' bgcolor='rgba(248,248,248, 0.8)' width={(width < 480) ? '93%' : '65%'}>
                         <form onSubmit={onSubmit}  className='animate__animated animate__fadeIn animate__faster'>
                         <Box width='100%' height='100%'>
                             {/* <Typography fontWeight='bold'  padding='10px 10px' zIndex={1}  fontSize='20px'>
