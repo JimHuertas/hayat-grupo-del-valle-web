@@ -1,24 +1,23 @@
-import { Box, Button, CircularProgress, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from "@mui/material";
-import { InfoOutlined } from "@mui/icons-material";
+import { Box, Button, CircularProgress, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
-import { heightScreen } from "../../../../hooks/heightScreen";
 import { widthScreen } from "../../../../hooks/widthScreen";
+import { heightScreen } from "../../../../hooks/heightScreen";
 
 import girlBeach from "../../../../../assets/girl-beach.png";
+import hayatLogo from '../../../../../assets/hayat-espera.gif';
 
 import { InfoFooter } from "../../../../ui/components/InfoFooter";
-import { CustomTextField, Underline } from "../../../../ui/components/CustomTextField";
+import { CustomTextField } from "../../../../ui/components/CustomTextField";
 import { useForm } from "../../../../hooks/useForm";
 import { validarNumero } from "../../../../helpers/numberValitador";
-import { useSelectItems } from "../../../../hooks/userSelectItems";
-import { departamentosPeru } from "../../../../config/departamentos";
 import { alertSwap } from "./hooks/alertSwap";
 import { Alert } from "./components/CustomAlert";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../../../../store";
 import { SendMailStatus } from "../../../../service/config";
 import { startSendingMail } from "../../../../../store/mail";
+import { AnimatedTypography } from "../../shared/AnimatedTypography";
 
 
 const formValidations: FormValidation = {
@@ -36,21 +35,31 @@ export const Contacto1 = () => {
     const {width} = widthScreen();
     const {height} = heightScreen();
     const first_content = (height < 1000) 
-        ? (height < 400 && width < 1070) ? height * (390/100) : 1000 * (140/100) 
+        ? (height < 400 && width < 1070) ? height * (390/100) : 1150
         : height * (117/100);
-    const second_content = (height < 1000) ? 1000 * (20/100): height * (22.8/100);
+    const second_content = (height < 1000) ? 160: 150;
 
     const [formSubmitted, setFormSubmitted] = useState(false);
 
     const mailState = useSelector((state: RootState) => state.mail );
 
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, []);
+    
+
+
     //FORM DATA
-    const { selectedItem, handleCategoryChange } = useSelectItems(); 
-    const { nombresValid, apellidosValid, correoValid, numeroValid, isFormValid, nombres, apellidos, correo, confirmCorreo, numero, onInputChange } = useForm({
+    const { nombresValid, apellidosValid, correoValid, numeroValid, isFormValid, nombres, apellidos, correo, numero, onInputChange } = useForm({
         nombres: '',
         apellidos: '',
         correo: '',
-        confirmCorreo: '',
         numero: '',
     }, formValidations);
 
@@ -63,10 +72,9 @@ export const Contacto1 = () => {
         event.preventDefault();
         setFormSubmitted(true);
 
-        if(!isFormValid || selectedItem === '' || confirmCorreo !== correo) return;
+        if(!isFormValid) return;
 
-        const departamento:string = selectedItem;
-        await dispatch( startSendingMail({nombres, apellidos, correo, departamento , numero}) );
+        await dispatch( startSendingMail({nombres, apellidos, correo , numero}) );
         
     }
     
@@ -87,58 +95,68 @@ export const Contacto1 = () => {
         <Grid height='inherit' container display='flex' direction='row' >
             <Box width='100%' height={first_content} padding='0 0 0 0' >
                 <Box flexDirection={(width < 1070) ? 'column' : 'row'} margin='80px 0 0 9vw' display='flex'>
-                    <Typography fontWeight='500' fontSize={(width < 860) ? {
-                        xs: '8vw',
-                        sm: '8vw',
+                    <AnimatedTypography fontWeight='500' fontSize={(width < 860) ? {
+                        xs: '7.0vw',
+                        sm: '7.0vw',
                     } : {sm: '50px',
                         md: '50px',
                         lg: '50px',
-                        xl: '70px'}} color='white' fontFamily='Montserrat'  >CONTÁCTANOS Y</Typography>
-                    <Typography padding={(width < 1070)  ? 'none' : '0 0 0 10px'} fontWeight='bold' fontSize={(width < 860) ? {
-                        xs: '8vw',
-                        sm: '8vw',
+                        xl: '60px'}} color='white' fontFamily='Montserrat'  >CONTÁCTANOS Y</AnimatedTypography>
+                    <AnimatedTypography padding={(width < 1070)  ? 'none' : '0 0 0 10px'} fontWeight='bold' fontSize={(width < 860) ? {
+                        xs: '7vw',
+                        sm: '7vw',
                     } : {sm: '50px',
                         md: '50px',
                         lg: '50px',
-                        xl: '70px'}} fontFamily='Montserrat' color='#E96417'  >EMPEZEMOS CON</Typography>
+                        xl: '60px'}} fontFamily='Montserrat' color='#E96417'  >EMPEZEMOS CON</AnimatedTypography>
                 </Box>
-                <Typography fontWeight='bold' margin='0 0 0 9vw' fontSize={(width < 860) ? {
-                    xs: '8vw',
-                    sm: '8vw',
+                <AnimatedTypography fontWeight='bold' margin='0 0 0 9vw' fontSize={(width < 860) ? {
+                    xs: '7vw',
+                    sm: '7vw',
                 } : {sm: '50px',
                     md: '50px',
                     lg: '50px',
-                    xl: '70px'}}  fontFamily='Montserrat' color='#E96417'>ESTA MARAVILLOSA EXPERIENCIA</Typography>
+                    xl: '60px'}} fontFamily='Montserrat' color='#E96417'>ESTA MARAVILLOSA EXPERIENCIA</AnimatedTypography>
 
-                <Typography fontWeight={'bold'} margin='30px 15vw 50px 9vw' color='white' fontSize={{
+                <AnimatedTypography id="form-hayat" fontWeight={'bold'} margin={(width < 480) ? '20px 15vw 0 9vw' :'20px 15vw 30px 9vw'} color='white' fontSize={{
                     xs: '15px',
                     sm: '20px',
                     md: '20px',
                     lg: '24px',
                     xl: '24px'
-                }}>Te contactaremos y daremos información exclusiva para que estés al tanto de todo</Typography>
+                }}>Te contactaremos y daremos información exclusiva para que estés al tanto de todo</AnimatedTypography>
 
-                <Box margin={(width < 550)  ? '0 0 0 1%' :'0 0 0 9vw'}  width={(width < 550)  ? '97%' : '75%'} position='absolute' display='flex' height={
+                {(width < 480) 
+                    ? <Box height={'auto'}  width={'100%'}  display='flex' alignContent={'center'} justifyContent={'center'}  alignItems={'center'} justifyItems={'center'}>
+                        <img src={hayatLogo} alt="Logo" style={{ border:'5px', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', height: 'auto', width: '70%', }} />        
+                      </Box>
+                    : null
+                }
+
+                <Box margin={(width < 550)  ? '0 0 0 10%' :'0 0 0 9vw'}  width={(width < 550)  ? '80%' : '75%'} position='absolute' display='flex' height={
                     (width < (height + 480)) 
                         ? first_content * (50/100) 
-                        : first_content * (58/100)}>
-                    <Box zIndex={1} bottom={0} left={(width < 550) ?  '-31px' : '-60px'} height='auto' width={{
-                        xs: '44vw',
-                        sm: '46vw',
-                        md: '42vw',
-                        lg: '41vw',
-                        xl: '33vw'
-                    }} position='absolute' component={'img'} src={girlBeach} sx={{ objectFit: 'contain'}} />
-                    <Box position='relative' bgcolor='rgba(233,100,23, 0.7)' width={(width < 480) ? '20%' : '35%'} />
-                    <Box color='rgba(38,38,38,0.8)' position='relative' bgcolor='rgba(248,248,248, 0.7)' width={(width < 480) ? '80%' : '65%'} >
+                        : first_content * (50/100)}>
+                    { (width > 479 ) 
+                        ? <Box zIndex={1} bottom={0} left={(width < 550) ?  '-31px' : '-60px'} height='auto' width={{
+                            xs: '44vw',
+                            sm: '46vw',
+                            md: '38vw',
+                            lg: '38vw',
+                            xl: '34vw'
+                        }} maxWidth={'440px'} position='absolute' component={'img'} src={girlBeach} sx={{ objectFit: 'contain'}} />
+                        : null
+                    }
+                    <Box position='relative' bgcolor='rgba(233,100,23, 0.7)' width={(width < 480) ? '7%' : '35%'} />
+                    <Box p={(width < 480) ? '5% 5% 0 0' : '5% 5% 0 5%'} color='rgba(38,38,38,0.8)' position='relative' bgcolor='rgba(248,248,248, 0.8)' width={(width < 480) ? '93%' : '65%'}>
                         <form onSubmit={onSubmit}  className='animate__animated animate__fadeIn animate__faster'>
-                        <Box width='100%' height='100%' >
-                            <Typography fontWeight='bold'  padding='10px 10px' zIndex={1}  fontSize='20px'>
+                        <Box width='100%' height='100%'>
+                            {/* <Typography fontWeight='bold'  padding='10px 10px' zIndex={1}  fontSize='20px'>
                                 <InfoOutlined sx={{color:'rgba(38,38,38,0.8)', zIndex:1, fontSize: '20px'}} /> Información de contacto
-                            </Typography>
-                            <Box display='flex' margin= {(width < 760) ? '0 0 2vw 0' : '0 0 2vw 0'} flexDirection={(width < 760) ? 'column' : 'row'} >
-                                <CustomTextField key={'nombre'} sx={{ margin: '0 10px 0 13px', width: (width < 760) ? '90%' : '47%'}} 
-                                    placeholder="" 
+                            </Typography> */}
+                            <Box display='flex' flexDirection={'column'} margin= {'0 10px 0 13px'} >
+                                <CustomTextField key={'nombre'} sx={{margin:'20px 0 0 0', width: (width < 480) ? '105%' : '96%'}} 
+                                    placeholder=""
                                     label="Nombres *"
                                     name="nombres"
                                     value={nombres}
@@ -146,7 +164,7 @@ export const Contacto1 = () => {
                                     error = {!!nombresValid && formSubmitted}
                                     helperText={(formSubmitted) ? nombresValid : null}
                                 />
-                                <CustomTextField key={'apellido'} sx={{ margin:(width < 760) ? '10px 10px 0 13px' : '', width: (width < 760) ? '90%' : '46%'}} 
+                                <CustomTextField key={'apellido'} sx={{ margin:'20px 0 0 0', width: (width < 480) ? '105%' : '96%'}} 
                                     placeholder="" 
                                     label="Apellido *"
                                     name="apellidos"
@@ -155,9 +173,7 @@ export const Contacto1 = () => {
                                     error = {!!apellidosValid && formSubmitted}
                                     helperText={(formSubmitted) ? apellidosValid : null}
                                 />
-                            </Box>
-                            <Box display='flex' margin= {(width < 760) ? '10px 0 2vw 0' : '0 0 2vw 0'}  flexDirection={(width < 760) ? 'column' : 'row'} >
-                                <CustomTextField key={'correo'} sx={{ margin: '0 10px 0 13px', width: (width < 760) ? '90%' : '47%'}} 
+                                <CustomTextField key={'correo'} sx={{ margin:'20px 0 0 0', width: (width < 480) ? '105%' : '96%'}}
                                     placeholder="" 
                                     label="E-mail *" 
                                     name="correo"
@@ -166,6 +182,18 @@ export const Contacto1 = () => {
                                     error = {!!correoValid && formSubmitted}
                                     helperText={(formSubmitted) ? correoValid : null}
                                 />
+                                <CustomTextField key={'numero'} sx={{ margin: '20px 0 0 0', width: (width < 480) ? '105%' : '96%'}} 
+                                placeholder="" 
+                                label="Celular *" 
+                                value={numero}
+                                name="numero"
+                                onChange={onInputChange}
+                                error = {!!numeroValid && formSubmitted}
+                                helperText={(formSubmitted) ? numeroValid : null}
+                            />
+                            </Box>
+                            {/* <Box display='flex' margin= {(width < 760) ? '10px 0 2vw 0' : '0 0 2vw 0'}  flexDirection={(width < 760) ? 'column' : 'row'} >
+                                
                                 <CustomTextField key={'confirmCorreo'} sx={{ margin:(width < 760) ? '11px 10px 0 13px' : '', width: (width < 760) ? '90%' : '46%'}} 
                                     placeholder="" 
                                     label="Confirmar E-mail *"  
@@ -177,8 +205,8 @@ export const Contacto1 = () => {
                                         : null
                                     }
                                 />
-                            </Box>
-                            <Grid container sx={{ margin: (width < 760) ? '0 10px 0 13px' : '0 10px 2vw 20px', width: (width < 760) ? '90%' : '48%'}}>
+                            </Box> */}
+                            {/* <Grid container sx={{ margin: (width < 760) ? '0 10px 0 13px' : '0 10px 2vw 13px', width: (width < 760) ? '90%' : '48%'}}>
                                 <FormControl key={'departamentos'} fullWidth>
                                     <InputLabel id="subcategory-select"> <Typography color={'rgba(38,38,38,0.8)'} >Departamento *</Typography></InputLabel>
                                     <Select
@@ -201,16 +229,8 @@ export const Contacto1 = () => {
                                 </FormControl>
                                 {(formSubmitted && selectedItem === '') ? <Typography p='0 0 0 10px' color='red' fontSize='11px' >Seleccione un departamento</Typography> : null}
                                 <Underline />
-                            </Grid>
-                            <CustomTextField key={'numero'} sx={{ margin: (width < 760) ? '11px 10px 0 13px' : '0 10px 2vw 15px', width: (width < 760) ? '90%' : '48%'}} 
-                                placeholder="" 
-                                label="Número *" 
-                                value={numero}
-                                name="numero"
-                                onChange={onInputChange}
-                                error = {!!numeroValid && formSubmitted}
-                                helperText={(formSubmitted) ? numeroValid : null}
-                            />
+                            </Grid> */}
+                            
                             <Button sx={{ display:'flex', justifyContent:'end', zIndex:1,  margin: (width < 760) ? {
                                         xs: '25px 0 0 20px',
                                         sm: '25px 0 0 12vw',

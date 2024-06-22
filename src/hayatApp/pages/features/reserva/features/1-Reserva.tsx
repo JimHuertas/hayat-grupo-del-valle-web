@@ -1,7 +1,8 @@
 import { Box, Grid, Typography } from "@mui/material";
 
-import { heightScreen } from "../../../../hooks/heightScreen";
+
 import { InfoFooter } from "../../../../ui/components/InfoFooter";
+import { heightScreen } from "../../../../hooks/heightScreen";
 
 export const Reserva1 = () => {
     const {height} = heightScreen();

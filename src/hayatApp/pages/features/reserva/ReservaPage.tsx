@@ -1,12 +1,15 @@
 import { Grid } from '@mui/material';
 import { HayatAppLayout } from '../../../layout/HayatAppLayout';
 import { Reserva1 } from './features/1-Reserva';
+import { loadingScreenHook } from '../../../hooks/loadingWait';
+import { LoadingScreen } from '../../../ui/components/LoadingScreen';
 
 export const ReservaPage = () => {
-    // const { theme } = useSelector( (state: RootState) => state.theme );
+  const { isLoading } = loadingScreenHook();
 
-  return (
-    <HayatAppLayout>
+  return ((isLoading) 
+  ? <LoadingScreen/> 
+  :  <HayatAppLayout>
     <Grid container 
         direction='row' 
         justifyContent='space-between' 

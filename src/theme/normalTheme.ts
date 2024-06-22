@@ -7,6 +7,7 @@ export const normalTheme = createTheme({
             styleOverrides: {
                 root: {
                     backgroundColor: 'transparent',
+                    boxShadow: 'none'
                 },
             },
         },

@@ -1,10 +1,10 @@
-import { Facebook, Instagram, YouTube, LinkedIn } from "@mui/icons-material"
+import { Facebook, Instagram, YouTube, LinkedIn, Send } from "@mui/icons-material"
 import { Box, Grid, IconButton, TextField, Theme, Typography, useMediaQuery } from "@mui/material"
 import { widthScreen } from "../../hooks/widthScreen";
 
 import logoHayat from '../../../assets/hayat-logo-2.png';
 // import videoDemo from '../../../assets/demo.mp4';
-import logoGrupoDelValle from '../../../assets/grupo-del-valle.png';
+import logoGrupoDelValle from '../../../assets/grupo-del-valle-white.png';
 import { TikTokIcon } from "./TikTokIcon";
 
 const Links = [
@@ -15,7 +15,7 @@ const Links = [
         window.open('https://www.facebook.com/profile.php?id=61558631184828', '_blank');
     },
     () => {
-        window.open('https://youtube.com/@hayatperu?si=KH6unyuK6_VRBQ5T', '_blank');
+        window.open('https://youtube.com/@hayatperu?si=oMJ6JK3bg1FmAH-o', '_blank');
     },
     () => {
         window.open('https://www.instagram.com/hayatperu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank');
@@ -55,7 +55,6 @@ const widthSpace = {
 
 
 export const Footer = () => {
-
     const fontInfoSize = {
         xs: '14px',
         sm: '12px', 
@@ -105,7 +104,6 @@ export const Footer = () => {
                         xl: '3vw'
                     }}
                     justifyContent='left'
-                    // borderColor={'orange'}
                 >
                     <Grid container
                         margin=' 50px 0 15px 0'
@@ -115,45 +113,56 @@ export const Footer = () => {
                         <img src={logoHayat} alt="Logo" style={{ boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: 140}} />
                         <Typography style={{ fontWeight:'500', alignContent:'end', color: '#A8A8A8', fontSize:'20px'}} >CLUB PUNTA SAL</Typography>
                     </Grid>
-
-                    <TextField
-                        type="email"
-                        label="Ingresa tu email para poder recibir novedades"
-                        variant="outlined"
-                        sx={{
-                            // border:1,ffffff
-                            margin: '0 10px 10px 0',
-                            width: '100%',
-                            '& .MuiOutlinedInput-root': {
-                                color: 'rgba(168,168,168,0.8)',
-                                borderColor: 'yellow', // Color del borde
-                                border: 1,
-                                '&:hover': {
-                                    borderColor: 'orange',
+                    <Typography m='0 0 15px 0' >Ingresa tu e-mail para poder recibir novedades</Typography>
+                    <Box display='flex' width={'100%'} >
+                        
+                        <TextField
+                            InputProps={{
+                                sx: {
+                                    fontSize: "12px",
                                 },
-                                '&.Mui-focused': {
-                                    borderColor: 'transparent', // Cambia el color del borde cuando el TextField está enfocado
+                                endAdornment: (
+                                    <IconButton >
+                                        <Send sx={{color:'white'}}/>
+                                    </IconButton>)
+                            }}
+                            type="email"
+                            label="Ingresa tu e-mail"
+                            
+                            variant="outlined"
+                            sx={{
+                                margin: '0 10px 10px 0',
+                                width: '95%',
+                                '& .MuiOutlinedInput-root': {
+                                    color: 'rgba(168,168,168,0.8)',
+                                    borderColor: 'yellow', // Color del borde
+                                    border: 1,
+                                    '&:hover': {
+                                        borderColor: 'orange',
+                                    },
+                                    '&.Mui-focused': {
+                                        borderColor: 'transparent', // Cambia el color del borde cuando el TextField está enfocado
+                                    },
                                 },
-                            },
-                            '& .MuiOutlinedInput-root:hover': {
-                              borderColor: 'orange', // Cambio de color del borde al pasar el mouse
-                            //   border: 1
-                            },
-                            '& .MuiInputLabel-root': {
-                              color: '#A8A8A8',
-                            },
-                          }} 
-                    />
+                                '& .MuiOutlinedInput-root:hover': {
+                                borderColor: 'orange', // Cambio de color del borde al pasar el mouse
+                                //   border: 1
+                                },
+                                '& .MuiInputLabel-root': {
+                                color: '#A8A8A8',
+                                },
+                            }} 
+                        />
+                    </Box>
                     <Typography margin={'0 0 15px 0'} style={{color: '#A8A8A8'}}>Conectate con nosotros</Typography>
-                    <Grid container direction= 'row' justifyContent='start' sx={{ 
-                    }}>
-                        <IconButton onClick={Links[0]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #25f4ee, #000000, #fe2c55)', color: '#383838'}}} > <TikTokIcon size={'21px'} color={'#A8A8A8'} /> </IconButton>
+                    <Grid container direction= 'row' justifyContent='start'>
+                        <IconButton onClick={Links[0]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #25f4ee, #000000, #fe2c55)', color: '#383838'}}} > <TikTokIcon size={'15px'} color={'#A8A8A8'} /> </IconButton>
                         <Box width={widthSpace}></Box>
                         <IconButton onClick={Links[1]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #0866FF, #000000, #0866FF)', color: '#0866FF'}}} > <Facebook style={{ color: '#A8A8A8'}}/> </IconButton>
                         <Box width={widthSpace}></Box>
-                        <IconButton sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, red, #000000, red)', color: 'red'}}} > <YouTube style={{ color: '#A8A8A8'}}/> </IconButton>
+                        <IconButton onClick={Links[2]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, red, #000000, red)', color: 'red'}}} > <YouTube style={{ color: '#A8A8A8'}}/> </IconButton>
                         <Box width={widthSpace}></Box>
-                        <IconButton sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #405de6, #5b51d8, #833ab4, #c13584, #e1306d, #fd1d1d,#f56040, #f77737, #fcaf45, #ffdc80)', color: '#DD2A7B'}}} > <Instagram style={{ color: '#A8A8A8'}}/> </IconButton>
+                        <IconButton onClick={Links[3]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #405de6, #5b51d8, #833ab4, #c13584, #e1306d, #fd1d1d,#f56040, #f77737, #fcaf45, #ffdc80)', color: '#DD2A7B'}}} > <Instagram style={{ color: '#A8A8A8'}}/> </IconButton>
                         <Box width={widthSpace}></Box>
                         <IconButton onClick={Links[4]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #0077B5, #000000, #0077B5)', color: '#0077B5'}}}> <LinkedIn style={{ color: '#A8A8A8'}}/> </IconButton>
                     </Grid>
@@ -169,37 +178,33 @@ export const Footer = () => {
                     : 'row'}>
                 <Grid container width={(width < 1030) 
                     ? (width < 600) ? '35%' : '80%' 
-                    :'50%'} direction='column'>
-                    <a href="/" style={{fontSize:'20px', padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>El proyecto</Typography> </a>
-                    <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Canal</Typography> </a>
-                    <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Nosotros</Typography> </a>
-                    <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Canal</Typography> </a>
-                    <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Redes</Typography> </a>
-                    <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Plano</Typography> </a>
-                    <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Informes</Typography> </a>
+                    :'57%'} direction='column'>
+                    <a href="/servicios" style={{fontSize:'20px', padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>El proyecto</Typography> </a>
+                    {/* <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Canal</Typography> </a> */}
+                    <a href="/nosotros" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Nosotros</Typography> </a>
+                    <a href="https://linktr.ee/grupodelvalle" target="_blank" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Redes</Typography> </a>
+                    <a href="/contacto" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Informes</Typography> </a>
+                    <a href="/contacto" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Contáctanos</Typography> </a>
                 </Grid>
                 <Grid container width={(width < 1030) 
                     ? (width < 600) 
-                        ? '50%' 
-                        : '80%'
-                    :'50%'} direction='column'>
-                    <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Soporte</Typography> </a>
-                    <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Contáctanos</Typography> </a>
-                    <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Precios</Typography> </a>
-                    <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Grupos</Typography> </a>
-                    <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Oficina</Typography> </a>
-                    <a href="/" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Politica de privacidad</Typography> </a>
+                    ? '50%' 
+                    : '80%'
+                    :'43%'} direction='column'>
+                    <a href="/nosotros" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Grupos</Typography> </a>
+                    <a href="/nosotros" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Oficina</Typography> </a>
+                        <a style={{ padding: '0 0 10px 0', color: '#484848', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Plano</Typography> </a>
+                    <a style={{padding: '0 0 10px 0', color: '#484848', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Politica de privacidad</Typography> </a>
+                    <a style={{padding: '0 0 10px 0', color: '#484848', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Precios</Typography> </a>
                 </Grid>
             </Grid>
 
-
             <Box flexDirection='column' display='flex' justifyContent='start' sx={{width: (isSmallScreen) ? '100%' : (width < 1450) ? '18%' : '17%' }}>
-                <Typography color='#B8B8B8' padding={(isSmallScreen) ? '30px 0 0 14vw' : '60px 0 0 14px'} fontSize={{xs: '20px',sm: '10px',md: '18px', lg: '15px',xl: '15px'}} sx={{ fontWeight: 'bold' }}>Desarrollado por:</Typography> 
+                <Typography color='#B8B8B8' padding={(isSmallScreen) ? '30px 0 0 14vw' : '60px 0 15px 14px'} fontSize={{xs: '20px',sm: '10px',md: '18px', lg: '15px',xl: '15px'}} sx={{ fontWeight: 'bold' }}>Desarrollado por:</Typography> 
                 <Box display='flex' justifyContent='center'>
-                    <img src={logoGrupoDelValle} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width:(width< 600) ? '30%' : '98%'}} />        
+                    <img src={logoGrupoDelValle} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width:(width< 600) ? '30%' : '97%'}} />        
                 </Box>
             </Box>
-
 
             <Box padding={(isSmallScreen) ? '30px 0 0 0' : '60px 0 0 0'} sx={{width:(isSmallScreen) ? '100%' : '22%'}}>
                 <Grid container direction='column'>

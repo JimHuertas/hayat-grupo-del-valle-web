@@ -35,6 +35,8 @@ export const CustomTextField: React.FC<CustomTextFieldProps> = ({sx, label, ...p
         InputProps={{ style: { color: 'rgba(38,38,38,1)' } }} 
         sx={{
           '& .MuiOutlinedInput-root': {
+            fontSize: '15px',
+            fontWeight: '500',
             '& input::placeholder': {
               fontWeight: 'bold',
             },
@@ -47,7 +49,7 @@ export const CustomTextField: React.FC<CustomTextFieldProps> = ({sx, label, ...p
             borderColor: 'rgba(248,248,248,1)',
           },
           '&.Mui-focused fieldset': {
-              borderColor: 'rgba(248,248,248,1)',
+            borderColor: 'rgba(248,248,248,1)',
           },
           
           zIndex: 1

@@ -3,14 +3,20 @@ import { Footer, NavBar, SideBar } from '../ui/components';
 import { ReactNode, useRef, useState } from 'react';
 import './components/css/transitions.css';
 
-import { BackgroundSlider } from './components/Background-Slider';
 import { bg_images } from '../config/bg_options';
+import fondoImagen from '../../assets/nosotros-fondo.webp';
+
+import { BackgroundSlider } from './components/Background-Slider';
+import { BackgroundVideo } from './components/Background-Video';
+import { BackgroundImage } from './components/Background-Image';
+
 
 interface AuthLayoutProps {
   children: ReactNode;
+  type?: string;
 }
 
-export const HayatAppLayout: React.FC<AuthLayoutProps> = ({ children }) => {
+export const HayatAppLayout: React.FC<AuthLayoutProps> = ({type='slider', children }) => {
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -33,7 +39,13 @@ export const HayatAppLayout: React.FC<AuthLayoutProps> = ({ children }) => {
       }} 
       // className="fade-in-out"
       >
-        <BackgroundSlider images={bg_images} interval={500} contentRef={contentRef}/>
+        {(type === 'slider') 
+          ? <BackgroundSlider images={bg_images} interval={500} contentRef={contentRef}/>
+          : (type === 'video')
+            ? <BackgroundVideo videoSrc='https://storage.googleapis.com/videos-mardeexperiencias/intro-hayat.mov' />
+            : null
+            // : <BackgroundImage imageSrc={fondoImagen}  />
+        }
         { ( isSidebarOpen ) ? <SideBar drawerWidth={ 230 } isOpen={ isSidebarOpen } handleSidebarToggle={handleSidebarToggle}/> : null }
         <NavBar
           onToggleSidebar={handleSidebarToggle}
@@ -46,9 +58,7 @@ export const HayatAppLayout: React.FC<AuthLayoutProps> = ({ children }) => {
           sx={{ flexGrow: 1, p: '0 0 0 0', overflow: 'auto',
           position: 'relative'}}
         >
-          
-          { children }
-            
+          { children }  
         </Box>
         <Footer />
         

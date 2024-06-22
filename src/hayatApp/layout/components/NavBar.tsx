@@ -17,8 +17,8 @@ import './css/navBar.css';
 import { selectedOption } from '../../hooks/selectedOption';
 import { widthScreen } from '../../hooks/widthScreen';
 
-import logoHayat from '../../../assets/hayat-name.png';
-
+import nombreHayat from '../../../assets/hayat-name.png';
+import logoHayat from '../../../assets/hayat-logo.png';
 // import { startLogout } from '../../../../store/auth';
 // import { useAppDispatch } from '../../../../store';
 import { RootState } from '../../../store';
@@ -106,10 +106,12 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                         xl: '200px' }} /> }
                     <Box display='flex' justifyContent='end' color={'red'} height='100%' width={
                         (width < 935) 
-                            ? (width < 400) ? '30vw' : '50vw' : 
+                            ? (width < 400) ? '45vw' : '50vw' : 
                             '100%'}>
                         <Button sx={{ height: '100%' }} disableRipple color="inherit" aria-label="menu" onClick={handleOnClickLogo}>
-                            <img src={logoHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? 120 : 190, borderRadius: '0' }} />
+                            <img src={logoHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? (width < 322) ? '5.5vw' : 35 : 50, borderRadius: '0' }} />
+                            <Box width={'0.7vw'}/>
+                            <img src={nombreHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? (width < 322) ? '12vw' : 80 : 130, borderRadius: '0' }} />
                         </Button>
                     </Box>
                 </Box>
@@ -176,6 +178,7 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                 {(width>450) ? <Button
                     className='iconButton'
                     sx={{ 
+                        m:'0 2vw 0 0',
                         color: '#F8F8F8',
                         // background: '#E3641A',
                         background: '#25d366',
