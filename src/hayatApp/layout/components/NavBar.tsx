@@ -19,8 +19,6 @@ import { widthScreen } from '../../hooks/widthScreen';
 
 import nombreHayat from '../../../assets/hayat-name.png';
 import logoHayat from '../../../assets/hayat-logo.png';
-// import { startLogout } from '../../../../store/auth';
-// import { useAppDispatch } from '../../../../store';
 import { RootState } from '../../../store';
 
 interface NavBarProps {
@@ -96,19 +94,21 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                 xl: '120px' 
             }} container direction='row' justifyContent='space-between' alignItems='center'>
                 <Box height='60px' justifyItems='center' display='flex' flexDirection='row' alignItems='center'>
-                    {(width < 1000) 
+                    {(width < 1000)
                     ? <IconButton onClick={handleToggleSidebar} sx={{ alignContent: 'center', width: '40px', height: '40px', background: 'rgba(238,238,238,0.9)'}}> 
                         <MenuOutlined sx={{color:'#E3641A'}}  />
-                      </IconButton> 
+                      </IconButton>
                     : <Box width={(width < 431) ? '' : {
                         md: '54px',
                         lg: '120px',
                         xl: '200px' }} /> }
                     <Box display='flex' justifyContent='end' color={'red'} height='100%' width={
                         (width < 935) 
-                            ? (width < 400) ? '45vw' : '50vw' : 
-                            '100%'}>
-                        <Button sx={{ height: '100%' }} disableRipple color="inherit" aria-label="menu" onClick={handleOnClickLogo}>
+                            ? (width < 400) 
+                                ? '45vw' 
+                                : showAppBar ? '50vw' : '5vw' 
+                            : '100%'} sx={{ transition: 'width  0.7s ease-in-out' }} >
+                        <Button sx={{ height:  '100%' }} disableRipple color="inherit" aria-label="menu" onClick={handleOnClickLogo}>
                             <img src={logoHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? (width < 322) ? '5.5vw' : 35 : 50, borderRadius: '0' }} />
                             <Box width={'0.7vw'}/>
                             <img src={nombreHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? (width < 322) ? '12vw' : 80 : 130, borderRadius: '0' }} />
@@ -157,7 +157,6 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                       },
                 }} 
                 ></Box> */}
-                <Box display='flex' flexDirection='row'>
                 {/*<Button
                     sx={{ 
                         color: '#F8F8F8',
@@ -175,10 +174,14 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                     Registrate
                 </Button>
                 <Box width='1vw'></Box>*/}
+                <Box display='fixed' flexDirection='row'>
                 {(width>450) ? <Button
                     className='iconButton'
                     sx={{ 
-                        m:'0 2vw 0 0',
+                        transition: 'top 0.7s ease-in-out',
+                        top: showAppBar ? 0 : '97vh',
+                        scale: showAppBar ? '1' : '1.1',
+                        m: showAppBar ? '0 2vw 0 0' : '0 3.5vw 0 0 ',
                         color: '#F8F8F8',
                         // background: '#E3641A',
                         background: '#25d366',
@@ -196,7 +199,12 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                 </Button> 
                 : <IconButton
                     className='iconButton delay1'
-                    sx={{ backgroundColor: '#25d366', "&.MuiButtonBase-root:hover":{bgcolor:'#25d366'}}}>
+                    
+                    sx={{transition: 'top 0.2s ease-in-out',
+                        top: showAppBar ? 0 : '97vh',
+                        scale: showAppBar ? '1' : '1.3',
+                        m: showAppBar ? '0 2vw 0 0' : '0 4vw 0 0 ', 
+                        backgroundColor: '#25d366', "&.MuiButtonBase-root:hover":{bgcolor:'#25d366'}}}>
                     <WhatsApp sx={{color: '#ffffff'}}/>
                 </IconButton> }
                 </Box>

@@ -16,7 +16,7 @@ export const Servicios1: React.FC = () => {
     const {width} = widthScreen();
 
     const first_content = (width < 380) ? 620 : 750;
-    const second_content = (height < 800) ? 800 * (20/100): 250;
+    const second_content = (height < 800) ? 800 * (20/100): 150;
 
     const { count } = countState();
 
@@ -37,8 +37,8 @@ export const Servicios1: React.FC = () => {
             <Grid container display='flex' direction='row' >
                 <Grid height={first_content} width='12%' alignItems='center' justifyContent='center' display='flex' flexDirection='column' >
                     <AnimatedTypography fontWeight='bold' color='white' fontSize='20px' >{(count<1) ? '01' : `0${count}`}</AnimatedTypography>
-                    <Box sx={{transition: 'height 0.5s ease-out'}} color='#E3641A' border={3} width='1px' height={`${16*count}%`} ></Box>
-                    <Box sx={{transition: 'height 0.5s ease-out'}}  color='white' border={1} width='1px' height={`${80-(16*count)}%`} ></Box>
+                    <Box sx={{transition: 'height 0.5s ease-out'}} color='#E3641A' border={3} width='1px' height={(count === 0) ? '16%' : `${16*count}%`} ></Box>
+                    <Box sx={{transition: 'height 0.5s ease-out'}}  color='white' border={1} width='1px' height={(count === 0) ? '64%' : `${80-(16*count)}%`} ></Box>
                     <AnimatedTypography fontWeight='bold' color='white' fontSize='20px'>05</AnimatedTypography>
                 </Grid>
 

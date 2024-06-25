@@ -3,7 +3,6 @@ import { Box, Grid, IconButton, TextField, Theme, Typography, useMediaQuery } fr
 import { widthScreen } from "../../hooks/widthScreen";
 
 import logoHayat from '../../../assets/hayat-logo-2.png';
-// import videoDemo from '../../../assets/demo.mp4';
 import logoGrupoDelValle from '../../../assets/grupo-del-valle-white.png';
 import { TikTokIcon } from "./TikTokIcon";
 
@@ -28,18 +27,19 @@ const Links = [
 
 
 const sxIconButton ={
+    marginBottom: '5%',
     bgcolor: '#303030',
     height: {
         xs: '10vw',
         sm: '6vw',
-        md: '40px',
+        md: '33px',
         lg: '3vw',
         xl: '2.5vw'
     },
     width: {
         xs: '10vw',
         sm: '6vw',
-        md: '40px',
+        md: '33px',
         lg: '3vw',
         xl: '2.5vw'
     }
@@ -48,8 +48,8 @@ const sxIconButton ={
 const widthSpace = {
     xs: '3vw',
     sm: '4vw',
-    md: '2vw',
-    lg: '2vw',
+    md: '1vw',
+    lg: '1.5vw',
     xl: '2.5vw'
 };
 
@@ -88,7 +88,6 @@ export const Footer = () => {
             direction= {isSmallScreen ? 'column' : 'row'} 
             justifyContent='space-between' 
             p={(isSmallScreen) ? 'none' :'5px 0 0 10px'}
-            // border={1}
             alignItems='space-between' 
             className='animate__animated animate__fadeIn animate__faster'
         >
@@ -127,8 +126,7 @@ export const Footer = () => {
                                     </IconButton>)
                             }}
                             type="email"
-                            label="Ingresa tu e-mail"
-                            
+                            label={ (width < 920) ? 'E-mail' :"Ingresa tu e-mail"}
                             variant="outlined"
                             sx={{
                                 margin: '0 10px 10px 0',
@@ -156,7 +154,7 @@ export const Footer = () => {
                     </Box>
                     <Typography margin={'0 0 15px 0'} style={{color: '#A8A8A8'}}>Conectate con nosotros</Typography>
                     <Grid container direction= 'row' justifyContent='start'>
-                        <IconButton onClick={Links[0]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #25f4ee, #000000, #fe2c55)', color: '#383838'}}} > <TikTokIcon size={'15px'} color={'#A8A8A8'} /> </IconButton>
+                        <IconButton onClick={Links[0]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #25f4ee, #000000, #fe2c55)', color: '#383838'}}} > <TikTokIcon size='15px' color={'#A8A8A8'} /> </IconButton>
                         <Box width={widthSpace}></Box>
                         <IconButton onClick={Links[1]} sx={{...sxIconButton, ':hover': {background:'linear-gradient(to right bottom, #0866FF, #000000, #0866FF)', color: '#0866FF'}}} > <Facebook style={{ color: '#A8A8A8'}}/> </IconButton>
                         <Box width={widthSpace}></Box>
@@ -213,7 +211,6 @@ export const Footer = () => {
                         <iframe width={isSmallScreen ? '70%' : '100%'} height={isSmallScreen ? '500px' : '350px'} style={{ border:1, maxWidth: isSmallScreen ? '60%' : '90%' }}
                                 src="https://youtube.com/embed/sapiVleNp68?si=sEoY2KQPDGtdiA3g" 
                                 title="Un mar de experiencias"
-                                
                         >Tu navegador no soporta el elemento de video 😞.</iframe>
                     </Box>
                     <Typography color='#B8B8B8' padding='20px 30px' sx={{ fontWeight: 'bold' }}>Mira nuestros últimos videos del proyecto</Typography>

@@ -3,7 +3,7 @@ import { CardsInfo } from "../components/Cards";
 
 import { widthScreen } from "../../../../hooks/widthScreen";
 
-export const CardsContacto2: React.FC = () => {
+export const CardsContacto3: React.FC = () => {
 
     const { width } = widthScreen();
 

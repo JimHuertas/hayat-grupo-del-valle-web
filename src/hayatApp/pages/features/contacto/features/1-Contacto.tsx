@@ -1,23 +1,24 @@
 import { Box, Button, CircularProgress, Grid, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
+import { Alert } from "./components/CustomAlert";
+import { InfoFooter } from "../../../../ui/components/InfoFooter";
+import { CustomTextField } from "../../../../ui/components/CustomTextField";
+import { AnimatedTypography } from "../../shared/AnimatedTypography";
 
 import { widthScreen } from "../../../../hooks/widthScreen";
 import { heightScreen } from "../../../../hooks/heightScreen";
+import { useForm } from "../../../../hooks/useForm";
+import { alertSwap } from "./hooks/alertSwap";
 
 import girlBeach from "../../../../../assets/girl-beach.png";
 import hayatLogo from '../../../../../assets/hayat-espera.gif';
 
-import { InfoFooter } from "../../../../ui/components/InfoFooter";
-import { CustomTextField } from "../../../../ui/components/CustomTextField";
-import { useForm } from "../../../../hooks/useForm";
 import { validarNumero } from "../../../../helpers/numberValitador";
-import { alertSwap } from "./hooks/alertSwap";
-import { Alert } from "./components/CustomAlert";
-import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../../../../store";
 import { SendMailStatus } from "../../../../service/config";
 import { startSendingMail } from "../../../../../store/mail";
-import { AnimatedTypography } from "../../shared/AnimatedTypography";
 
 
 const formValidations: FormValidation = {
@@ -124,7 +125,7 @@ export const Contacto1 = () => {
                     md: '20px',
                     lg: '24px',
                     xl: '24px'
-                }}>Te contactaremos y daremos información exclusiva para que estés al tanto de todo</AnimatedTypography>
+                }}>Contáctanos y se uno de los primeros en obtener tu membresía a este exclusivo CLUB a precio de introducción </AnimatedTypography>
 
                 {(width < 480) 
                     ? <Box height={'auto'}  width={'100%'}  display='flex' alignContent={'center'} justifyContent={'center'}  alignItems={'center'} justifyItems={'center'}>
@@ -230,25 +231,17 @@ export const Contacto1 = () => {
                                 {(formSubmitted && selectedItem === '') ? <Typography p='0 0 0 10px' color='red' fontSize='11px' >Seleccione un departamento</Typography> : null}
                                 <Underline />
                             </Grid> */}
-                            
-                            <Button sx={{ display:'flex', justifyContent:'end', zIndex:1,  margin: (width < 760) ? {
-                                        xs: '25px 0 0 20px',
-                                        sm: '25px 0 0 12vw',
-                                    } : {
-                                    xs: '44vw 0 0 0',
-                                    sm: '25px 0 0 6vw',
-                                    md: '25px 0 0 9vw',
-                                    lg: '25px 0 0 12vw',
-                                    xl: '25px 0 0 15vw'
-                                }, border:3, padding:'10px 40px', color:'black',  borderColor: 'rgba(233,100,23, 0.6)'}} 
-                                disabled={(mailState.status === SendMailStatus.Checking) ? true : false}
-                                variant="text" 
-                                color="inherit"
-                                type='submit'
-                            >
-                                <Typography color='rgba(233,100,2, 0.6)' fontWeight='bold' fontFamily={'Montserrat'}>Enviar</Typography>
-                                { (mailState.status === SendMailStatus.Checking) ? <CircularProgress size={14} sx={{ margin:'0 0 0 3px', color: 'green'}} /> : null}
-                            </Button>
+                            <Box pt='15%' width='100%' display='flex' justifyContent='center'>
+                                <Button sx={{ display:'flex', justifyContent:'end', zIndex:1, border:3, padding:'10px 40px', color:'black',  borderColor: 'rgba(233,100,23, 0.6)'}} 
+                                    disabled={(mailState.status === SendMailStatus.Checking) ? true : false}
+                                    variant="text" 
+                                    color="inherit"
+                                    type='submit'
+                                >
+                                    <Typography color='rgba(233,100,2, 0.6)' fontWeight='bold' fontFamily={'Montserrat'}>Enviar</Typography>
+                                    { (mailState.status === SendMailStatus.Checking) ? <CircularProgress size={14} sx={{ margin:'0 0 0 3px', color: 'green'}} /> : null}
+                                </Button>
+                            </Box>
                             {alert && (
                                 <Alert
                                     title= {(mailState.severity === 'error') 
