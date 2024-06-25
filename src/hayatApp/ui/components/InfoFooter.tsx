@@ -1,9 +1,6 @@
 import { FacebookRounded, Instagram, YouTube, PlayArrowRounded } from "@mui/icons-material";
 import { Box, Grid, IconButton, Typography } from "@mui/material";
 
-import comida from '../../../assets/comida-hayat.jpg';
-import showEspeciales from '../../../assets/show-especiales.jpg';
-
 import { widthScreen } from "../../hooks/widthScreen";
 
 interface InfoFooterProps {
@@ -92,16 +89,19 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
                 }}
                 
                 display='flex' color='white' justifyContent='center' border={3} borderRadius='30px' width='50px' height='50px' >
-                    <IconButton> <PlayArrowRounded 
-                    sx={{
-                        color:'white',
-                        fontSize: '150%',
-                        '&:hover': {
-                        cursor: 'pointer',
-                        color: 'primary.light',
-                        transform: 'scale(1.3)',
-                        transition: 'all 0.3s ease-in-out',
-                    },}}/> </IconButton>
+                    <IconButton> 
+                        <PlayArrowRounded 
+                            sx={{
+                                color:'white',
+                                fontSize: '150%',
+                                '&:hover': {
+                                    cursor: 'pointer',
+                                    color: 'primary.light',
+                                    transform: 'scale(1.3)',
+                                    transition: 'all 0.3s ease-in-out',
+                                }
+                            }}/> 
+                    </IconButton>
                 </Box>
                 <Typography color='white' padding={ (width < 733) ? '6px 0 0 0'  : '0 0 0 10px'} fontSize={(width<504) ? '3vw' : '120%'} fontWeight='bold'>EXPLORAR</Typography>
             </Box>
@@ -118,14 +118,14 @@ const SmallSizeScreenContent:React.FC<ScreenContentProps> = ({width, sizeContent
     return (
     <Grid container padding='0 5px' height={sizeContent} alignContent='center' justifyContent={(width < 424) ? 'center' : 'space-between'} direction={(width < 430) ? 'column' : 'column'} >
          <Box height={(width < 430) ? '40%': '100%'} width={(width < 430) ? '100%': '50%'}flexDirection='column' display='flex' alignItems='center' justifyContent='center' >
-            <Box component='img' overflow='hidden' src={showEspeciales} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%'}} />
+            <Box component='img' overflow='hidden' src='https://cdn.clubhayat.com/show-especiales.jpg' alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%'}} />
             <Typography textAlign='center' fontSize={(width < 424) ? '9px' : '13px'} color='white' fontWeight='bold' > SHOW ESPECIALES </Typography>
             {(width < 640) 
                 ? null 
                 : <Typography textAlign='center' fontSize='13px' color='white'> No te pierdas de ...</Typography>}
          </Box>
          <Box height={(width < 430) ? '40%': '100%'} width={(width < 430) ? '100%': '50%'}textAlign='center' flexDirection='column' display='flex' alignItems='center' justifyContent='center'>
-            <Box component='img' overflow='hidden' src={comida} alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%' }} />
+            <Box component='img' overflow='hidden' src='https://cdn.clubhayat.com/comida-hayat.jpg' alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%' }} />
             <Typography textAlign='center' fontSize={(width < 424) ? '9px' : '13px'}color='white' fontWeight='bold'> COMIDAS Y BEBIDAS </Typography>
             {(width < 640) 
                 ? null 
@@ -140,7 +140,7 @@ const HighSizeScreenContent:React.FC<ScreenContentProps>  = ({sizeContent}) => {
    return (
    <Grid container padding='0 20px' alignContent='center' height={sizeContent} justifyContent='space-between' direction='row' >
         <Box component='img' height={{md: '50%', lg: '50%', xl: '50%'}} width={{md: '24%', lg: '20%', xl: '17%'}}  
-            overflow='hidden' src={showEspeciales} alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
+            overflow='hidden' src='https://cdn.clubhayat.com/show-especiales.jpg' alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
         <Box alignContent='center' justifyContent='center' width='24%' >
             <Typography fontSize={{
                 md: '13px',
@@ -154,7 +154,7 @@ const HighSizeScreenContent:React.FC<ScreenContentProps>  = ({sizeContent}) => {
             }} color='white'> No te pierdas de ...</Typography>
         </Box>
         <Box component='img' height={{md: '50%', lg: '50%', xl: '50%'}} width={{md: '24%', lg: '20%', xl: '17%'}} 
-        overflow='hidden' src={comida} alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
+        overflow='hidden' src='https://cdn.clubhayat.com/comida-hayat.jpg' alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
         <Box alignContent='center' justifyContent='center' width='24%'height='auto' >
             <Typography fontSize={{
                 md: '13px',

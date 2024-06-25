@@ -78,10 +78,10 @@
 
   @media (min-height: 800px) {
     .slider-cards::after{
-      top: 1130px;
+      top: 1030px;
     }
     .slider-cards::before{
-      top: 1130px;
+      top: 1030px;
     }
   }
 

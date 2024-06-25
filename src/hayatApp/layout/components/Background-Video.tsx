@@ -18,7 +18,7 @@ export const BackgroundVideo:React.FC<BackgroundVideoProps> = ({videoSrc}) => {
 
     return (
     <Box className='video-background-container'
-      style={{ backgroundImage: `url(${bgpreview})`, height: '1090px'}}
+      style={{ backgroundImage: `url('${bgpreview}')`, height: '1090px'}}
     >
       <video  className={`video-background ${isVideoLoaded ? 'loaded' : ''}`} autoPlay loop muted
         onCanPlayThrough={handleVideoLoaded}

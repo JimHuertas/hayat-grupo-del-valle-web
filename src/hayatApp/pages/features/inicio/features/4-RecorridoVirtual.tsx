@@ -4,14 +4,14 @@ import { widthScreen } from "../../../../hooks/widthScreen";
 
 import virtual3d from '../../../../../assets/fondo-3d-render.jpg'; 
 
-export const RecorridoVirtual3: React.FC = () => {
+export const RecorridoVirtual4: React.FC = () => {
 
     const {width} = widthScreen();
 
     return (
         <Box 
             sx={{ 
-                backgroundImage: `url(${virtual3d})`,
+                backgroundImage: `url('https://cdn.clubhayat.com/fondo-3d-render.jpg')`,
                 backgroundPosition:'center',
                 backgroundSize:'cover',
                 padding: 'none',

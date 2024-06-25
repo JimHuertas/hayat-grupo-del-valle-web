@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 
 import { InitPage1 } from './features/1-InitPage';
-import { CardsContacto2 } from './features/2-CardsContacto';
-import { RecorridoVirtual3 } from './features/3-RecorridoVirtual';
+import { CardsContacto3 } from './features/3-CardsContacto';
+import { RecorridoVirtual4 } from './features/4-RecorridoVirtual';
 import { HayatAppLayout } from '../../../layout/HayatAppLayout';
 import { loadingScreenHook } from '../../../hooks/loadingWait';
 import { LoadingScreen } from '../../../ui/components/LoadingScreen';
@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { RootState, useAppDispatch } from '../../../../store';
 import { useSelector } from 'react-redux';
 import { changeIndex } from '../../../../store/navbar/navBatSlice';
+import { CardsInfo2 } from './features/2-CardsInfo';
 
 export const InicioPage = () => {
   const { isLoading } = loadingScreenHook();
@@ -31,8 +32,9 @@ export const InicioPage = () => {
             className='animate__animated animate__fadeIn animate__faster'
         >
             <InitPage1 />
-            <CardsContacto2/>
-            <RecorridoVirtual3/>
+            <CardsInfo2/>
+            <CardsContacto3/>
+            <RecorridoVirtual4/>
         </Box>
         </HayatAppLayout>
 

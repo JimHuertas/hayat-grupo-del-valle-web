@@ -25,7 +25,7 @@ const CardOne:React.FC<CardProps> = ({img, title, content, onClick}) => {
     <div style={{ padding: (width < 550) ? ' 0 10px 0 10px'  : '0 15px'}} className="slide">
       <Box sx={{ ml:'6%', objectFit: 'cover', top: (width< 550) ? '40px' : '5%', position: "absolute",zIndex:1 }} component='img' width={'38%'}  height={(width < 550) ? '80%' : '90%'} overflow='auto' src={img} display='block' ></Box>
       <Box sx={{position:'relative'}} padding={{
-            xs: '0 3% 0 50%',
+            xs: '10px 3% 0 50%',
             sm: '0 3% 0 48%',
             md: '0 3% 0 48%',
             lg: '0 3% 0 48%',
@@ -49,7 +49,8 @@ const CardOne:React.FC<CardProps> = ({img, title, content, onClick}) => {
             xl: '14px'
         }}}> {content}
         </Typography>
-        <CustomRoundedButton  background="#007EB9" className="" onClick={onClick}> <Typography margin={{
+        <CustomRoundedButton  
+          background="#007EB9" className="" onClick={onClick}> <Typography margin={{
             xs: '0 0px',
             sm: '0 16px',
             md: '0 17px',

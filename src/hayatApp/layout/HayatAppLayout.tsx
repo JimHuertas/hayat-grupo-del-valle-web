@@ -4,11 +4,9 @@ import { ReactNode, useRef, useState } from 'react';
 import './components/css/transitions.css';
 
 import { bg_images } from '../config/bg_options';
-import fondoImagen from '../../assets/nosotros-fondo.webp';
 
 import { BackgroundSlider } from './components/Background-Slider';
 import { BackgroundVideo } from './components/Background-Video';
-import { BackgroundImage } from './components/Background-Image';
 
 
 interface AuthLayoutProps {

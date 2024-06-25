@@ -15,7 +15,7 @@ import { widthScreen } from "../../../../hooks/widthScreen";
 function SamplePrevArrow(props: any){
   const { style, onClick } = props;
   return (
-    <IconButton disableRipple className="arrow" sx={{ left:'-25px', display: 'flex', justifyContent:'center' ,top:'25%'}} onClick={onClick} style={{ ...style, position:'absolute', zIndex:1, display: "flex", background: "transparent" }}>
+    <IconButton disableRipple className="arrow" sx={{ left:'-25px', display: 'flex', justifyContent:'center' ,top:'15%'}} onClick={onClick} style={{ ...style, position:'absolute', zIndex:1, display: "flex", background: "transparent" }}>
       <ArrowLeftIcon size="100px" color="#E4E4E4"/>
     </IconButton>
   );
@@ -25,14 +25,13 @@ function SampleNextArrow(props: any) {
 
   const { style, onClick } = props;
   return (
-    <IconButton disableRipple className="arrow" sx={{ display: 'flex', justifyContent:'center', right:'-25px' ,top:'25%'}} onClick={onClick} style={{ ...style, position:'absolute', zIndex:1, display: "flex", background: "transparent" }}>
+    <IconButton disableRipple className="arrow" sx={{ display: 'flex', justifyContent:'center', right:'-25px' ,top:'15%'}} onClick={onClick} style={{ ...style, position:'absolute', zIndex:1, display: "flex", background: "transparent" }}>
       <ArrowRightIcon size='100px' color='#E4E4E4'/>
     </IconButton>
   );
 }
 
 interface CardOneProps {
-  index:string;
   img: string;
   title: string;
   content: string;
@@ -40,7 +39,7 @@ interface CardOneProps {
   height: string;
 }
 
-const CardOne:React.FC<CardOneProps> = ({height = '170px', index, img, title, content}) => {
+const CardOne:React.FC<CardOneProps> = ({height = '170px', img, title, content}) => {
 
   const {width} = widthScreen();
 
@@ -63,13 +62,6 @@ const CardOne:React.FC<CardOneProps> = ({height = '170px', index, img, title, co
         lg: '17px',
         xl: '17px'
         } }}> {title}</Typography>
-        <Typography fontWeight='bold' padding={'0 0 0 0'} textAlign='left' fontFamily={'Montserrat'} sx={{ fontSize: {
-          xs: '16px',
-          sm: '17px',
-          md: '17px',
-          lg: '17px',
-          xl: '17px'
-          } }}> {index}</Typography>
         <Box border={1.5} color='#E3641A' margin={'0 0 5% 0'}/>
         <Typography textAlign='left' sx={{ mb: '15px', fontSize: {
           xs: '13.5px',
@@ -112,7 +104,6 @@ export const HorizontalCards: React.FC = () => {
           return (
           <CardOne
             key={index}
-            index={card.id}
             content={card.content}
             title={card.title}
             img={card.image}
