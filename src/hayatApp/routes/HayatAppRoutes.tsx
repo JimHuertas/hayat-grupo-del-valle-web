@@ -8,6 +8,10 @@ import { InicioPage } from "../pages/features/inicio/InicioPage";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../store";
 import { changeIndex } from "../../store/navbar/navBatSlice";
+import { TermsAndConditionsPage } from "../pages/extras/TermsAndConditionsPage";
+import { InformacionPage } from "../pages/extras/InformacionPage";
+import { PlanosMap } from "../pages/extras/Planos-Mapa";
+import { HayatTermsAndConditions } from "../pages/extras/HayatTermsAndConditions";
 
 
 export const HayatAppRoutes = () => {
@@ -39,6 +43,12 @@ export const HayatAppRoutes = () => {
           <Route path="/nosotros" element={ <NosotrosPage /> } />
           <Route path="/servicios" element={ <ServiciosPage /> } />
           <Route path="/reserva" element={ <ReservaPage /> } />
+          <Route path='/informacion' element={<InformacionPage/>} />
+          
+          {/* RUTAS EXTRA */}
+          <Route path="/terminos-y-condiciones" element={ <TermsAndConditionsPage /> } />
+          <Route path="/plano-hayat" element={ <PlanosMap/> }/>
+          <Route path="/hayat-terminos-y-condiciones" element={ <HayatTermsAndConditions/> } />
           <Route path='/*' element={ <Navigate to="/" /> } />
       </Routes>
     )

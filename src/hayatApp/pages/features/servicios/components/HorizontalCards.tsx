@@ -37,9 +37,10 @@ interface CardOneProps {
   content: string;
   onClick: ()=>void
   height: string;
+  position: string;
 }
 
-const CardOne:React.FC<CardOneProps> = ({height = '170px', img, title, content}) => {
+const CardOne:React.FC<CardOneProps> = ({position, height = '170px', img, title, content}) => {
 
   const {width} = widthScreen();
 
@@ -71,7 +72,7 @@ const CardOne:React.FC<CardOneProps> = ({height = '170px', img, title, content})
           xl: '12px'
           }}}> {content}
         </Typography>
-        <Box sx={{ borderRadius: '0 60px 60px 0', ml:'52%', objectFit: 'cover', top: (width< 550) ? '40px' : '20px', position: "absolute",zIndex:1 }} component='img' width={'38%'}  height={(width < 550) ? '85%' : '80%'} overflow='auto' src={img} display='block' ></Box>
+        <Box loading="lazy" sx={{display:'flex', objectPosition:{position}, borderRadius: '0 60px 60px 0', ml:'52%', objectFit: 'cover', top: (width< 550) ? '40px' : '20px', position: "absolute",zIndex:1 }} component='img' width={'38%'}  height={(width < 550) ? '85%' : '80%'} overflow='auto' src={img}></Box>
     </Box>
     </div>
   );
@@ -108,6 +109,7 @@ export const HorizontalCards: React.FC = () => {
             title={card.title}
             img={card.image}
             height={card.height}
+            position={card.position}
             onClick={()=>{}}
           />)
         })}

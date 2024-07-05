@@ -8,5 +8,6 @@ export const MenuOptions: MenuOption[] = [
     {title: 'CONTÁCTO', url: '/contacto'},
     {title: 'NOSOTROS', url: '/nosotros'},
     {title: 'SERVICIOS', url: '/servicios'},
+    {title: 'INFORMACIÓN', url: '/informacion' }
     // {title: 'RESERVA', url: '/reserva'}
 ]

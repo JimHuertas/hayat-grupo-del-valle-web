@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const HAYAT_MAIL_API = import.meta.env.VITE_AUTH_API;
+const HAYAT_MAIL_API = import.meta.env.VITE_MAIL_API;
 
 export enum UserStatus {
     Checking         = 'checking',

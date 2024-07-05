@@ -12,7 +12,7 @@ import { heightScreen } from "../../../../hooks/heightScreen";
 import { useForm } from "../../../../hooks/useForm";
 import { alertSwap } from "./hooks/alertSwap";
 
-import girlBeach from "../../../../../assets/girl-beach.png";
+import girlBeach from "../../../../../assets/girl-beach.webp";
 import hayatLogo from '../../../../../assets/hayat-espera.gif';
 
 import { validarNumero } from "../../../../helpers/numberValitador";
@@ -54,8 +54,6 @@ export const Contacto1 = () => {
         }
       }, []);
     
-
-
     //FORM DATA
     const { nombresValid, apellidosValid, correoValid, numeroValid, isFormValid, nombres, apellidos, correo, numero, onInputChange } = useForm({
         nombres: '',
@@ -109,7 +107,7 @@ export const Contacto1 = () => {
                     } : {sm: '50px',
                         md: '50px',
                         lg: '50px',
-                        xl: '60px'}} fontFamily='Montserrat' color='#E96417'  >EMPEZEMOS CON</AnimatedTypography>
+                        xl: '60px'}} fontFamily='Montserrat' color='#E96417'  >EMPECEMOS CON</AnimatedTypography>
                 </Box>
                 <AnimatedTypography fontWeight='bold' margin='0 0 0 9vw' fontSize={(width < 860) ? {
                     xs: '7vw',
@@ -125,7 +123,7 @@ export const Contacto1 = () => {
                     md: '20px',
                     lg: '24px',
                     xl: '24px'
-                }}>Contáctanos y se uno de los primeros en obtener tu membresía a este exclusivo CLUB a precio de introducción </AnimatedTypography>
+                }}>Contáctanos y se uno de los primeros en obtener tu membresía a este exclusivo CLUB a precio de lanzamiento </AnimatedTypography>
 
                 {(width < 480) 
                     ? <Box height={'auto'}  width={'100%'}  display='flex' alignContent={'center'} justifyContent={'center'}  alignItems={'center'} justifyItems={'center'}>
@@ -139,13 +137,13 @@ export const Contacto1 = () => {
                         ? first_content * (50/100) 
                         : first_content * (50/100)}>
                     { (width > 479 ) 
-                        ? <Box zIndex={1} bottom={0} left={(width < 550) ?  '-31px' : '-60px'} height='auto' width={{
-                            xs: '44vw',
-                            sm: '46vw',
-                            md: '38vw',
-                            lg: '38vw',
-                            xl: '34vw'
-                        }} maxWidth={'440px'} position='absolute' component={'img'} src={girlBeach} sx={{ objectFit: 'contain'}} />
+                        ? <Box zIndex={1} bottom={0} left={(width < 480) ?  '-31px' : '-130px'} height='auto' width={{
+                            xs: '80vw',
+                            sm: '70vw',
+                            md: '62vw',
+                            lg: '60vw',
+                            xl: '64vw'
+                        }} maxWidth={'940px'} position='absolute' component={'img'} src={girlBeach} sx={{ objectFit: 'contain'}} />
                         : null
                     }
                     <Box position='relative' bgcolor='rgba(233,100,23, 0.7)' width={(width < 480) ? '7%' : '35%'} />
@@ -167,7 +165,7 @@ export const Contacto1 = () => {
                                 />
                                 <CustomTextField key={'apellido'} sx={{ margin:'20px 0 0 0', width: (width < 480) ? '105%' : '96%'}} 
                                     placeholder="" 
-                                    label="Apellido *"
+                                    label="Apellidos *"
                                     name="apellidos"
                                     value={apellidos}
                                     onChange={onInputChange}
@@ -231,7 +229,7 @@ export const Contacto1 = () => {
                                 {(formSubmitted && selectedItem === '') ? <Typography p='0 0 0 10px' color='red' fontSize='11px' >Seleccione un departamento</Typography> : null}
                                 <Underline />
                             </Grid> */}
-                            <Box pt='15%' width='100%' display='flex' justifyContent='center'>
+                            <Box pt='8%' width='100%' display='flex' justifyContent='center'>
                                 <Button sx={{ display:'flex', justifyContent:'end', zIndex:1, border:3, padding:'10px 40px', color:'black',  borderColor: 'rgba(233,100,23, 0.6)'}} 
                                     disabled={(mailState.status === SendMailStatus.Checking) ? true : false}
                                     variant="text" 

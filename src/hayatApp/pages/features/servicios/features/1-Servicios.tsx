@@ -24,7 +24,7 @@ export const Servicios1: React.FC = () => {
 
     return (
         <Box
-            bgcolor={'rgba(38,38,38,0.3)'}
+            bgcolor={'rgba(38,38,38,0.4)'}
             overflow='hidden'
             sx={{ 
                 backgroundAttachment: 'center',
@@ -84,11 +84,11 @@ export const Servicios1: React.FC = () => {
                     <AnimatedTypography 
                         color='#F8F8F8' 
                         padding={{
-                            xs: '40px 7vw 30px 0',
-                            sm: '50px 5vw 20px 0',
-                            md: '30px 24vw 30px 0',
-                            lg: '20px 20vw 30px 0',
-                            xl: '30px 25vw 18px 0'
+                            xs: '40px 7vw 0 0',
+                            sm: '50px 5vw 0 0',
+                            md: '30px 24vw 0 0',
+                            lg: '20px 20vw 0 0',
+                            xl: '30px 25vw 0 0'
                         }} 
                         fontSize={{
                             xs: '13px',
@@ -97,9 +97,43 @@ export const Servicios1: React.FC = () => {
                             lg: '16px',
                             xl: '16px'
                         }} fontWeight='500'
-                    > Se parte de nuestro exclusivo club. ''vive un mar de emociones'', donde no podras perderte en una experiencia inolvidable.
-                    Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas cristalinas del océano. Disfruta de una variedad de comodidadesde lujo,
-                    desde exquisitos restaurantes y bares frente al mar hasta comodas cabañas y tumbonas para descansar bajo el cálido sol tropical.
+                    > Se parte de nuestro exclusivo club, ''vive un mar de experiencias'' donde no podrás perderte en una experiencia inolvidable.
+                    </AnimatedTypography>
+                    <AnimatedTypography 
+                        color='#F8F8F8' 
+                        padding={{
+                            xs: '0 7vw 0 0',
+                            sm: '0 5vw 0 0',
+                            md: '0 24vw 0 0',
+                            lg: '0 20vw 0 0',
+                            xl: '0 25vw 0 0'
+                        }} 
+                        fontSize={{
+                            xs: '13px',
+                            sm: '14px',
+                            md: '16px',
+                            lg: '16px',
+                            xl: '16px'
+                        }} fontWeight='500'
+                    > Ofrecemos un escape idílico con acceso privado a la suave arena dorada y las aguas cristalinas del océano en las playas del norte peruano.
+                    </AnimatedTypography>
+                    <AnimatedTypography 
+                        color='#F8F8F8' 
+                        padding={{
+                            xs: '0 7vw 30px 0',
+                            sm: '0 5vw 20px 0',
+                            md: '0 24vw 30px 0',
+                            lg: '0 20vw 30px 0',
+                            xl: '0 25vw 18px 0'
+                        }} 
+                        fontSize={{
+                            xs: '13px',
+                            sm: '14px',
+                            md: '16px',
+                            lg: '16px',
+                            xl: '16px'
+                        }} fontWeight='500'
+                    > Disfruta de una variedad de comodidades de lujo, desde exquisitos restaurantes y bares frente al mar hasta comodas cabañas y tumbonas para descansar bajo el cálido sol tropical.
                     </AnimatedTypography>
                     {/* <CustomRoundedButton
                         background='#E3641A'

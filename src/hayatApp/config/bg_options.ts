@@ -1,13 +1,8 @@
-import bg1 from "https://cdn.clubhayat.com/bg1.webp";
-import bg2 from "https://cdn.clubhayat.com/bg2.webp";
-import bg3 from "https://cdn.clubhayat.com/bg3.webp";
-import bg4 from "https://cdn.clubhayat.com/bg4.webp";
-import bg5 from "https://cdn.clubhayat.com/bg5.webp";
-
+import bg1 from '../../assets/bg-1.webp';
 export const bg_images=[
-  'https://cdn.clubhayat.com/bg1.webp',
-  'https://cdn.clubhayat.com/bg2.webp',
-  'https://cdn.clubhayat.com/bg3.webp',
-  'https://cdn.clubhayat.com/bg4.webp',
-  'https://cdn.clubhayat.com/bg5.webp',
+  bg1,
+  'https://cdn.clubhayat.com/bg-2.webp',
+  'https://cdn.clubhayat.com/bg-3.webp',
+  'https://cdn.clubhayat.com/bg-4.webp',
+  'https://cdn.clubhayat.com/bg-5.webp',
 ];

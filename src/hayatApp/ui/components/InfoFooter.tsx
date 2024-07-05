@@ -57,7 +57,7 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
                         }}
                         />
                 </IconButton>
-                <IconButton onClick={()=>{window.open('https://www.instagram.com/hayatperu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}} sx={{ margin:icons_separation, background: '#F8F8F8', width: icon_radius, height: icon_radius}} > 
+                <IconButton onClick={()=>{window.open('https://www.instagram.com/hayatclubpuntasal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}} sx={{ margin:icons_separation, background: '#F8F8F8', width: icon_radius, height: icon_radius}} > 
                     <Instagram 
                         sx={{
                             '&:hover': {color: 'white'},
@@ -70,11 +70,12 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
             </Box>
             <Box alignSelf='center' justifyContent='center' border={1.2} height={sizeContent * (75/100)} display='flex' color='white' />
             
-            <Box width='40vw' height={sizeContent} >
-            {(width < 900)
+            <Box width='40vw' p={(width < 600) ? '0 10%' : '0'} height={sizeContent} display={'flex'} justifyContent='center' alignItems='center' justifyItems='center' alignContent='center'>
+                <Typography color='white' textAlign={'center'} fontWeight='bold' fontSize={(width < 900) ? (width < 600) ? '3vw' : '2.5vw' : '25px'}>HAYAT CLUB PUNTA SAL</Typography>
+            {/* {(width < 900)
                 ? <SmallSizeScreenContent sizeContent={sizeContent} width={width}/>
                 : <HighSizeScreenContent  sizeContent={sizeContent} width={width}/>
-            }
+            } */}
             </Box>
             <Box alignSelf='center' justifyContent='center' border={1.2} height={sizeContent * (75/100)} display='flex' color='white' />
             <Box width='24vw' justifyContent='center' alignItems='center' display='flex' flexDirection={(width < 733) ? 'column' : 'row' } height={sizeContent}>
@@ -89,7 +90,7 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
                 }}
                 
                 display='flex' color='white' justifyContent='center' border={3} borderRadius='30px' width='50px' height='50px' >
-                    <IconButton> 
+                    <IconButton onClick={()=>{ window.open('https://youtube.com/@hayatclubpuntasal?si=sQypIKHSlGCDhSJD', '_blank') }} > 
                         <PlayArrowRounded 
                             sx={{
                                 color:'white',
@@ -110,63 +111,63 @@ export const InfoFooter: React.FC<InfoFooterProps> = ({sizeContent}) => {
     );
 }
 
-interface ScreenContentProps{
-    width: number;
-    sizeContent: number
-};
-const SmallSizeScreenContent:React.FC<ScreenContentProps> = ({width, sizeContent}) => {
-    return (
-    <Grid container padding='0 5px' height={sizeContent} alignContent='center' justifyContent={(width < 424) ? 'center' : 'space-between'} direction={(width < 430) ? 'column' : 'column'} >
-         <Box height={(width < 430) ? '40%': '100%'} width={(width < 430) ? '100%': '50%'}flexDirection='column' display='flex' alignItems='center' justifyContent='center' >
-            <Box component='img' overflow='hidden' src='https://cdn.clubhayat.com/show-especiales.jpg' alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%'}} />
-            <Typography textAlign='center' fontSize={(width < 424) ? '9px' : '13px'} color='white' fontWeight='bold' > SHOW ESPECIALES </Typography>
-            {(width < 640) 
-                ? null 
-                : <Typography textAlign='center' fontSize='13px' color='white'> No te pierdas de ...</Typography>}
-         </Box>
-         <Box height={(width < 430) ? '40%': '100%'} width={(width < 430) ? '100%': '50%'}textAlign='center' flexDirection='column' display='flex' alignItems='center' justifyContent='center'>
-            <Box component='img' overflow='hidden' src='https://cdn.clubhayat.com/comida-hayat.jpg' alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%' }} />
-            <Typography textAlign='center' fontSize={(width < 424) ? '9px' : '13px'}color='white' fontWeight='bold'> COMIDAS Y BEBIDAS </Typography>
-            {(width < 640) 
-                ? null 
-                : <Typography textAlign='center' fontSize='13px' color='white'> No te pierdas de ...</Typography>}
+// interface ScreenContentProps{
+//     width: number;
+//     sizeContent: number
+// };
+// const SmallSizeScreenContent:React.FC<ScreenContentProps> = ({width, sizeContent}) => {
+//     return (
+//     <Grid container padding='0 5px' height={sizeContent} alignContent='center' justifyContent={(width < 424) ? 'center' : 'space-between'} direction={(width < 430) ? 'column' : 'column'} >
+//          <Box height={(width < 430) ? '40%': '100%'} width={(width < 430) ? '100%': '50%'}flexDirection='column' display='flex' alignItems='center' justifyContent='center' >
+//             <Box component='img' overflow='hidden' src='https://cdn.clubhayat.com/show-especiales.jpg' alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%'}} />
+//             <Typography textAlign='center' fontSize={(width < 424) ? '9px' : '13px'} color='white' fontWeight='bold' > SHOW ESPECIALES </Typography>
+//             {(width < 640) 
+//                 ? null 
+//                 : <Typography textAlign='center' fontSize='13px' color='white'> No te pierdas de ...</Typography>}
+//          </Box>
+//          <Box height={(width < 430) ? '40%': '100%'} width={(width < 430) ? '100%': '50%'}textAlign='center' flexDirection='column' display='flex' alignItems='center' justifyContent='center'>
+//             <Box component='img' overflow='hidden' src='https://cdn.clubhayat.com/comida-hayat.jpg' alt="Logo" style={{ textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s', width: (width < 424) ? '45%' : '50%' }} />
+//             <Typography textAlign='center' fontSize={(width < 424) ? '9px' : '13px'}color='white' fontWeight='bold'> COMIDAS Y BEBIDAS </Typography>
+//             {(width < 640) 
+//                 ? null 
+//                 : <Typography textAlign='center' fontSize='13px' color='white'> No te pierdas de ...</Typography>}
             
-         </Box>
-     </Grid>
-     );
- }
+//          </Box>
+//      </Grid>
+//      );
+//  }
 
-const HighSizeScreenContent:React.FC<ScreenContentProps>  = ({sizeContent}) => {
-   return (
-   <Grid container padding='0 20px' alignContent='center' height={sizeContent} justifyContent='space-between' direction='row' >
-        <Box component='img' height={{md: '50%', lg: '50%', xl: '50%'}} width={{md: '24%', lg: '20%', xl: '17%'}}  
-            overflow='hidden' src='https://cdn.clubhayat.com/show-especiales.jpg' alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
-        <Box alignContent='center' justifyContent='center' width='24%' >
-            <Typography fontSize={{
-                md: '13px',
-                lg: '15px',
-                xl: '15px'
-            }} color='white' fontWeight='bold' > SHOW ESPECIALES </Typography>
-            <Typography fontSize={{
-                md: '13px',
-                lg: '15px',
-                xl: '15px'
-            }} color='white'> No te pierdas de ...</Typography>
-        </Box>
-        <Box component='img' height={{md: '50%', lg: '50%', xl: '50%'}} width={{md: '24%', lg: '20%', xl: '17%'}} 
-        overflow='hidden' src='https://cdn.clubhayat.com/comida-hayat.jpg' alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
-        <Box alignContent='center' justifyContent='center' width='24%'height='auto' >
-            <Typography fontSize={{
-                md: '13px',
-                lg: '15px',
-                xl: '15px'
-            }} color='white' fontWeight='bold'> COMIDAS Y BEBIDAS </Typography>
-            <Typography fontSize={{
-                md: '13px',
-                lg: '15px',
-                xl: '15px'
-            }} color='white'> No te pierdas de ...</Typography>
-        </Box>
-    </Grid>
-    );
-}
+// const HighSizeScreenContent:React.FC<ScreenContentProps>  = ({sizeContent}) => {
+//    return (
+//    <Grid container padding='0 20px' alignContent='center' height={sizeContent} justifyContent='space-between' direction='row' >
+//         <Box component='img' height={{md: '50%', lg: '50%', xl: '50%'}} width={{md: '24%', lg: '20%', xl: '17%'}}  
+//             overflow='hidden' src='https://cdn.clubhayat.com/show-especiales.jpg' alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
+//         <Box alignContent='center' justifyContent='center' width='24%' >
+//             <Typography fontSize={{
+//                 md: '13px',
+//                 lg: '15px',
+//                 xl: '15px'
+//             }} color='white' fontWeight='bold' > SHOW ESPECIALES </Typography>
+//             <Typography fontSize={{
+//                 md: '13px',
+//                 lg: '15px',
+//                 xl: '15px'
+//             }} color='white'> No te pierdas de ...</Typography>
+//         </Box>
+//         <Box component='img' height={{md: '50%', lg: '50%', xl: '50%'}} width={{md: '24%', lg: '20%', xl: '17%'}} 
+//         overflow='hidden' src='https://cdn.clubhayat.com/comida-hayat.jpg' alt="Logo" style={{objectFit: 'cover', textAlign:'center', boxShadow: 'none', margin:'none', transition: 'box-shadow 3s'}} />
+//         <Box alignContent='center' justifyContent='center' width='24%'height='auto' >
+//             <Typography fontSize={{
+//                 md: '13px',
+//                 lg: '15px',
+//                 xl: '15px'
+//             }} color='white' fontWeight='bold'> COMIDAS Y BEBIDAS </Typography>
+//             <Typography fontSize={{
+//                 md: '13px',
+//                 lg: '15px',
+//                 xl: '15px'
+//             }} color='white'> No te pierdas de ...</Typography>
+//         </Box>
+//     </Grid>
+//     );
+// }

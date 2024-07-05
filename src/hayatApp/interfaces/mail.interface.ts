@@ -4,3 +4,7 @@ interface MailData{
     correo: string;
     numero: number;
 }
+
+interface MailDataNovedades{
+    correo: string;
+}

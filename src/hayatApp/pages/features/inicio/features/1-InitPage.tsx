@@ -15,7 +15,7 @@ export const InitPage1: React.FC = () => {
     const {height} = heightScreen();
     const {width} = widthScreen();
 
-    const first_content = (width < 380) ? 620 : 750;
+    const first_content = (width < 870) ? 580 : 690;
     const second_content = (height < 800) ? 170 : 140;
 
     // const { count } = countState();
@@ -24,7 +24,7 @@ export const InitPage1: React.FC = () => {
 
     return (
         <Box
-            bgcolor={'rgba(38,38,38,0.3)'}
+            bgcolor={'rgba(38,38,38,0.4)'}
             sx={{ 
                 backgroundAttachment: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -43,7 +43,7 @@ export const InitPage1: React.FC = () => {
 
                 <Box height={first_content} width='90%' p='0 0 0 8%' >
                     <AnimatedTypography
-                        fontFamily='Archivo Black' 
+                        fontFamily='Archivo Black, sans-serif' 
                         padding={{
                             xs: '80px 6vw 0 0',
                             sm: '150px 5vw 0 0',
@@ -151,7 +151,7 @@ export const InitPage1: React.FC = () => {
                         className=""
                     > <TextImage fontSize="20px" text="Registrate" backgroundPosition="bottom" urlImage={background1} />
                     </CustomRoundedButton> */}
-                    <IconButton  sx={{ height:'50px', width:'280px', borderRadius:'30px' }}  onClick={()=>{navigate('/contacto#form-hayat')}}>
+                    <IconButton aria-label="¡CONSULTA AHORA!" sx={{ height:'50px', width:'280px', borderRadius:'30px' }}  onClick={()=>{navigate('/contacto#form-hayat')}}>
                         <ConsultaAhoraSvg style={{ width: 300, height: (width < 550) ? 35 : 40 }} />
                     </IconButton>
                 </Box>

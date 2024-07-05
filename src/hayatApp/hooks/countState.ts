@@ -7,7 +7,7 @@ export const countState = ()=>{
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCount((prevCount) => (prevCount === 4) ? 0 : prevCount + 1);
+            setCount((prevCount) => (prevCount === 5) ? 0 : prevCount + 1);
         }, 5500); 
         return () => clearInterval(interval);
     }, []);

@@ -18,7 +18,7 @@ export const infoCards:InfoCardType[] = [
         description: 'Hotel en primera línea de playa, con magníficas vistas al Oceano Pacifico en Punta Sal.'
     },{
         icon: GatronomySVG,
-        title: 'Gatronomia',
+        title: 'Gastronomía',
         description: 'Propuesta culinaria basada en la cocina internacional y local.'
     },{
         icon: FamilySVG,

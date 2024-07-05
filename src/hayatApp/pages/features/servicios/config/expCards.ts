@@ -3,38 +3,45 @@ export interface ExperienciasCardType{
     rate: string;
     image: string;
     title: string;
+    position: string;
 }
 
 
-export const expCards: ExperienciasCardType[] = [
+export let expCards: ExperienciasCardType[] = [
     {
         title: 'Zona de juegos acuaticos',
-        image: 'https://cdn.clubhayat.com/zona-parque-acuatico.jpeg',
-        rate: '4.5'
+        image: 'https://cdn.clubhayat.com/zona-parque-acuatico.webp',
+        rate: '4.5',
+        position: 'center'
     },
     {
         title: 'Vista general Hayat',
-        image: 'https://cdn.clubhayat.com/zona-vista-hayat.jpg',
-        rate: '4.5'
+        image: 'https://cdn.clubhayat.com/zona-general-hayat.webp',
+        rate: '4.5',
+        position: 'center'
     },
     {
         title: 'Restaurant y zona de descanso frente al mar',
-        image: 'https://cdn.clubhayat.com/zona-descanso.jpg',
-        rate: '4.7'
+        image: 'https://cdn.clubhayat.com/zona-descanso.webp',
+        rate: '4.7',
+        position: 'center'
     },
     {
         title: 'Zona de spa y gymnasio',
-        image: 'https://cdn.clubhayat.com/gym-spa.jpg',
-        rate: '4.3'
-    },
-    {
-        title: 'Zona de hotel',
-        image: 'https://cdn.clubhayat.com/zona-hotel.jpg',
-        rate: '5'
+        image: 'https://cdn.clubhayat.com/zona-spa.webp',
+        rate: '4.3',
+        position: 'left'
     },
     {
         title: 'Zona de eventos',
-        image: 'https://cdn.clubhayat.com/zona-eventosjpg.jpeg',
-        rate: '5'
+        image: 'https://cdn.clubhayat.com/zona-conciertos.webp',
+        rate: '5',
+        position: 'center'
+    },
+    {   
+        title: 'Zona hotelera',
+        image: 'https://cdn.clubhayat.com/zona-hoteles.webp',
+        rate: '5',
+        position: 'center'
     },
 ]

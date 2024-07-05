@@ -11,7 +11,7 @@ export const ServiciosPage = () => {
 
   return ((isLoading) 
   ? <LoadingScreen/> 
-  :  <HayatAppLayout>
+  :  <HayatAppLayout disablePanel={true} >
     <Grid container 
         overflow='hidden'
         direction='row' 

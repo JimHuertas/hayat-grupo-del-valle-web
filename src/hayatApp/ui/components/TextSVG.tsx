@@ -23,7 +23,7 @@ const ConsultaAhoraSvg: React.FC<SvgIconProps> = (props) => {
             <mask id="text-mask">
             <rect width="100%" height="100%" fill="white" />
             <text
-                className={isVisible ? 'typography-enter' : ''}
+                className={ isVisible ? 'typography-enter' : ''}
                 x="50%"
                 y="50%"
                 fontFamily='Montserrat'

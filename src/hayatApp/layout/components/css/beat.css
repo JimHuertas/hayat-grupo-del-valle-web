@@ -16,9 +16,15 @@
     transform: scale(1);
   }
 }
+.iconButton .transparent{
+  background-color: transparent;
+}
+
+.iconButton .color{
+  background-color: #25d366;
+}
 
 .iconButton {
-  background-color: #25d366;
   animation: heartbeat 16s infinite;
   /* animation-duration: 3s; */
   /* transition-duration: 10s; */
@@ -26,7 +32,7 @@
 }
 
 .iconButton:hover {
-  background-color: #25d366;
+  /* background-color: #25d366; */
   cursor: pointer;
   /* transform: scale(1.2); */
   

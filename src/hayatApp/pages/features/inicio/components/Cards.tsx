@@ -14,17 +14,19 @@ interface CardProps {
   img: string;
   title: string;
   content: string;
+  position: string;
+  smallPosition: string;
   onClick: ()=>void
 }
 
-const CardOne:React.FC<CardProps> = ({img, title, content, onClick}) => {
+const CardOne:React.FC<CardProps> = ({smallPosition, position, img, title, content, onClick}) => {
 
   const {width} = widthScreen();
 
   return (
     <div style={{ padding: (width < 550) ? ' 0 10px 0 10px'  : '0 15px'}} className="slide">
-      <Box sx={{ ml:'6%', objectFit: 'cover', top: (width< 550) ? '40px' : '5%', position: "absolute",zIndex:1 }} component='img' width={'38%'}  height={(width < 550) ? '80%' : '90%'} overflow='auto' src={img} display='block' ></Box>
-      <Box sx={{position:'relative'}} padding={{
+      <Box loading="lazy" sx={{ ml:'6%', objectPosition: width < 600 ? smallPosition : position, objectFit: 'cover', top: (width< 550) ? '40px' : '2%', position: "absolute", zIndex:1 }} component='img' width={'38%'} height={(width < 550) ? '80%' : '90%'} overflow='auto' src={img} display='flex' ></Box>
+      <Box sx={{ display:'flex', flexDirection:'column', position:'relative'}} padding={{
             xs: '10px 3% 0 50%',
             sm: '0 3% 0 48%',
             md: '0 3% 0 48%',
@@ -49,20 +51,23 @@ const CardOne:React.FC<CardProps> = ({img, title, content, onClick}) => {
             xl: '14px'
         }}}> {content}
         </Typography>
-        <CustomRoundedButton  
+        <CustomRoundedButton 
+          width={width} 
           background="#007EB9" className="" onClick={onClick}> <Typography margin={{
             xs: '0 0px',
-            sm: '0 16px',
-            md: '0 17px',
-            lg: '0 18px',
+            sm: '0 10px',
+            md: '0 10px',
+            lg: '0 10px',
             xl: '0 40px'
-          }} color='white' fontSize={{
+          }} color='white' 
+          
+          fontSize={{
             xs: '12px',
-            sm: '20px',
+            sm: '14px',
             md: '20px',
             lg: '20px',
-            xl: '20px'}
-        } fontWeight={'bold'} >DISFRUTA</Typography>   </CustomRoundedButton>
+            xl: '20px'}} 
+          fontWeight={'bold'} >DESCUBRE</Typography>   </CustomRoundedButton>
     </Box>
     </div>
   );
@@ -71,7 +76,6 @@ const CardOne:React.FC<CardProps> = ({img, title, content, onClick}) => {
 export const CardsInfo: React.FC = () => {
 
   const {width} = widthScreen();
-
   const navigate = useNavigate();
 
   const settings = {
@@ -80,7 +84,7 @@ export const CardsInfo: React.FC = () => {
     dots: true,
     infinite: true,
     centerMode: true,
-    autoplay:true,
+    autoplay: (width < 800) ? false : true,
     autoplaySpeed: 5000,
     centerPadding: (width < 950 ) ? '4%' : "5%",
     slidesToShow: (width < 1200) ? 1 : 2,
@@ -99,6 +103,8 @@ export const CardsInfo: React.FC = () => {
             content={card.content}
             title={card.title}
             img={card.image}
+            position={card.position}
+            smallPosition={card.smallPosition}
             onClick={()=>{navigate('/contacto#form-hayat')}}
           />)
         })}

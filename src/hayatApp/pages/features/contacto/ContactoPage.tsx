@@ -21,9 +21,10 @@ export const ContactoPage = () => {
 
   return ((isLoading) 
   ? <LoadingScreen/> 
-  :  <HayatAppLayout>
+  :  <HayatAppLayout disablePanel={true} >
     <Box
         display='flex' 
+        bgcolor='rgba(35,35,35,0.1)'
         flexDirection='column'
         className='animate__animated animate__fadeIn animate__faster'
     >

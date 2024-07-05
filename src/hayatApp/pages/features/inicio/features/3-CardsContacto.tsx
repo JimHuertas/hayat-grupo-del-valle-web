@@ -1,11 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { CardsInfo } from "../components/Cards";
 
-import { widthScreen } from "../../../../hooks/widthScreen";
-
 export const CardsContacto3: React.FC = () => {
-
-    const { width } = widthScreen();
 
     return (
     <Box 
@@ -17,7 +13,7 @@ export const CardsContacto3: React.FC = () => {
             height: '650px',
         }}
     >
-        <Box height='15%' padding={'20px 2% 0 5%'} alignItems={'center'} justifyContent='center' display='flex' flexDirection='row'>
+        <Box height='15%' padding={'20px 2% 0 5%'} alignItems={'center'} justifyContent='start' display='flex' flexDirection='row'>
             <Box border={1} margin='0 20px 0 0' color={'red'} height='0' width={'100px'} />
             <Typography margin='0 5% 0 0' fontSize={{
                 xs: '15px',
@@ -25,9 +21,9 @@ export const CardsContacto3: React.FC = () => {
                 md: '20px',
                 lg: '22px',
                 xl: '24px'
-            }} fontWeight={'bold'}> UNA ESCAPADA AL PARAÍSO </Typography>
+            }} fontWeight={'bold'}> MAR DE EXPERIENCIAS </Typography>
             
-            {(width < 380) 
+            {/* {(width < 380) 
             ? <Typography fontSize={{
                 xs: '11px',
                 sm: '14px',
@@ -42,7 +38,7 @@ export const CardsContacto3: React.FC = () => {
                 lg: '18px',
                 xl: '18px'
               }} fontWeight={500}> Tendrás inumerables actividades de las cuales podrías disfrutar a los largo de tu estadía con nosotros </Typography>
-            }
+            } */}
 
         </Box>
         <Box height={'85%'} display={'flex'} flexDirection={'row'} alignItems='center' >

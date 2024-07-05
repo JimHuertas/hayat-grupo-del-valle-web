@@ -2,10 +2,7 @@ import { Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Too
 import { useRef, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-// import { useSelector } from 'react-redux';
-// import { RootState } from '../../../../store';
-
-import logoHayat from '../../../assets/hayat-logo-2.png';
+import logoHayat from '../../../assets/hayat-logo-2.webp';
 
 interface SideBarProps {
     drawerWidth: number;
@@ -14,7 +11,6 @@ interface SideBarProps {
 }
 
 export const SideBar: React.FC<SideBarProps> = ({ drawerWidth = 240, isOpen, handleSidebarToggle}) => {
-    // const { fullName } = useSelector( (state: RootState) => state.auth );
     const [_, setWidthScreen] = useState(window.innerWidth);
     
     const sidebarRef = useRef<HTMLDivElement>(null);
@@ -88,12 +84,11 @@ export const SideBar: React.FC<SideBarProps> = ({ drawerWidth = 240, isOpen, han
                             <ListItemText primary="Servicios" />
                         </ListItemButton>
                     </ListItem>
-
-                    {/* <ListItem disablePadding>
-                        <ListItemButton component={NavLink} to="/reserva">
-                            <ListItemText primary="Reserva" />
+                    <ListItem disablePadding>
+                        <ListItemButton component={NavLink} to="/informacion">
+                            <ListItemText primary="Información" />
                         </ListItemButton>
-                    </ListItem> */}
+                    </ListItem>
                 </List>
             </Drawer>
         </Box>

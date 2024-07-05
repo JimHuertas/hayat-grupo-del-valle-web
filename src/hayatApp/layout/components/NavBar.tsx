@@ -17,8 +17,8 @@ import './css/navBar.css';
 import { selectedOption } from '../../hooks/selectedOption';
 import { widthScreen } from '../../hooks/widthScreen';
 
-import nombreHayat from '../../../assets/hayat-name.png';
-import logoHayat from '../../../assets/hayat-logo.png';
+import nombreHayat from '../../../assets/hayat-name.webp';
+import logoHayat from '../../../assets/hayat-logo.webp';
 import { RootState } from '../../../store';
 
 interface NavBarProps {
@@ -94,7 +94,7 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                 xl: '120px' 
             }} container direction='row' justifyContent='space-between' alignItems='center'>
                 <Box height='60px' justifyItems='center' display='flex' flexDirection='row' alignItems='center'>
-                    {(width < 1000)
+                    {(width < 1180)
                     ? <IconButton onClick={handleToggleSidebar} sx={{ alignContent: 'center', width: '40px', height: '40px', background: 'rgba(238,238,238,0.9)'}}> 
                         <MenuOutlined sx={{color:'#E3641A'}}  />
                       </IconButton>
@@ -104,9 +104,9 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                         xl: '200px' }} /> }
                     <Box display='flex' justifyContent='end' color={'red'} height='100%' width={
                         (width < 935) 
-                            ? (width < 400) 
-                                ? '45vw' 
-                                : showAppBar ? '50vw' : '5vw' 
+                            ? (width < 400)
+                                ? '45vw'
+                                : showAppBar ? '50vw' : '5vw'
                             : '100%'} sx={{ transition: 'width  0.7s ease-in-out' }} >
                         <Button sx={{ height:  '100%' }} disableRipple color="inherit" aria-label="menu" onClick={handleOnClickLogo}>
                             <img src={logoHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? (width < 322) ? '5.5vw' : 35 : 50, borderRadius: '0' }} />
@@ -117,15 +117,15 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                 </Box>
                {/* { (width <935) ? null : <Box border={1} width={(width < 935) ? '1px' : (width < 990) ? '1px' : '1px'} />} */}
                 <Box >
-                {width < 1000 ? null : MenuOptions.map((option, index) => (
-                    (index !== 4)
+                {width < 1180 ? null : MenuOptions.map((option, index) => (
+                    (index !== 5)
                     ? <CustomButton
                         key={index} 
                         className={`button ${indexNav === index ? 'selected' : ''}`}
                         onClick={() => {
                             handleButtonClick(index)
-                        }} >
-                        <Typography color="#F8F8F8" fontSize= 'clamp(16px, 1vw, 20px)' fontWeight="fontWeightBold" bgcolor={'transparent'} >{option.title}</Typography>
+                        }}>
+                        <Typography color="#F8F8F8" fontSize= 'clamp(13px, 1vw, 18px)' fontWeight="fontWeightBold" bgcolor={'transparent'} >{option.title}</Typography>
                       </CustomButton>
                     : <CustomRoundedButton
                         background='#F8F8F8'
@@ -176,12 +176,12 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                 <Box width='1vw'></Box>*/}
                 <Box display='fixed' flexDirection='row'>
                 {(width>450) ? <Button
-                    className='iconButton'
+                    className='iconButton transparent'
                     sx={{ 
-                        transition: 'top 0.7s ease-in-out',
-                        top: showAppBar ? 0 : '97vh',
-                        scale: showAppBar ? '1' : '1.1',
-                        m: showAppBar ? '0 2vw 0 0' : '0 3.5vw 0 0 ',
+                        // transition: 'top 0.7s ease-in-out',
+                        // top: showAppBar ? 0 : '97vh',
+                        // scale: showAppBar ? '1' : '1.1',
+                        m: '0 3.5vw 0 0 ',
                         color: '#F8F8F8',
                         // background: '#E3641A',
                         background: '#25d366',
@@ -194,16 +194,17 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                         },
                         fontSize: (width < 431) ? '12px' : '14px'
                     }}
-                    onClick={()=>{}}
+                    onClick={()=>{window.open('https://wa.me/51967392794?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20membres%C3%ADas.', '_blank')}}
                 ><Typography fontWeight={'bold'} textAlign={'center'} display={'flex'} justifyContent={'center'} >Conéctate <WhatsApp/></Typography>
                 </Button> 
                 : <IconButton
+                    onClick={()=>{window.open('https://wa.me/51967392794?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20membres%C3%ADas.', '_blank')}}
                     className='iconButton delay1'
-                    
-                    sx={{transition: 'top 0.2s ease-in-out',
-                        top: showAppBar ? 0 : '97vh',
-                        scale: showAppBar ? '1' : '1.3',
-                        m: showAppBar ? '0 2vw 0 0' : '0 4vw 0 0 ', 
+                    sx={{
+                        // transition: 'top 0.7s ease-in-out',
+                        // top: showAppBar ? 0 : '97vh',
+                        // scale: showAppBar ? '1' : '1.3',
+                        m: '0 4vw 0 0 ', 
                         backgroundColor: '#25d366', "&.MuiButtonBase-root:hover":{bgcolor:'#25d366'}}}>
                     <WhatsApp sx={{color: '#ffffff'}}/>
                 </IconButton> }

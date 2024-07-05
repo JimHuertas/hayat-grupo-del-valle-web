@@ -22,7 +22,7 @@ export const Experiencias2 = () => {
                 : '0 8% 0 8%'}
       >
         <Box display='flex' flexDirection={'column'} justifyContent='center' height='100%' width='30%' color='black'>
-            <Typography fontWeight='bold' fontSize='1.7vw' >DESCUBRE NUESTROS</Typography>
+            <Typography fontWeight='bold' fontSize='1.7vw'>DESCUBRE NUESTROS</Typography>
             <Box display='flex'>
                 <Typography fontWeight='bold' fontSize='1.7vw'>ESPACIOS</Typography>
                 <Box bgcolor='#E3641A' p='12px 10px'>
@@ -30,8 +30,8 @@ export const Experiencias2 = () => {
                         xs: '13.5px',
                         sm: '16px',
                         md: '15px',
-                        lg: '16px',
-                        xl: '18px'}}
+                        lg: '15px',
+                        xl: '15px'}}
                       color='white' >
                         Sin fin de actividades de las cuales podrás disfrutar plenamente
                     </Typography>
