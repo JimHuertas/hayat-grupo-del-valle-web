@@ -123,7 +123,7 @@ export const Contacto1 = () => {
                     md: '20px',
                     lg: '24px',
                     xl: '24px'
-                }}>Contáctanos y se uno de los primeros en obtener tu membresía a este exclusivo CLUB a precio de lanzamiento </AnimatedTypography>
+                }}>Se uno de los primeros en obtener tu membresía a este exclusivo CLUB a precio de lanzamiento </AnimatedTypography>
 
                 {(width < 480) 
                     ? <Box height={'auto'}  width={'100%'}  display='flex' alignContent={'center'} justifyContent={'center'}  alignItems={'center'} justifyItems={'center'}>

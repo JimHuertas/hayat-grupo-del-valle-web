@@ -97,7 +97,7 @@ export const Servicios1: React.FC = () => {
                             lg: '16px',
                             xl: '16px'
                         }} fontWeight='500'
-                    > Se parte de nuestro exclusivo club, ''vive un mar de experiencias'' donde no podrás perderte en una experiencia inolvidable.
+                    > Se parte de nuestro exclusivo club, ''vive un mar de experiencias'' donde no podrás perderte de experiencias inolvidables.
                     </AnimatedTypography>
                     <AnimatedTypography 
                         color='#F8F8F8' 

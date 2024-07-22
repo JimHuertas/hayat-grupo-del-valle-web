@@ -19,7 +19,7 @@ export const selectedOption = (initialSelectedIndex: number | null = null) => {
                 break;
             case 1:
                 dispatch( changeIndex(buttonIndex))
-                navigate('/contacto');
+                navigate('/servicios');
                 break;
             case 2:
                 dispatch( changeIndex(buttonIndex))
@@ -27,7 +27,7 @@ export const selectedOption = (initialSelectedIndex: number | null = null) => {
                 break;
             case 3:
                 dispatch( changeIndex(buttonIndex))
-                navigate('/servicios');
+                navigate('/contacto');
                 break;
             case 4:
                 dispatch( changeIndex(buttonIndex))

@@ -13,7 +13,7 @@ export const cards: ExperienciasCardType[] = [
     {//comida
         id: '01',
         title: 'Gastronomía',
-        content: 'Una experiencia culinaria frente al mar con fusión de sabores nacionales e internacionales.',
+        content: 'Experiencias culinarias frente al mar con fusión de sabores nacionales e internacionales.', 
         image: 'https://cdn.clubhayat.com/gastronomia.webp',
         height: '170px',
         position: 'center'
@@ -21,7 +21,7 @@ export const cards: ExperienciasCardType[] = [
     {//bar
         id: '02',
         title: 'Discoteca',
-        content: 'El bar de playa del club ofrece cócteles refrescantes y aperitivos junto al mar con servicio excepcional.',
+        content: 'Cuando cae la noche, podrás disfrutar de una de las discotecas más seductoras, creado para vivir experiencias únicas en primera línea de mar.',
         image: 'https://cdn.clubhayat.com/bar.webp',
         height: '170px',
         position: 'center'
@@ -30,7 +30,7 @@ export const cards: ExperienciasCardType[] = [
         id: '03',
         image: 'https://cdn.clubhayat.com/show-especiales-card.webp',
         title:'Eventos y conciertos',
-        content: 'Vive eventos únicos y emocionantes en nuestro club, con espectáculos variados.',
+        content: 'Vive eventos únicos y emocionantes en nuestro club, con espectáculos variados y exclusivos para nuestros miembros.',
         height: '170px',
         position: 'center'
     },
@@ -38,7 +38,7 @@ export const cards: ExperienciasCardType[] = [
         id: '04',
         image: 'https://cdn.clubhayat.com/parque-acuatico.webp',
         title:'Water Park',
-        content: 'Disfruta de nuestro emocionante parque acuático con toboganes, piscinas y juegos interactivos.',
+        content: 'Disfruta de nuestro emocionante parque acuático con toboganes, piscinas y juegos interactivos, ideal para la diversión de toda la familia frente al mar.',
         height: '170px',
         position: 'center'
     },

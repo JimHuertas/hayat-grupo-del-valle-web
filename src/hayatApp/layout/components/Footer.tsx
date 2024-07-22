@@ -19,7 +19,7 @@ import { SendMailStatus } from "../../service/config";
 
 const Links = [
     () => {
-        window.open('https://www.tiktok.com/@hayatpuntasal?_t=8myhmTJj35S&_r=1', '_blank');
+        window.open('https://www.tiktok.com/@hayatclubpuntasal', '_blank');
     },
     () => {
         window.open('https://www.facebook.com/profile.php?id=61558631184828', '_blank');
@@ -224,27 +224,26 @@ export const Footer = () => {
                 flexDirection={(width < 1030) 
                     ? (width < 600) ? 'row' : 'column' 
                     : 'row'}>
-                <Grid container width={(width < 1030) 
-                    ? (width < 600) ? '35%' : '80%' 
-                    :'57%'} direction='column'>
+                <Grid container sx={{pl: '15%'}} width='80%' direction='column'>
                     <a href="/servicios" style={{fontSize:'20px', padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>El proyecto</Typography> </a>
+                    <a href="/plano-hayat" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Planimetría</Typography> </a>
                     {/* <a href="/" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Canal</Typography> </a> */}
                     <a href="/nosotros" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Nosotros</Typography> </a>
                     {/* <a href="https://linktr.ee/grupodelvalle" target="_blank" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Redes</Typography> </a> */}
                     <a href="/contacto" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Contáctanos</Typography> </a>
                     {/* <a href="/contacto" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Informes</Typography> </a> */}
                     <a href="/hayat-terminos-y-condiciones" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Politica de privacidad</Typography> </a>
+                    <a href="/informacion" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Informes</Typography> </a>
                 </Grid>
-                <Grid container width={(width < 1030) 
+                {/* <Grid container width={(width < 1030) 
                     ? (width < 600) 
                         ? '50%'
                         : '80%'
                     :'43%'} direction='column'>
                     <a href="/nosotros" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Holding</Typography> </a>
                     <a href="/nosotros" style={{padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Oficina</Typography> </a>
-                    <a href="/plano-hayat" style={{ padding: '0 0 10px 0', color: '#B8B8B8', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Plano</Typography> </a>
-                    {/* <a style={{padding: '0 0 10px 0', color: '#484848', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Precios</Typography> </a> */}
-                </Grid>
+                    <a style={{padding: '0 0 10px 0', color: '#484848', textDecoration: 'none'}}><Typography fontSize={fontInfoSize} sx={{ fontWeight: 'bold' }}>Precios</Typography> </a>
+                </Grid> */}
             </Grid>
 
             <Box flexDirection='column' display='flex' justifyContent='start' sx={{width: (isSmallScreen) ? '100%' : (width < 1450) ? '18%' : '17%' }}>

@@ -15,8 +15,8 @@ export const ContactoPage = () => {
   const indexNav= useSelector((state: RootState) => state.nabBar.index);
 
   useEffect(()=>{
-    if(indexNav !== 1)
-      dispatch( changeIndex(1) )
+    if(indexNav !== 3)
+      dispatch( changeIndex(3) )
   },[])
 
   return ((isLoading) 

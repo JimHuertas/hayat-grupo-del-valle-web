@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { changeIndex } from '../../../../store/navbar/navBatSlice';
 import { CardsInfo2 } from './features/2-CardsInfo';
 import { MapaHayat } from './features/4-Maps-hayat';
+import { RecorridoVirtual4 } from './features/4-RecorridoVirtual';
 
 export const InicioPage = () => {
   const { isLoading } = loadingScreenHook();
@@ -35,6 +36,7 @@ export const InicioPage = () => {
             <InitPage1 />
             <CardsInfo2/>
             <CardsContacto3/>
+            <RecorridoVirtual4/>
             <MapaHayat/>
         </Box>
         </HayatAppLayout>

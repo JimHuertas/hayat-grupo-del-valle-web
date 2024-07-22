@@ -24,8 +24,8 @@ export const Experiencias2 = () => {
         <Box display='flex' flexDirection={'column'} justifyContent='center' height='100%' width='30%' color='black'>
             <Typography fontWeight='bold' fontSize='1.7vw'>DESCUBRE NUESTROS</Typography>
             <Box display='flex'>
-                <Typography fontWeight='bold' fontSize='1.7vw'>ESPACIOS</Typography>
-                <Box bgcolor='#E3641A' p='12px 10px'>
+                <Typography fontWeight='bold' fontSize='1.7vw'>SERVICIOS</Typography>
+                {/* <Box bgcolor='#E3641A' p='12px 10px'>
                     <Typography fontSize={{
                         xs: '13.5px',
                         sm: '16px',
@@ -35,7 +35,7 @@ export const Experiencias2 = () => {
                       color='white' >
                         Sin fin de actividades de las cuales podrás disfrutar plenamente
                     </Typography>
-                </Box>
+                </Box> */}
             </Box>
             <Box border={1.5} color='#E3641A' width={'100%'} ></Box>
         </Box>
@@ -48,8 +48,8 @@ export const Experiencias2 = () => {
         <Box p={(width < 540 ) ? '0 7%' : '0 9%'} height={(width < 540 ) ? '25%' : '35%'} width='97%' color='black'>
             <Typography fontWeight='bold' fontSize={(width < 550) ? '6.0vw' : '5vw'} >DESCUBRE NUESTROS</Typography>
             <Box display='flex'>
-                <Typography fontWeight='bold' fontSize={(width < 550) ? '6.0vw' : '5vw'}>ESPACIOS</Typography>
-                <Box bgcolor='#E3641A' p='12px 10px'>
+                <Typography fontWeight='bold' fontSize={(width < 550) ? '6.0vw' : '5vw'}>SERVICIOS</Typography>
+                {/* <Box bgcolor='#E3641A' p='12px 10px'>
                     <Typography fontSize={{
                         xs: '12px',
                         sm: '17px',
@@ -57,7 +57,7 @@ export const Experiencias2 = () => {
                       color='white' >
                         Sin fin de actividades de las cuales podrás disfrutar plenamente
                     </Typography>
-                </Box>
+                </Box> */}
             </Box>
             <Box border={1.5} color='#E3641A' width={'100%'} ></Box>
         </Box>
@@ -69,8 +69,8 @@ export const Experiencias2 = () => {
 
     <Box m='0 0 10px 0' p=' 2vw' display='flex' alignItems='center' alignContent='center' >
         <Box border={1.5} color='#E3641A' height={'0'} width={'100px'} />
-        <Typography fontWeight='bold' fontSize='20px' p='10px 10px' >DESCUBRE LAS MEJORES EXPERIENCIAS</Typography>
-        <Typography fontWeight='500' p='10px 10px' >Tendrás inumerables acividades de las cuales podrías a lo largo de tu estadía con nosotros</Typography>
+        <Typography fontWeight='bold' fontSize='20px' p='10px 10px' >LAS MEJORES EXPERIENCIAS</Typography>
+        <Typography fontWeight='500' p='10px 10px' >Disfruta de inumerables actividades a lo largo de tu estadía con nosotros</Typography>
     </Box>
 
     <Box sx={{

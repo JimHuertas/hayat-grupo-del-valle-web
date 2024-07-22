@@ -67,9 +67,10 @@ export const SideBar: React.FC<SideBarProps> = ({ drawerWidth = 240, isOpen, han
                             <ListItemText primary="Inicio" />
                         </ListItemButton>
                     </ListItem>
+                    
                     <ListItem disablePadding>
-                        <ListItemButton component={NavLink} to="/contacto">
-                            <ListItemText primary="Contácto" />
+                        <ListItemButton component={NavLink} to="/servicios">
+                            <ListItemText primary="Servicios" />
                         </ListItemButton>
                     </ListItem>
 
@@ -80,15 +81,16 @@ export const SideBar: React.FC<SideBarProps> = ({ drawerWidth = 240, isOpen, han
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton component={NavLink} to="/servicios">
-                            <ListItemText primary="Servicios" />
+                        <ListItemButton component={NavLink} to="/contacto">
+                            <ListItemText primary="Contácto" />
                         </ListItemButton>
                     </ListItem>
-                    <ListItem disablePadding>
+
+                    {/* <ListItem disablePadding>
                         <ListItemButton component={NavLink} to="/informacion">
                             <ListItemText primary="Información" />
                         </ListItemButton>
-                    </ListItem>
+                    </ListItem> */}
                 </List>
             </Drawer>
         </Box>

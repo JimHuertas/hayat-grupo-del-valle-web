@@ -109,7 +109,7 @@ export const NavBar: React.FC<NavBarProps> = ({onToggleSidebar}) => {
                                 : showAppBar ? '50vw' : '5vw'
                             : '100%'} sx={{ transition: 'width  0.7s ease-in-out' }} >
                         <Button sx={{ height:  '100%' }} disableRipple color="inherit" aria-label="menu" onClick={handleOnClickLogo}>
-                            <img src={logoHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? (width < 322) ? '5.5vw' : 35 : 50, borderRadius: '0' }} />
+                            <img src={logoHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? (width < 322) ? '5.5vw' : 35 : 70, borderRadius: '0' }} />
                             <Box width={'0.7vw'}/>
                             <img src={nombreHayat} alt="Logo" style={{ padding:'none', margin:'none', borderColor:'white', boxShadow: 'none', transition: 'box-shadow 0.1s', width: (width < 640) ? (width < 322) ? '12vw' : 80 : 130, borderRadius: '0' }} />
                         </Button>

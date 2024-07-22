@@ -9,7 +9,7 @@ export interface ExperienciasCardType{
 
 export let expCards: ExperienciasCardType[] = [
     {
-        title: 'Zona de juegos acuaticos',
+        title: 'Zona de juegos acuáticos',
         image: 'https://cdn.clubhayat.com/zona-parque-acuatico.webp',
         rate: '4.5',
         position: 'center'

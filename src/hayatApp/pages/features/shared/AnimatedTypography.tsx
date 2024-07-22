@@ -15,9 +15,10 @@ interface AniTypoProps{
     fontWeight?: string;
     color?: string;
     fontFamily?: string;
+    textAlign?: any;
     sx?: SxProps<Theme> | undefined;
 }
-export const AnimatedTypography:React.FC<AniTypoProps> = ({id, alignItems, display, margin, variant, sx, children, color, fontFamily, fontSize, fontWeight, padding}) => {
+export const AnimatedTypography:React.FC<AniTypoProps> = ({textAlign='left', id, alignItems, display, margin, variant, sx, children, color, fontFamily, fontSize, fontWeight, padding}) => {
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -28,6 +29,7 @@ export const AnimatedTypography:React.FC<AniTypoProps> = ({id, alignItems, displ
     return (
         <Typography 
             id={id}
+            textAlign={textAlign}
             alignItems={alignItems}
             display={display}
             variant={variant}

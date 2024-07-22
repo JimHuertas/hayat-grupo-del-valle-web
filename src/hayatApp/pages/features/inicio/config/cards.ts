@@ -12,14 +12,14 @@ export const cards: CardType[] = [
     {//Comida
         image: 'https://cdn.clubhayat.com/gastronomia.webp',
         title: 'Gastronomía',
-        content: 'Una experiencia culinaria frente al mar con fusión de sabores nacionales e internacionales.', 
+        content: 'Experiencias culinarias frente al mar con fusión de sabores nacionales e internacionales.', 
         position: 'center',
         smallPosition: 'center'
     },
     {//Bar
         image: 'https://cdn.clubhayat.com/bar.webp',
         title:'Discoteca',
-        content: 'El bar de playa del club ofrece cócteles refrescantes y aperitivos junto al mar en un ambiente relajado con servicio excepcional.',
+        content: 'Cuando cae la noche, podrás disfrutar de una de las discotecas más seductoras del norte peruano, creado para vivir experiencias únicas en primera línea de mar.',
         position: 'center',
         smallPosition: 'center'
     },
